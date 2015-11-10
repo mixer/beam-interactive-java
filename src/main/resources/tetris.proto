@@ -1,0 +1,106 @@
+package pro.beam.interactive;
+
+option java_package = "pro.beam.interactive.net";
+option java_outer_classname = "Protocol";
+
+// Handshake MUST be the first message sent from clients to servers.
+// After sending it, they should wait for a HandshakeACK, which will
+// contain authentication status.
+message Handshake {
+    // Channel ID you want to connect as.
+    required uint32 channel = 1;
+    // That channel's stream key
+    required string streamKey = 2;
+}
+
+// This is sent from the server to the client in response to a
+// Handshake message. It's only send on a successful handshake.
+// In other cases, an error will be sent.
+message HandshakeACK {}
+
+// The Report is send down to the streamer's computer at the
+// reportFrequency, containing information about connected
+// clients and their actions.
+message Report {
+    // Total number of active gamers connected. Only users who have
+    // given input recently (within the last couple minutes) will
+    // be counted in the quorum.
+    required uint32 quorum = 1;
+    // Total number of connected users. This includes users who
+    // might not be active.
+    required uint32 connected = 2;
+    // Unix seconds timestamp that this report was sent at.
+    required uint32 time = 3;
+
+    // Contains information as required in game's analysis.
+    message Info {
+        // Only present if "frequency" is requested
+        optional double frequency = 1;
+        // Only present if "mean" is requested
+        optional double mean = 2;
+        // Only present if "stdev" is requested
+        optional double stdev = 3;
+        // Only present if "quartiles" are requested
+        optional double upperQuartile = 4;
+        optional double lowerQuartile = 5;
+        // Only present if "normalized_mean" is requested
+        optional double normalizedMean = 6;
+    }
+
+    message JoystickInfo {
+        required uint32 axis = 1;
+        required Info info = 2;
+    }
+
+    // Report for the mouse control.
+    repeated JoystickInfo joystick = 4;
+
+    // Wraps an Info to provide the key code, which might be easier
+    // to use as a means of identification.
+    message TactileInfo {
+        required uint32 code = 1;
+        optional Info up = 2;
+        optional Info down = 3;
+    }
+    // Report for key controls. The order and index of reports
+    // matches those originally given in the handshake.
+    repeated TactileInfo tactile = 5;
+}
+
+// An error in response to some invalid input or event.
+message Error {
+    required string message = 1;
+}
+
+// A ProgressUpdate message may be sent up periodically from the Robot. It
+// contains an array of objects to update the multiple controls on the fe.
+message ProgressUpdate {
+    message Progress {
+        enum TargetType {
+            TACTILE = 0;
+            JOYSTICK = 1;
+        }
+
+        // The type of control this targets.
+        required TargetType target = 1;
+
+        // The code for the control target. For tactile controls, this will be
+        // the `key` code. For joystick controls, this will be the `axis`.
+        required uint32 code = 2;
+
+        // The progress this input as towards some threshold, designated by the
+        // robot. This must be a float value in the range [0, 1).
+        optional float progress = 3;
+
+        // The duration, in milliseconds, before the action effected by this input
+        // may be carried out again. Note that this will decrement automatically
+        // on the frontend and does not need continuous updates.
+        optional uint32 cooldown = 4;
+
+        // Denotes that the action effected by this control has
+        // occurred, showing a "pulse" on the input.
+        optional bool fired = 5;
+    }
+
+    repeated Progress progress = 1;
+}
