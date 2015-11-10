@@ -21,7 +21,7 @@ public class Decoder {
         // Wait until the buffer is filled enough to be able to read from it.
         while (this.stream.available() < length);
 
-        Class<? extends Message> messageType = new PacketIdentifier().fromId(id);
+        Class<? extends Message> messageType = PacketIdentifier.fromId(id);
         byte[] packet = new byte[length];
         int read = this.stream.read(packet);
         if (read != length) {
