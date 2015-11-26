@@ -13,13 +13,12 @@ public class TetrisExample {
 
         ListenableFuture<Robot> future = new RobotBuilder().username("<username>")
                                                            .password("<password>")
-                                                           .on(0 /* channelId */)
+                                                           .channel(127)
                                                            .build(beam);
 
         Futures.addCallback(future, new FutureCallback<Robot>() {
             @Override public void onSuccess(Robot robot) {
-//                robot.handshake();
-                robot.register(new ExampleListener());
+                // The robot is ready to be used.
             }
 
             @Override public void onFailure(Throwable throwable) {
