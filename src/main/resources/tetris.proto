@@ -1,6 +1,6 @@
 package pro.beam.interactive;
 
-option java_package = "pro.beam.interactive.net";
+option java_package = "pro.beam.interactive.net.packet";
 option java_outer_classname = "Protocol";
 
 // Handshake MUST be the first message sent from clients to servers.

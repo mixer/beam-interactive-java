@@ -102,7 +102,7 @@ public class RobotBuilder {
                 connector.authenticate(beam);
 
                 RobotInfo info = connector.findCredentials(beam);
-                Robot robot = connector.connectRobotTo(info);
+                Robot robot = connector.connectRobotTo(info, channel);
 
                 return robot;
             }

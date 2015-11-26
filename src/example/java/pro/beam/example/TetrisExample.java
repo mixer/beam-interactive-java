@@ -18,7 +18,7 @@ public class TetrisExample {
 
         Futures.addCallback(future, new FutureCallback<Robot>() {
             @Override public void onSuccess(Robot robot) {
-                // The robot is ready to be used.
+                // The robot is connected and ready to be used.
             }
 
             @Override public void onFailure(Throwable throwable) {

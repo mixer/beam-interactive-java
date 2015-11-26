@@ -4,6 +4,7 @@ import com.google.common.util.concurrent.CheckedFuture;
 import pro.beam.api.BeamAPI;
 import pro.beam.api.exceptions.BeamException;
 import pro.beam.api.resource.BeamUser;
+import pro.beam.api.resource.channel.BeamChannel;
 import pro.beam.api.resource.tetris.RobotInfo;
 import pro.beam.api.services.impl.TetrisService;
 import pro.beam.api.services.impl.UsersService;
@@ -37,9 +38,9 @@ public class RobotConnector {
         return beam.use(TetrisService.class).getRobotCredentials(this.builder.channel).get();
     }
 
-    protected Robot connectRobotTo(RobotInfo info) throws IOException {
+    protected Robot connectRobotTo(RobotInfo info, BeamChannel channel) throws IOException {
         Robot robot = new Robot(info.address);
-        robot.connect(info.authkey);
+        robot.connect(info.authkey, channel);
 
         return robot;
     }
