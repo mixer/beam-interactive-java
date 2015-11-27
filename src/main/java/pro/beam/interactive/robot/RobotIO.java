@@ -10,12 +10,18 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class RobotIO {
-    protected final Encoder encoder;
-    protected final Decoder decoder;
+    protected final Socket socket;
 
-    public RobotIO(Socket socket) throws IOException {
-        this.encoder = new SimpleProtobufEncoder(socket);
-        this.decoder = new SimpleProtobufDecoder(socket);
+    protected Encoder encoder;
+    protected Decoder decoder;
+
+    public RobotIO(Socket socket) {
+        this.socket = socket;
+    }
+
+    public void open() throws IOException {
+        this.encoder = new SimpleProtobufEncoder(this.socket);
+        this.decoder = new SimpleProtobufDecoder(this.socket);
     }
 
     public void write(Message message) throws IOException {

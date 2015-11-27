@@ -12,13 +12,30 @@ import pro.beam.api.services.impl.UsersService;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Internal class responsible for connecting a robot to the API.
+ */
 public class RobotConnector {
     protected final RobotBuilder builder;
 
+    /**
+     * Default constructor which takes an instance of the builder.
+     *
+     * @param builder The builder used to create the robot.
+     */
     protected RobotConnector(RobotBuilder builder) {
         this.builder = builder;
     }
 
+    /**
+     * Prepares the given instance of the BeamAPI (see: Java Client; https://githuib.com/WatchBeam/beam-client-java)
+     * by authenticating it with the API so that it may fetch robot network credentials later (see #findCredentials).
+     *
+     * @param beam The API that will be prepared.
+     * @return The prepared version of that API.
+     *
+     * @throws BeamException Thrown if invalid credentials are given with which to login.
+     */
     protected BeamAPI authenticate(BeamAPI beam) throws BeamException {
         UsersService users = beam.use(UsersService.class);
         CheckedFuture<BeamUser, BeamException> loginTask = null;
@@ -34,10 +51,29 @@ public class RobotConnector {
         return beam;
     }
 
+    /**
+     * Finds the robot's credentials for the given channel in a blocking fashion.
+     *
+     * @param beam The API to work with.
+     * @return The asked for credentials.
+     *
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     protected RobotInfo findCredentials(BeamAPI beam) throws ExecutionException, InterruptedException {
         return beam.use(TetrisService.class).getRobotCredentials(this.builder.channel).get();
     }
 
+    /**
+     * Connects a robot to a channel given an address to connect to and an authkey. This method blocks.
+     *
+     * @param info The credentials info object.
+     * @param channel The channel to connect to.
+     * @return A robot which is connected to the requested things. It will have been connected, set-up, and have
+     * completed the handshake process by the time that it is returned.
+     *
+     * @throws IOException If the socket is unopenable, or becomes unreadable.
+     */
     protected Robot connectRobotTo(RobotInfo info, BeamChannel channel) throws IOException {
         Robot robot = new Robot(info.address);
         robot.connect(info.authkey, channel);
