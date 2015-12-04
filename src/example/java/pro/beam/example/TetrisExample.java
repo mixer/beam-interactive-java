@@ -29,8 +29,9 @@ public class TetrisExample {
                 // The robot is connected and ready to be used.
 
                 // Set up an event handler to listen to the Report message, and delegate
-                // into the given instance of the MouseMoveListener class.
+                // into the given instance of a listener.
                 robot.on(Protocol.Report.class, new MouseMoveListener());
+                robot.on(Protocol.Report.class, new KeyPressListener());
             }
 
             @Override public void onFailure(Throwable throwable) {
