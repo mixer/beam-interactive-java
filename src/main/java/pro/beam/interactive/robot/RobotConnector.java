@@ -60,8 +60,8 @@ public class RobotConnector {
      * @throws ExecutionException
      * @throws InterruptedException
      */
-    protected RobotInfo findCredentials(BeamAPI beam) throws ExecutionException, InterruptedException {
-        return beam.use(TetrisService.class).getRobotCredentials(this.builder.channel).get();
+    protected RobotInfo findCredentials(BeamAPI beam) throws BeamException, ExecutionException, InterruptedException {
+        return beam.use(TetrisService.class).getRobotCredentials(this.builder.channel).checkedGet();
     }
 
     /**
