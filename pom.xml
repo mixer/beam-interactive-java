@@ -22,7 +22,7 @@
         <dependency>
             <groupId>pro.beam</groupId>
             <artifactId>api</artifactId>
-            <version>1.6.1-SNAPSHOT</version>
+            <version>1.6.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
