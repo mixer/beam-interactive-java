@@ -76,7 +76,7 @@ public class RobotConnector {
      */
     protected Robot connectRobotTo(RobotInfo info, BeamChannel channel) throws IOException {
         Robot robot = new Robot(info.address);
-        robot.connect(info.authkey, channel);
+        robot.connect(info.key, channel);
 
         return robot;
     }
