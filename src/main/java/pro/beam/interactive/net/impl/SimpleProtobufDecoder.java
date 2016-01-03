@@ -1,33 +1,31 @@
 package pro.beam.interactive.net.impl;
 
-import com.google.protobuf.CodedInputStream;
 import com.google.protobuf.Message;
-import pro.beam.interactive.net.AbstractSocketHolder;
+import pro.beam.interactive.util.Varint;
+import pro.beam.interactive.websocket.AbstractBufferedWebsocketHolder;
 import pro.beam.interactive.net.Decoder;
 import pro.beam.interactive.net.packet.PacketIdentifier;
+import pro.beam.interactive.websocket.BufferedWebSocket;
 
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.Socket;
 
 /**
  * SimpleProtobufDecoder is an implementation of the Decoder interface designed for unfurling
  * protobuf messages from over the socket.
  */
-public class SimpleProtobufDecoder extends AbstractSocketHolder implements Decoder {
-    protected final CodedInputStream stream;
-
+public class SimpleProtobufDecoder extends AbstractBufferedWebsocketHolder implements Decoder {
     /**
      * Public constructor for the SimpleProtobufDecoder.
      *
      * @param socket The socket to read from.
      * @throws IOException Thrown if the input stream of the socket cannot be accessed.
      */
-    public SimpleProtobufDecoder(Socket socket) throws IOException {
-        super(socket);
-
-        this.stream = CodedInputStream.newInstance(this.input());
+    public SimpleProtobufDecoder(BufferedWebSocket ws) throws IOException {
+        super(ws);
     }
 
     /**
@@ -39,9 +37,16 @@ public class SimpleProtobufDecoder extends AbstractSocketHolder implements Decod
      * @throws IOException Thrown if the stream becomes unreadable.
      */
     @Override public Message next() throws IOException {
-        int length = this.stream.readRawVarint32();
-        int id = this.stream.readRawVarint32();
-        byte[] payload = this.stream.readRawBytes(length);
+        DataInputStream stream;
+        try {
+            stream = new DataInputStream(new ByteArrayInputStream(this.ws.next()));
+        } catch (InterruptedException e) {
+            return null;
+        }
+
+        int id = Varint.readUnsignedVarInt(stream);
+        byte[] payload = new byte[stream.available()];
+        stream.read(payload);
 
         Method parser = this.getParser(PacketIdentifier.fromId(id));
         try {
@@ -52,6 +57,7 @@ public class SimpleProtobufDecoder extends AbstractSocketHolder implements Decod
 
             return null;
         } catch (IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
             return null;
         }
     }

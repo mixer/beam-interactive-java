@@ -5,23 +5,23 @@ import pro.beam.interactive.net.Decoder;
 import pro.beam.interactive.net.Encoder;
 import pro.beam.interactive.net.impl.SimpleProtobufDecoder;
 import pro.beam.interactive.net.impl.SimpleProtobufEncoder;
+import pro.beam.interactive.websocket.BufferedWebSocket;
 
 import java.io.IOException;
-import java.net.Socket;
 
 public class RobotIO {
-    protected final Socket socket;
+    protected final BufferedWebSocket ws;
 
     protected Encoder encoder;
     protected Decoder decoder;
 
-    public RobotIO(Socket socket) {
-        this.socket = socket;
+    public RobotIO(BufferedWebSocket ws) {
+        this.ws = ws;
     }
 
     public void open() throws IOException {
-        this.encoder = new SimpleProtobufEncoder(this.socket);
-        this.decoder = new SimpleProtobufDecoder(this.socket);
+        this.encoder = new SimpleProtobufEncoder(this.ws);
+        this.decoder = new SimpleProtobufDecoder(this.ws);
     }
 
     public void write(Message message) throws IOException {
