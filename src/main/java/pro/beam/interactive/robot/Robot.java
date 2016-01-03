@@ -4,10 +4,11 @@ import com.google.protobuf.Message;
 import pro.beam.api.resource.channel.BeamChannel;
 import pro.beam.interactive.event.EventListener;
 import pro.beam.interactive.event.EventRegistry;
+import pro.beam.interactive.websocket.BufferedWebSocket;
 
+import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
-import java.net.Socket;
-import java.net.SocketAddress;
+import java.net.URI;
 
 /**
  * The Robot is responsible for maintaining a connection to the Tetris API,
@@ -16,10 +17,7 @@ import java.net.SocketAddress;
  *
  * It is constructed using the @link{pro.beam.interactive.robot.RobotBuilder} class.
  */
-public class Robot {
-    protected final SocketAddress address;
-    protected final Socket socket;
-
+public class Robot extends BufferedWebSocket {
     protected final EventRegistry eventRegistry;
     protected final RobotDecoderTask decoderTask;
     protected final RobotIO io;
@@ -32,15 +30,22 @@ public class Robot {
      * given no arguments and no target to connect to. The event registry is initialized, and no
      * handlers are set up. The DecoderTask is initialized, but not yet run.
      *
-     * @param address The address of the Tetris Robot server to connect to.
+     * @param uri The URI of the Tetris Robot server to connect to.
      */
-    public Robot(SocketAddress address) {
-        this.address = address;
-        this.socket = new Socket();
+    public Robot(URI uri) throws IOException {
+        super(uri);
+
+        if (uri.getScheme().equals("wss")) {
+            try {
+                this.setSocket(SSLSocketFactory.getDefault().createSocket());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         this.eventRegistry = new EventRegistry();
         this.decoderTask = new RobotDecoderTask(this);
-        this.io = new RobotIO(this.socket);
+        this.io = new RobotIO(this);
     }
 
     /**
@@ -50,17 +55,14 @@ public class Robot {
      * the decoder task is prepared to be run on a new Thread in a concurrent fashion. Finally, a handshake
      * is sent down to the server.
      *
-     * @param authkey The authkey to use when establishing a connection to the API.
+     * @param key The key to use when establishing a connection to the API.
      * @param channel The channel to connect to.
      * @throws IOException Thrown if the socket fails to establish itself, or closes itself.
      */
-    public void connect(String authkey, BeamChannel channel) throws IOException {
-        this.socket.connect(this.address);
-        this.io.open();
-
-        new Thread(this.decoderTask).start();
-
-        this.write(Handshaker.createHandshake(authkey, channel.id));
+    public void connect(String key, BeamChannel channel) throws IOException, InterruptedException {
+        this.beginDecoding();
+        this.connectBlocking();
+        this.write(Handshaker.createHandshake(key, channel.id));
     }
 
     /**
@@ -68,8 +70,8 @@ public class Robot {
      *
      * @throws IOException Thrown if an error was experienced in disconnecting from the established connection.
      */
-    public void disconnect() throws IOException {
-        this.socket.close();
+    public void disconnect() throws InterruptedException {
+        this.closeBlocking();
         this.decoderTask.stop();
     }
 
@@ -92,5 +94,10 @@ public class Robot {
      */
     public void write(Message message) throws IOException {
         this.io.write(message);
+    }
+
+    private void beginDecoding() throws IOException {
+        this.io.open();
+        new Thread(this.decoderTask).start();
     }
 }

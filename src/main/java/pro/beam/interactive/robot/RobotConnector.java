@@ -10,6 +10,7 @@ import pro.beam.api.services.impl.TetrisService;
 import pro.beam.api.services.impl.UsersService;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -74,8 +75,10 @@ public class RobotConnector {
      *
      * @throws IOException If the socket is unopenable, or becomes unreadable.
      */
-    protected Robot connectRobotTo(RobotInfo info, BeamChannel channel) throws IOException {
-        Robot robot = new Robot(info.address);
+    protected Robot connectRobotTo(RobotInfo info, BeamChannel channel) throws IOException, InterruptedException {
+        URI address = info.address.resolve("/robot");
+
+        Robot robot = new Robot(address);
         robot.connect(info.key, channel);
 
         return robot;
