@@ -1,6 +1,7 @@
 package pro.beam.interactive.websocket;
 
 import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.drafts.Draft;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.io.*;
@@ -12,8 +13,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class BufferedWebSocket extends WebSocketClient {
     protected final BlockingQueue<byte[]> queue;
 
-    public BufferedWebSocket(URI uri) throws IOException {
-        super(uri);
+    public BufferedWebSocket(URI uri, Draft draft) throws IOException {
+        super(uri, draft);
 
         this.queue = new LinkedBlockingQueue<>();
     }
