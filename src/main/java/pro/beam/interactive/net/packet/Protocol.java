@@ -1012,15 +1012,15 @@ public final class Protocol {
     int getTime();
 
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     boolean hasUsers();
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     pro.beam.interactive.net.packet.Protocol.Report.Users getUsers();
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder();
 
@@ -5184,19 +5184,19 @@ public final class Protocol {
     public static final int USERS_FIELD_NUMBER = 2;
     private pro.beam.interactive.net.packet.Protocol.Report.Users users_;
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     public boolean hasUsers() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.Users getUsers() {
       return users_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
     }
     /**
-     * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder() {
       return users_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
@@ -5352,13 +5352,11 @@ public final class Protocol {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasUsers()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!getUsers().isInitialized()) {
-        memoizedIsInitialized = 0;
-        return false;
+      if (hasUsers()) {
+        if (!getUsers().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       for (int i = 0; i < getJoystickCount(); i++) {
         if (!getJoystick(i).isInitialized()) {
@@ -5802,11 +5800,10 @@ public final class Protocol {
         if (!hasTime()) {
           return false;
         }
-        if (!hasUsers()) {
-          return false;
-        }
-        if (!getUsers().isInitialized()) {
-          return false;
+        if (hasUsers()) {
+          if (!getUsers().isInitialized()) {
+            return false;
+          }
         }
         for (int i = 0; i < getJoystickCount(); i++) {
           if (!getJoystick(i).isInitialized()) {
@@ -5902,13 +5899,13 @@ public final class Protocol {
       private com.google.protobuf.SingleFieldBuilder<
           pro.beam.interactive.net.packet.Protocol.Report.Users, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder, pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder> usersBuilder_;
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public boolean hasUsers() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.Users getUsers() {
         if (usersBuilder_ == null) {
@@ -5918,7 +5915,7 @@ public final class Protocol {
         }
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public Builder setUsers(pro.beam.interactive.net.packet.Protocol.Report.Users value) {
         if (usersBuilder_ == null) {
@@ -5934,7 +5931,7 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public Builder setUsers(
           pro.beam.interactive.net.packet.Protocol.Report.Users.Builder builderForValue) {
@@ -5948,7 +5945,7 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public Builder mergeUsers(pro.beam.interactive.net.packet.Protocol.Report.Users value) {
         if (usersBuilder_ == null) {
@@ -5968,7 +5965,7 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public Builder clearUsers() {
         if (usersBuilder_ == null) {
@@ -5981,7 +5978,7 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.Users.Builder getUsersBuilder() {
         bitField0_ |= 0x00000002;
@@ -5989,7 +5986,7 @@ public final class Protocol {
         return getUsersFieldBuilder().getBuilder();
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder() {
         if (usersBuilder_ != null) {
@@ -6000,7 +5997,7 @@ public final class Protocol {
         }
       }
       /**
-       * <code>required .pro.beam.interactive.Report.Users users = 2;</code>
+       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           pro.beam.interactive.net.packet.Protocol.Report.Users, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder, pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder> 
@@ -10413,7 +10410,7 @@ public final class Protocol {
       "\n\037src/main/resources/tetris.proto\022\024pro.b" +
       "eam.interactive\"/\n\tHandshake\022\017\n\007channel\030" +
       "\001 \002(\r\022\021\n\tstreamKey\030\002 \002(\t\"\016\n\014HandshakeACK" +
-      "\"\277\006\n\006Report\022\014\n\004time\030\001 \002(\r\0221\n\005users\030\002 \002(\013" +
+      "\"\277\006\n\006Report\022\014\n\004time\030\001 \002(\r\0221\n\005users\030\002 \001(\013" +
       "2\".pro.beam.interactive.Report.Users\022;\n\010" +
       "joystick\030\003 \003(\0132).pro.beam.interactive.Re" +
       "port.JoystickInfo\0229\n\007tactile\030\004 \003(\0132(.pro" +

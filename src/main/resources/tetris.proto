@@ -26,7 +26,7 @@ message HandshakeACK {}
 message Report {
     // Unix seconds timestamp in milliseconds that this report was sent at.
     required uint32 time = 1;
-    required Users users = 2;
+    optional Users users = 2;
 
     // Contains information about the users connected to the stream.
     message Users {
