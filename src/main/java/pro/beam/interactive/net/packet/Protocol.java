@@ -995,129 +995,153 @@ public final class Protocol {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required uint32 time = 1;</code>
+     * <code>required uint32 quorum = 1;</code>
      *
      * <pre>
-     * Unix seconds timestamp in milliseconds that this report was sent at.
+     * Total number of active gamers connected. Only users who have
+     * given input recently (within the last couple minutes) will
+     * be counted in the quorum.
+     * </pre>
+     */
+    boolean hasQuorum();
+    /**
+     * <code>required uint32 quorum = 1;</code>
+     *
+     * <pre>
+     * Total number of active gamers connected. Only users who have
+     * given input recently (within the last couple minutes) will
+     * be counted in the quorum.
+     * </pre>
+     */
+    int getQuorum();
+
+    /**
+     * <code>required uint32 connected = 2;</code>
+     *
+     * <pre>
+     * Total number of connected users. This includes users who
+     * might not be active.
+     * </pre>
+     */
+    boolean hasConnected();
+    /**
+     * <code>required uint32 connected = 2;</code>
+     *
+     * <pre>
+     * Total number of connected users. This includes users who
+     * might not be active.
+     * </pre>
+     */
+    int getConnected();
+
+    /**
+     * <code>required uint32 time = 3;</code>
+     *
+     * <pre>
+     * Unix seconds timestamp that this report was sent at.
      * </pre>
      */
     boolean hasTime();
     /**
-     * <code>required uint32 time = 1;</code>
+     * <code>required uint32 time = 3;</code>
      *
      * <pre>
-     * Unix seconds timestamp in milliseconds that this report was sent at.
+     * Unix seconds timestamp that this report was sent at.
      * </pre>
      */
     int getTime();
 
     /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    boolean hasUsers();
-    /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.Users getUsers();
-    /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder();
-
-    /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> 
         getJoystickList();
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo getJoystick(int index);
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     int getJoystickCount();
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder> 
         getJoystickOrBuilderList();
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder getJoystickOrBuilder(
         int index);
 
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> 
         getTactileList();
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     pro.beam.interactive.net.packet.Protocol.Report.TactileInfo getTactile(int index);
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     int getTactileCount();
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder> 
         getTactileOrBuilderList();
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder getTactileOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> 
-        getScreenCoordsList();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getScreenCoords(int index);
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    int getScreenCoordsCount();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder> 
-        getScreenCoordsOrBuilderList();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder getScreenCoordsOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> 
-        getScreenPressList();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getScreenPress(int index);
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    int getScreenPressCount();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder> 
-        getScreenPressOrBuilderList();
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder getScreenPressOrBuilder(
         int index);
   }
   /**
@@ -1138,11 +1162,11 @@ public final class Protocol {
       super(builder);
     }
     private Report() {
+      quorum_ = 0;
+      connected_ = 0;
       time_ = 0;
       joystick_ = java.util.Collections.emptyList();
       tactile_ = java.util.Collections.emptyList();
-      screenCoords_ = java.util.Collections.emptyList();
-      screenPress_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -1174,52 +1198,33 @@ public final class Protocol {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              time_ = input.readUInt32();
+              quorum_ = input.readUInt32();
               break;
             }
-            case 18: {
-              pro.beam.interactive.net.packet.Protocol.Report.Users.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = users_.toBuilder();
-              }
-              users_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.Users.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(users_);
-                users_ = subBuilder.buildPartial();
-              }
+            case 16: {
               bitField0_ |= 0x00000002;
+              connected_ = input.readUInt32();
               break;
             }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                joystick_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              joystick_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.parser(), extensionRegistry));
+            case 24: {
+              bitField0_ |= 0x00000004;
+              time_ = input.readUInt32();
               break;
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                tactile_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo>();
+                joystick_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo>();
                 mutable_bitField0_ |= 0x00000008;
               }
-              tactile_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.parser(), extensionRegistry));
+              joystick_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.parser(), extensionRegistry));
               break;
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                screenCoords_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo>();
+                tactile_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              screenCoords_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                screenPress_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              screenPress_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.parser(), extensionRegistry));
+              tactile_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.parser(), extensionRegistry));
               break;
             }
           }
@@ -1231,17 +1236,11 @@ public final class Protocol {
             new com.google.protobuf.InvalidProtocolBufferException(
                 e.getMessage()).setUnfinishedMessage(this));
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           joystick_ = java.util.Collections.unmodifiableList(joystick_);
         }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          tactile_ = java.util.Collections.unmodifiableList(tactile_);
-        }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          screenCoords_ = java.util.Collections.unmodifiableList(screenCoords_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          screenPress_ = java.util.Collections.unmodifiableList(screenPress_);
+          tactile_ = java.util.Collections.unmodifiableList(tactile_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1259,64 +1258,126 @@ public final class Protocol {
               pro.beam.interactive.net.packet.Protocol.Report.class, pro.beam.interactive.net.packet.Protocol.Report.Builder.class);
     }
 
-    public interface UsersOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.Report.Users)
+    public interface InfoOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.Report.Info)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 connected = 1;</code>
+       * <code>optional double frequency = 1;</code>
        *
        * <pre>
-       * Total number of users connected to the stream.
+       * Only present if "frequency" is requested
        * </pre>
        */
-      boolean hasConnected();
+      boolean hasFrequency();
       /**
-       * <code>required uint32 connected = 1;</code>
+       * <code>optional double frequency = 1;</code>
        *
        * <pre>
-       * Total number of users connected to the stream.
+       * Only present if "frequency" is requested
        * </pre>
        */
-      int getConnected();
+      double getFrequency();
 
       /**
-       * <code>required uint32 quorum = 2;</code>
+       * <code>optional double mean = 2;</code>
        *
        * <pre>
-       * Number of users who gave any kind of input in the last
-       * 30 seconds.
+       * Only present if "mean" is requested
        * </pre>
        */
-      boolean hasQuorum();
+      boolean hasMean();
       /**
-       * <code>required uint32 quorum = 2;</code>
+       * <code>optional double mean = 2;</code>
        *
        * <pre>
-       * Number of users who gave any kind of input in the last
-       * 30 seconds.
+       * Only present if "mean" is requested
        * </pre>
        */
-      int getQuorum();
+      double getMean();
+
+      /**
+       * <code>optional double stdev = 3;</code>
+       *
+       * <pre>
+       * Only present if "stdev" is requested
+       * </pre>
+       */
+      boolean hasStdev();
+      /**
+       * <code>optional double stdev = 3;</code>
+       *
+       * <pre>
+       * Only present if "stdev" is requested
+       * </pre>
+       */
+      double getStdev();
+
+      /**
+       * <code>optional double upperQuartile = 4;</code>
+       *
+       * <pre>
+       * Only present if "quartiles" are requested
+       * </pre>
+       */
+      boolean hasUpperQuartile();
+      /**
+       * <code>optional double upperQuartile = 4;</code>
+       *
+       * <pre>
+       * Only present if "quartiles" are requested
+       * </pre>
+       */
+      double getUpperQuartile();
+
+      /**
+       * <code>optional double lowerQuartile = 5;</code>
+       */
+      boolean hasLowerQuartile();
+      /**
+       * <code>optional double lowerQuartile = 5;</code>
+       */
+      double getLowerQuartile();
+
+      /**
+       * <code>optional double normalizedMean = 6;</code>
+       *
+       * <pre>
+       * Only present if "normalized_mean" is requested
+       * </pre>
+       */
+      boolean hasNormalizedMean();
+      /**
+       * <code>optional double normalizedMean = 6;</code>
+       *
+       * <pre>
+       * Only present if "normalized_mean" is requested
+       * </pre>
+       */
+      double getNormalizedMean();
     }
     /**
-     * Protobuf type {@code pro.beam.interactive.Report.Users}
+     * Protobuf type {@code pro.beam.interactive.Report.Info}
      *
      * <pre>
-     * Contains information about the users connected to the stream.
+     * Contains information as required in game's analysis.
      * </pre>
      */
-    public  static final class Users extends
+    public  static final class Info extends
         com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:pro.beam.interactive.Report.Users)
-        UsersOrBuilder {
-      // Use Users.newBuilder() to construct.
-      private Users(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        // @@protoc_insertion_point(message_implements:pro.beam.interactive.Report.Info)
+        InfoOrBuilder {
+      // Use Info.newBuilder() to construct.
+      private Info(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
-      private Users() {
-        connected_ = 0;
-        quorum_ = 0;
+      private Info() {
+        frequency_ = 0D;
+        mean_ = 0D;
+        stdev_ = 0D;
+        upperQuartile_ = 0D;
+        lowerQuartile_ = 0D;
+        normalizedMean_ = 0D;
       }
 
       @java.lang.Override
@@ -1324,7 +1385,7 @@ public final class Protocol {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private Users(
+      private Info(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
         this();
@@ -1346,14 +1407,34 @@ public final class Protocol {
                 }
                 break;
               }
-              case 8: {
+              case 9: {
                 bitField0_ |= 0x00000001;
-                connected_ = input.readUInt32();
+                frequency_ = input.readDouble();
                 break;
               }
-              case 16: {
+              case 17: {
                 bitField0_ |= 0x00000002;
-                quorum_ = input.readUInt32();
+                mean_ = input.readDouble();
+                break;
+              }
+              case 25: {
+                bitField0_ |= 0x00000004;
+                stdev_ = input.readDouble();
+                break;
+              }
+              case 33: {
+                bitField0_ |= 0x00000008;
+                upperQuartile_ = input.readDouble();
+                break;
+              }
+              case 41: {
+                bitField0_ |= 0x00000010;
+                lowerQuartile_ = input.readDouble();
+                break;
+              }
+              case 49: {
+                bitField0_ |= 0x00000020;
+                normalizedMean_ = input.readDouble();
                 break;
               }
             }
@@ -1371,63 +1452,145 @@ public final class Protocol {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Users_descriptor;
+        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Info_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Users_fieldAccessorTable
+        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Info_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pro.beam.interactive.net.packet.Protocol.Report.Users.class, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder.class);
+                pro.beam.interactive.net.packet.Protocol.Report.Info.class, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder.class);
       }
 
       private int bitField0_;
-      public static final int CONNECTED_FIELD_NUMBER = 1;
-      private int connected_;
+      public static final int FREQUENCY_FIELD_NUMBER = 1;
+      private double frequency_;
       /**
-       * <code>required uint32 connected = 1;</code>
+       * <code>optional double frequency = 1;</code>
        *
        * <pre>
-       * Total number of users connected to the stream.
+       * Only present if "frequency" is requested
        * </pre>
        */
-      public boolean hasConnected() {
+      public boolean hasFrequency() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 connected = 1;</code>
+       * <code>optional double frequency = 1;</code>
        *
        * <pre>
-       * Total number of users connected to the stream.
+       * Only present if "frequency" is requested
        * </pre>
        */
-      public int getConnected() {
-        return connected_;
+      public double getFrequency() {
+        return frequency_;
       }
 
-      public static final int QUORUM_FIELD_NUMBER = 2;
-      private int quorum_;
+      public static final int MEAN_FIELD_NUMBER = 2;
+      private double mean_;
       /**
-       * <code>required uint32 quorum = 2;</code>
+       * <code>optional double mean = 2;</code>
        *
        * <pre>
-       * Number of users who gave any kind of input in the last
-       * 30 seconds.
+       * Only present if "mean" is requested
        * </pre>
        */
-      public boolean hasQuorum() {
+      public boolean hasMean() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required uint32 quorum = 2;</code>
+       * <code>optional double mean = 2;</code>
        *
        * <pre>
-       * Number of users who gave any kind of input in the last
-       * 30 seconds.
+       * Only present if "mean" is requested
        * </pre>
        */
-      public int getQuorum() {
-        return quorum_;
+      public double getMean() {
+        return mean_;
+      }
+
+      public static final int STDEV_FIELD_NUMBER = 3;
+      private double stdev_;
+      /**
+       * <code>optional double stdev = 3;</code>
+       *
+       * <pre>
+       * Only present if "stdev" is requested
+       * </pre>
+       */
+      public boolean hasStdev() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional double stdev = 3;</code>
+       *
+       * <pre>
+       * Only present if "stdev" is requested
+       * </pre>
+       */
+      public double getStdev() {
+        return stdev_;
+      }
+
+      public static final int UPPERQUARTILE_FIELD_NUMBER = 4;
+      private double upperQuartile_;
+      /**
+       * <code>optional double upperQuartile = 4;</code>
+       *
+       * <pre>
+       * Only present if "quartiles" are requested
+       * </pre>
+       */
+      public boolean hasUpperQuartile() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional double upperQuartile = 4;</code>
+       *
+       * <pre>
+       * Only present if "quartiles" are requested
+       * </pre>
+       */
+      public double getUpperQuartile() {
+        return upperQuartile_;
+      }
+
+      public static final int LOWERQUARTILE_FIELD_NUMBER = 5;
+      private double lowerQuartile_;
+      /**
+       * <code>optional double lowerQuartile = 5;</code>
+       */
+      public boolean hasLowerQuartile() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional double lowerQuartile = 5;</code>
+       */
+      public double getLowerQuartile() {
+        return lowerQuartile_;
+      }
+
+      public static final int NORMALIZEDMEAN_FIELD_NUMBER = 6;
+      private double normalizedMean_;
+      /**
+       * <code>optional double normalizedMean = 6;</code>
+       *
+       * <pre>
+       * Only present if "normalized_mean" is requested
+       * </pre>
+       */
+      public boolean hasNormalizedMean() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional double normalizedMean = 6;</code>
+       *
+       * <pre>
+       * Only present if "normalized_mean" is requested
+       * </pre>
+       */
+      public double getNormalizedMean() {
+        return normalizedMean_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1436,14 +1599,6 @@ public final class Protocol {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasConnected()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        if (!hasQuorum()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
         memoizedIsInitialized = 1;
         return true;
       }
@@ -1451,10 +1606,22 @@ public final class Protocol {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, connected_);
+          output.writeDouble(1, frequency_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeUInt32(2, quorum_);
+          output.writeDouble(2, mean_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeDouble(3, stdev_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          output.writeDouble(4, upperQuartile_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          output.writeDouble(5, lowerQuartile_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          output.writeDouble(6, normalizedMean_);
         }
         unknownFields.writeTo(output);
       }
@@ -1466,11 +1633,27 @@ public final class Protocol {
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, connected_);
+            .computeDoubleSize(1, frequency_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(2, quorum_);
+            .computeDoubleSize(2, mean_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(3, stdev_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(4, upperQuartile_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(5, lowerQuartile_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeDoubleSize(6, normalizedMean_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1478,53 +1661,53 @@ public final class Protocol {
       }
 
       private static final long serialVersionUID = 0L;
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(byte[] data)
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(java.io.InputStream input)
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return PARSER.parseFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return PARSER.parseFrom(input, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseDelimitedFrom(java.io.InputStream input)
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return PARSER.parseDelimitedFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseDelimitedFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return PARSER.parseFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1535,7 +1718,7 @@ public final class Protocol {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.Report.Users prototype) {
+      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.Report.Info prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() {
@@ -1550,29 +1733,29 @@ public final class Protocol {
         return builder;
       }
       /**
-       * Protobuf type {@code pro.beam.interactive.Report.Users}
+       * Protobuf type {@code pro.beam.interactive.Report.Info}
        *
        * <pre>
-       * Contains information about the users connected to the stream.
+       * Contains information as required in game's analysis.
        * </pre>
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.Report.Users)
-          pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder {
+          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.Report.Info)
+          pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Users_descriptor;
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Info_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Users_fieldAccessorTable
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Info_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.Report.Users.class, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder.class);
+                  pro.beam.interactive.net.packet.Protocol.Report.Info.class, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder.class);
         }
 
-        // Construct using pro.beam.interactive.net.packet.Protocol.Report.Users.newBuilder()
+        // Construct using pro.beam.interactive.net.packet.Protocol.Report.Info.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -1588,63 +1771,99 @@ public final class Protocol {
         }
         public Builder clear() {
           super.clear();
-          connected_ = 0;
+          frequency_ = 0D;
           bitField0_ = (bitField0_ & ~0x00000001);
-          quorum_ = 0;
+          mean_ = 0D;
           bitField0_ = (bitField0_ & ~0x00000002);
+          stdev_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          upperQuartile_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          lowerQuartile_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000010);
+          normalizedMean_ = 0D;
+          bitField0_ = (bitField0_ & ~0x00000020);
           return this;
         }
 
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Users_descriptor;
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_Info_descriptor;
         }
 
-        public pro.beam.interactive.net.packet.Protocol.Report.Users getDefaultInstanceForType() {
-          return pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance();
+        public pro.beam.interactive.net.packet.Protocol.Report.Info getDefaultInstanceForType() {
+          return pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance();
         }
 
-        public pro.beam.interactive.net.packet.Protocol.Report.Users build() {
-          pro.beam.interactive.net.packet.Protocol.Report.Users result = buildPartial();
+        public pro.beam.interactive.net.packet.Protocol.Report.Info build() {
+          pro.beam.interactive.net.packet.Protocol.Report.Info result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public pro.beam.interactive.net.packet.Protocol.Report.Users buildPartial() {
-          pro.beam.interactive.net.packet.Protocol.Report.Users result = new pro.beam.interactive.net.packet.Protocol.Report.Users(this);
+        public pro.beam.interactive.net.packet.Protocol.Report.Info buildPartial() {
+          pro.beam.interactive.net.packet.Protocol.Report.Info result = new pro.beam.interactive.net.packet.Protocol.Report.Info(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
             to_bitField0_ |= 0x00000001;
           }
-          result.connected_ = connected_;
+          result.frequency_ = frequency_;
           if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
             to_bitField0_ |= 0x00000002;
           }
-          result.quorum_ = quorum_;
+          result.mean_ = mean_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.stdev_ = stdev_;
+          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.upperQuartile_ = upperQuartile_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          result.lowerQuartile_ = lowerQuartile_;
+          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+            to_bitField0_ |= 0x00000020;
+          }
+          result.normalizedMean_ = normalizedMean_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
 
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof pro.beam.interactive.net.packet.Protocol.Report.Users) {
-            return mergeFrom((pro.beam.interactive.net.packet.Protocol.Report.Users)other);
+          if (other instanceof pro.beam.interactive.net.packet.Protocol.Report.Info) {
+            return mergeFrom((pro.beam.interactive.net.packet.Protocol.Report.Info)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.Users other) {
-          if (other == pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance()) return this;
-          if (other.hasConnected()) {
-            setConnected(other.getConnected());
+        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.Info other) {
+          if (other == pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance()) return this;
+          if (other.hasFrequency()) {
+            setFrequency(other.getFrequency());
           }
-          if (other.hasQuorum()) {
-            setQuorum(other.getQuorum());
+          if (other.hasMean()) {
+            setMean(other.getMean());
+          }
+          if (other.hasStdev()) {
+            setStdev(other.getStdev());
+          }
+          if (other.hasUpperQuartile()) {
+            setUpperQuartile(other.getUpperQuartile());
+          }
+          if (other.hasLowerQuartile()) {
+            setLowerQuartile(other.getLowerQuartile());
+          }
+          if (other.hasNormalizedMean()) {
+            setNormalizedMean(other.getNormalizedMean());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1652,12 +1871,6 @@ public final class Protocol {
         }
 
         public final boolean isInitialized() {
-          if (!hasConnected()) {
-            return false;
-          }
-          if (!hasQuorum()) {
-            return false;
-          }
           return true;
         }
 
@@ -1665,11 +1878,11 @@ public final class Protocol {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          pro.beam.interactive.net.packet.Protocol.Report.Users parsedMessage = null;
+          pro.beam.interactive.net.packet.Protocol.Report.Info parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (pro.beam.interactive.net.packet.Protocol.Report.Users) e.getUnfinishedMessage();
+            parsedMessage = (pro.beam.interactive.net.packet.Protocol.Report.Info) e.getUnfinishedMessage();
             throw e;
           } finally {
             if (parsedMessage != null) {
@@ -1680,127 +1893,299 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        private int connected_ ;
+        private double frequency_ ;
         /**
-         * <code>required uint32 connected = 1;</code>
+         * <code>optional double frequency = 1;</code>
          *
          * <pre>
-         * Total number of users connected to the stream.
+         * Only present if "frequency" is requested
          * </pre>
          */
-        public boolean hasConnected() {
+        public boolean hasFrequency() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>required uint32 connected = 1;</code>
+         * <code>optional double frequency = 1;</code>
          *
          * <pre>
-         * Total number of users connected to the stream.
+         * Only present if "frequency" is requested
          * </pre>
          */
-        public int getConnected() {
-          return connected_;
+        public double getFrequency() {
+          return frequency_;
         }
         /**
-         * <code>required uint32 connected = 1;</code>
+         * <code>optional double frequency = 1;</code>
          *
          * <pre>
-         * Total number of users connected to the stream.
+         * Only present if "frequency" is requested
          * </pre>
          */
-        public Builder setConnected(int value) {
+        public Builder setFrequency(double value) {
           bitField0_ |= 0x00000001;
-          connected_ = value;
+          frequency_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 connected = 1;</code>
+         * <code>optional double frequency = 1;</code>
          *
          * <pre>
-         * Total number of users connected to the stream.
+         * Only present if "frequency" is requested
          * </pre>
          */
-        public Builder clearConnected() {
+        public Builder clearFrequency() {
           bitField0_ = (bitField0_ & ~0x00000001);
-          connected_ = 0;
+          frequency_ = 0D;
           onChanged();
           return this;
         }
 
-        private int quorum_ ;
+        private double mean_ ;
         /**
-         * <code>required uint32 quorum = 2;</code>
+         * <code>optional double mean = 2;</code>
          *
          * <pre>
-         * Number of users who gave any kind of input in the last
-         * 30 seconds.
+         * Only present if "mean" is requested
          * </pre>
          */
-        public boolean hasQuorum() {
+        public boolean hasMean() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
-         * <code>required uint32 quorum = 2;</code>
+         * <code>optional double mean = 2;</code>
          *
          * <pre>
-         * Number of users who gave any kind of input in the last
-         * 30 seconds.
+         * Only present if "mean" is requested
          * </pre>
          */
-        public int getQuorum() {
-          return quorum_;
+        public double getMean() {
+          return mean_;
         }
         /**
-         * <code>required uint32 quorum = 2;</code>
+         * <code>optional double mean = 2;</code>
          *
          * <pre>
-         * Number of users who gave any kind of input in the last
-         * 30 seconds.
+         * Only present if "mean" is requested
          * </pre>
          */
-        public Builder setQuorum(int value) {
+        public Builder setMean(double value) {
           bitField0_ |= 0x00000002;
-          quorum_ = value;
+          mean_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 quorum = 2;</code>
+         * <code>optional double mean = 2;</code>
          *
          * <pre>
-         * Number of users who gave any kind of input in the last
-         * 30 seconds.
+         * Only present if "mean" is requested
          * </pre>
          */
-        public Builder clearQuorum() {
+        public Builder clearMean() {
           bitField0_ = (bitField0_ & ~0x00000002);
-          quorum_ = 0;
+          mean_ = 0D;
           onChanged();
           return this;
         }
 
-        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.Users)
+        private double stdev_ ;
+        /**
+         * <code>optional double stdev = 3;</code>
+         *
+         * <pre>
+         * Only present if "stdev" is requested
+         * </pre>
+         */
+        public boolean hasStdev() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional double stdev = 3;</code>
+         *
+         * <pre>
+         * Only present if "stdev" is requested
+         * </pre>
+         */
+        public double getStdev() {
+          return stdev_;
+        }
+        /**
+         * <code>optional double stdev = 3;</code>
+         *
+         * <pre>
+         * Only present if "stdev" is requested
+         * </pre>
+         */
+        public Builder setStdev(double value) {
+          bitField0_ |= 0x00000004;
+          stdev_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double stdev = 3;</code>
+         *
+         * <pre>
+         * Only present if "stdev" is requested
+         * </pre>
+         */
+        public Builder clearStdev() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          stdev_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double upperQuartile_ ;
+        /**
+         * <code>optional double upperQuartile = 4;</code>
+         *
+         * <pre>
+         * Only present if "quartiles" are requested
+         * </pre>
+         */
+        public boolean hasUpperQuartile() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <code>optional double upperQuartile = 4;</code>
+         *
+         * <pre>
+         * Only present if "quartiles" are requested
+         * </pre>
+         */
+        public double getUpperQuartile() {
+          return upperQuartile_;
+        }
+        /**
+         * <code>optional double upperQuartile = 4;</code>
+         *
+         * <pre>
+         * Only present if "quartiles" are requested
+         * </pre>
+         */
+        public Builder setUpperQuartile(double value) {
+          bitField0_ |= 0x00000008;
+          upperQuartile_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double upperQuartile = 4;</code>
+         *
+         * <pre>
+         * Only present if "quartiles" are requested
+         * </pre>
+         */
+        public Builder clearUpperQuartile() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          upperQuartile_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double lowerQuartile_ ;
+        /**
+         * <code>optional double lowerQuartile = 5;</code>
+         */
+        public boolean hasLowerQuartile() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <code>optional double lowerQuartile = 5;</code>
+         */
+        public double getLowerQuartile() {
+          return lowerQuartile_;
+        }
+        /**
+         * <code>optional double lowerQuartile = 5;</code>
+         */
+        public Builder setLowerQuartile(double value) {
+          bitField0_ |= 0x00000010;
+          lowerQuartile_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double lowerQuartile = 5;</code>
+         */
+        public Builder clearLowerQuartile() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          lowerQuartile_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double normalizedMean_ ;
+        /**
+         * <code>optional double normalizedMean = 6;</code>
+         *
+         * <pre>
+         * Only present if "normalized_mean" is requested
+         * </pre>
+         */
+        public boolean hasNormalizedMean() {
+          return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+        /**
+         * <code>optional double normalizedMean = 6;</code>
+         *
+         * <pre>
+         * Only present if "normalized_mean" is requested
+         * </pre>
+         */
+        public double getNormalizedMean() {
+          return normalizedMean_;
+        }
+        /**
+         * <code>optional double normalizedMean = 6;</code>
+         *
+         * <pre>
+         * Only present if "normalized_mean" is requested
+         * </pre>
+         */
+        public Builder setNormalizedMean(double value) {
+          bitField0_ |= 0x00000020;
+          normalizedMean_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional double normalizedMean = 6;</code>
+         *
+         * <pre>
+         * Only present if "normalized_mean" is requested
+         * </pre>
+         */
+        public Builder clearNormalizedMean() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          normalizedMean_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.Info)
       }
 
-      // @@protoc_insertion_point(class_scope:pro.beam.interactive.Report.Users)
-      private static final pro.beam.interactive.net.packet.Protocol.Report.Users DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:pro.beam.interactive.Report.Info)
+      private static final pro.beam.interactive.net.packet.Protocol.Report.Info DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.Report.Users();
+        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.Report.Info();
       }
 
-      public static pro.beam.interactive.net.packet.Protocol.Report.Users getDefaultInstance() {
+      public static pro.beam.interactive.net.packet.Protocol.Report.Info getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<Users>
-          PARSER = new com.google.protobuf.AbstractParser<Users>() {
-        public Users parsePartialFrom(
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Info>
+          PARSER = new com.google.protobuf.AbstractParser<Info>() {
+        public Info parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           try {
-            return new Users(input, extensionRegistry);
+            return new Info(input, extensionRegistry);
           } catch (RuntimeException e) {
             if (e.getCause() instanceof
                 com.google.protobuf.InvalidProtocolBufferException) {
@@ -1812,16 +2197,16 @@ public final class Protocol {
         }
       };
 
-      public static com.google.protobuf.Parser<Users> parser() {
+      public static com.google.protobuf.Parser<Info> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<Users> getParserForType() {
+      public com.google.protobuf.Parser<Info> getParserForType() {
         return PARSER;
       }
 
-      public pro.beam.interactive.net.packet.Protocol.Report.Users getDefaultInstanceForType() {
+      public pro.beam.interactive.net.packet.Protocol.Report.Info getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -1832,58 +2217,29 @@ public final class Protocol {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 axis = 1;</code>
        */
-      boolean hasId();
+      boolean hasAxis();
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 axis = 1;</code>
        */
-      int getId();
+      int getAxis();
 
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      boolean hasCoordMean();
+      boolean hasInfo();
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordMean();
+      pro.beam.interactive.net.packet.Protocol.Report.Info getInfo();
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordMeanOrBuilder();
-
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      boolean hasCoordStddev();
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordStddev();
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordStddevOrBuilder();
+      pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getInfoOrBuilder();
     }
     /**
      * Protobuf type {@code pro.beam.interactive.Report.JoystickInfo}
-     *
-     * <pre>
-     * Reports for the Joystick input type.
-     * </pre>
      */
     public  static final class JoystickInfo extends
         com.google.protobuf.GeneratedMessage implements
@@ -1894,7 +2250,7 @@ public final class Protocol {
         super(builder);
       }
       private JoystickInfo() {
-        id_ = 0;
+        axis_ = 0;
       }
 
       @java.lang.Override
@@ -1926,33 +2282,20 @@ public final class Protocol {
               }
               case 8: {
                 bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
+                axis_ = input.readUInt32();
                 break;
               }
               case 18: {
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder subBuilder = null;
+                pro.beam.interactive.net.packet.Protocol.Report.Info.Builder subBuilder = null;
                 if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                  subBuilder = coordMean_.toBuilder();
+                  subBuilder = info_.toBuilder();
                 }
-                coordMean_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.parser(), extensionRegistry);
+                info_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.Info.parser(), extensionRegistry);
                 if (subBuilder != null) {
-                  subBuilder.mergeFrom(coordMean_);
-                  coordMean_ = subBuilder.buildPartial();
+                  subBuilder.mergeFrom(info_);
+                  info_ = subBuilder.buildPartial();
                 }
                 bitField0_ |= 0x00000002;
-                break;
-              }
-              case 26: {
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder subBuilder = null;
-                if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                  subBuilder = coordStddev_.toBuilder();
-                }
-                coordStddev_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(coordStddev_);
-                  coordStddev_ = subBuilder.buildPartial();
-                }
-                bitField0_ |= 0x00000004;
                 break;
               }
             }
@@ -1980,562 +2323,41 @@ public final class Protocol {
                 pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.class, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder.class);
       }
 
-      public interface DataOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:pro.beam.interactive.Report.JoystickInfo.Data)
-          com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>required double X = 1;</code>
-         */
-        boolean hasX();
-        /**
-         * <code>required double X = 1;</code>
-         */
-        double getX();
-
-        /**
-         * <code>required double Y = 2;</code>
-         */
-        boolean hasY();
-        /**
-         * <code>required double Y = 2;</code>
-         */
-        double getY();
-      }
-      /**
-       * Protobuf type {@code pro.beam.interactive.Report.JoystickInfo.Data}
-       */
-      public  static final class Data extends
-          com.google.protobuf.GeneratedMessage implements
-          // @@protoc_insertion_point(message_implements:pro.beam.interactive.Report.JoystickInfo.Data)
-          DataOrBuilder {
-        // Use Data.newBuilder() to construct.
-        private Data(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-          super(builder);
-        }
-        private Data() {
-          x_ = 0D;
-          y_ = 0D;
-        }
-
-        @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-          return this.unknownFields;
-        }
-        private Data(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-          this();
-          int mutable_bitField0_ = 0;
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
-          try {
-            boolean done = false;
-            while (!done) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  done = true;
-                  break;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    done = true;
-                  }
-                  break;
-                }
-                case 9: {
-                  bitField0_ |= 0x00000001;
-                  x_ = input.readDouble();
-                  break;
-                }
-                case 17: {
-                  bitField0_ |= 0x00000002;
-                  y_ = input.readDouble();
-                  break;
-                }
-              }
-            }
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw new RuntimeException(e.setUnfinishedMessage(this));
-          } catch (java.io.IOException e) {
-            throw new RuntimeException(
-                new com.google.protobuf.InvalidProtocolBufferException(
-                    e.getMessage()).setUnfinishedMessage(this));
-          } finally {
-            this.unknownFields = unknownFields.build();
-            makeExtensionsImmutable();
-          }
-        }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_JoystickInfo_Data_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.class, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder.class);
-        }
-
-        private int bitField0_;
-        public static final int X_FIELD_NUMBER = 1;
-        private double x_;
-        /**
-         * <code>required double X = 1;</code>
-         */
-        public boolean hasX() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required double X = 1;</code>
-         */
-        public double getX() {
-          return x_;
-        }
-
-        public static final int Y_FIELD_NUMBER = 2;
-        private double y_;
-        /**
-         * <code>required double Y = 2;</code>
-         */
-        public boolean hasY() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>required double Y = 2;</code>
-         */
-        public double getY() {
-          return y_;
-        }
-
-        private byte memoizedIsInitialized = -1;
-        public final boolean isInitialized() {
-          byte isInitialized = memoizedIsInitialized;
-          if (isInitialized == 1) return true;
-          if (isInitialized == 0) return false;
-
-          if (!hasX()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          if (!hasY()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-          memoizedIsInitialized = 1;
-          return true;
-        }
-
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            output.writeDouble(1, x_);
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            output.writeDouble(2, y_);
-          }
-          unknownFields.writeTo(output);
-        }
-
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeDoubleSize(1, x_);
-          }
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            size += com.google.protobuf.CodedOutputStream
-              .computeDoubleSize(2, y_);
-          }
-          size += unknownFields.getSerializedSize();
-          memoizedSize = size;
-          return size;
-        }
-
-        private static final long serialVersionUID = 0L;
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return PARSER.parseFrom(data, extensionRegistry);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return PARSER.parseFrom(input);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return PARSER.parseFrom(input, extensionRegistry);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return PARSER.parseDelimitedFrom(input);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return PARSER.parseDelimitedFrom(input, extensionRegistry);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return PARSER.parseFrom(input);
-        }
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return PARSER.parseFrom(input, extensionRegistry);
-        }
-
-        public Builder newBuilderForType() { return newBuilder(); }
-        public static Builder newBuilder() {
-          return DEFAULT_INSTANCE.toBuilder();
-        }
-        public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data prototype) {
-          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-        public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          Builder builder = new Builder(parent);
-          return builder;
-        }
-        /**
-         * Protobuf type {@code pro.beam.interactive.Report.JoystickInfo.Data}
-         */
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-            // @@protoc_insertion_point(builder_implements:pro.beam.interactive.Report.JoystickInfo.Data)
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor;
-          }
-
-          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-              internalGetFieldAccessorTable() {
-            return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_JoystickInfo_Data_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                    pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.class, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder.class);
-          }
-
-          // Construct using pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.newBuilder()
-          private Builder() {
-            maybeForceBuilderInitialization();
-          }
-
-          private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            super(parent);
-            maybeForceBuilderInitialization();
-          }
-          private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            }
-          }
-          public Builder clear() {
-            super.clear();
-            x_ = 0D;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            y_ = 0D;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            return this;
-          }
-
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor;
-          }
-
-          public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getDefaultInstanceForType() {
-            return pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance();
-          }
-
-          public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data build() {
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(result);
-            }
-            return result;
-          }
-
-          public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data buildPartial() {
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data result = new pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data(this);
-            int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
-            if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-              to_bitField0_ |= 0x00000001;
-            }
-            result.x_ = x_;
-            if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-              to_bitField0_ |= 0x00000002;
-            }
-            result.y_ = y_;
-            result.bitField0_ = to_bitField0_;
-            onBuilt();
-            return result;
-          }
-
-          public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data) {
-              return mergeFrom((pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data)other);
-            } else {
-              super.mergeFrom(other);
-              return this;
-            }
-          }
-
-          public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data other) {
-            if (other == pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance()) return this;
-            if (other.hasX()) {
-              setX(other.getX());
-            }
-            if (other.hasY()) {
-              setY(other.getY());
-            }
-            this.mergeUnknownFields(other.unknownFields);
-            onChanged();
-            return this;
-          }
-
-          public final boolean isInitialized() {
-            if (!hasX()) {
-              return false;
-            }
-            if (!hasY()) {
-              return false;
-            }
-            return true;
-          }
-
-          public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data parsedMessage = null;
-            try {
-              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data) e.getUnfinishedMessage();
-              throw e;
-            } finally {
-              if (parsedMessage != null) {
-                mergeFrom(parsedMessage);
-              }
-            }
-            return this;
-          }
-          private int bitField0_;
-
-          private double x_ ;
-          /**
-           * <code>required double X = 1;</code>
-           */
-          public boolean hasX() {
-            return ((bitField0_ & 0x00000001) == 0x00000001);
-          }
-          /**
-           * <code>required double X = 1;</code>
-           */
-          public double getX() {
-            return x_;
-          }
-          /**
-           * <code>required double X = 1;</code>
-           */
-          public Builder setX(double value) {
-            bitField0_ |= 0x00000001;
-            x_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <code>required double X = 1;</code>
-           */
-          public Builder clearX() {
-            bitField0_ = (bitField0_ & ~0x00000001);
-            x_ = 0D;
-            onChanged();
-            return this;
-          }
-
-          private double y_ ;
-          /**
-           * <code>required double Y = 2;</code>
-           */
-          public boolean hasY() {
-            return ((bitField0_ & 0x00000002) == 0x00000002);
-          }
-          /**
-           * <code>required double Y = 2;</code>
-           */
-          public double getY() {
-            return y_;
-          }
-          /**
-           * <code>required double Y = 2;</code>
-           */
-          public Builder setY(double value) {
-            bitField0_ |= 0x00000002;
-            y_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <code>required double Y = 2;</code>
-           */
-          public Builder clearY() {
-            bitField0_ = (bitField0_ & ~0x00000002);
-            y_ = 0D;
-            onChanged();
-            return this;
-          }
-
-          // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.JoystickInfo.Data)
-        }
-
-        // @@protoc_insertion_point(class_scope:pro.beam.interactive.Report.JoystickInfo.Data)
-        private static final pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data DEFAULT_INSTANCE;
-        static {
-          DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data();
-        }
-
-        public static pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getDefaultInstance() {
-          return DEFAULT_INSTANCE;
-        }
-
-        @java.lang.Deprecated public static final com.google.protobuf.Parser<Data>
-            PARSER = new com.google.protobuf.AbstractParser<Data>() {
-          public Data parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            try {
-              return new Data(input, extensionRegistry);
-            } catch (RuntimeException e) {
-              if (e.getCause() instanceof
-                  com.google.protobuf.InvalidProtocolBufferException) {
-                throw (com.google.protobuf.InvalidProtocolBufferException)
-                    e.getCause();
-              }
-              throw e;
-            }
-          }
-        };
-
-        public static com.google.protobuf.Parser<Data> parser() {
-          return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<Data> getParserForType() {
-          return PARSER;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getDefaultInstanceForType() {
-          return DEFAULT_INSTANCE;
-        }
-
-      }
-
       private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
+      public static final int AXIS_FIELD_NUMBER = 1;
+      private int axis_;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 axis = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasAxis() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 axis = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getAxis() {
+        return axis_;
       }
 
-      public static final int COORDMEAN_FIELD_NUMBER = 2;
-      private pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data coordMean_;
+      public static final int INFO_FIELD_NUMBER = 2;
+      private pro.beam.interactive.net.packet.Protocol.Report.Info info_;
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      public boolean hasCoordMean() {
+      public boolean hasInfo() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordMean() {
-        return coordMean_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordMean_;
+      public pro.beam.interactive.net.packet.Protocol.Report.Info getInfo() {
+        return info_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : info_;
       }
       /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
+       * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordMeanOrBuilder() {
-        return coordMean_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordMean_;
-      }
-
-      public static final int COORDSTDDEV_FIELD_NUMBER = 3;
-      private pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data coordStddev_;
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      public boolean hasCoordStddev() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordStddev() {
-        return coordStddev_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordStddev_;
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordStddevOrBuilder() {
-        return coordStddev_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordStddev_;
+      public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getInfoOrBuilder() {
+        return info_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : info_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2544,21 +2366,13 @@ public final class Protocol {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasId()) {
+        if (!hasAxis()) {
           memoizedIsInitialized = 0;
           return false;
         }
-        if (hasCoordMean()) {
-          if (!getCoordMean().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
-        }
-        if (hasCoordStddev()) {
-          if (!getCoordStddev().isInitialized()) {
-            memoizedIsInitialized = 0;
-            return false;
-          }
+        if (!hasInfo()) {
+          memoizedIsInitialized = 0;
+          return false;
         }
         memoizedIsInitialized = 1;
         return true;
@@ -2567,13 +2381,10 @@ public final class Protocol {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
+          output.writeUInt32(1, axis_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeMessage(2, getCoordMean());
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeMessage(3, getCoordStddev());
+          output.writeMessage(2, getInfo());
         }
         unknownFields.writeTo(output);
       }
@@ -2585,15 +2396,11 @@ public final class Protocol {
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
+            .computeUInt32Size(1, axis_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getCoordMean());
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getCoordStddev());
+            .computeMessageSize(2, getInfo());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -2674,10 +2481,6 @@ public final class Protocol {
       }
       /**
        * Protobuf type {@code pro.beam.interactive.Report.JoystickInfo}
-       *
-       * <pre>
-       * Reports for the Joystick input type.
-       * </pre>
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -2707,26 +2510,19 @@ public final class Protocol {
         }
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-            getCoordMeanFieldBuilder();
-            getCoordStddevFieldBuilder();
+            getInfoFieldBuilder();
           }
         }
         public Builder clear() {
           super.clear();
-          id_ = 0;
+          axis_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
-          if (coordMeanBuilder_ == null) {
-            coordMean_ = null;
+          if (infoBuilder_ == null) {
+            info_ = null;
           } else {
-            coordMeanBuilder_.clear();
+            infoBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000002);
-          if (coordStddevBuilder_ == null) {
-            coordStddev_ = null;
-          } else {
-            coordStddevBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
 
@@ -2754,22 +2550,14 @@ public final class Protocol {
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
             to_bitField0_ |= 0x00000001;
           }
-          result.id_ = id_;
+          result.axis_ = axis_;
           if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
             to_bitField0_ |= 0x00000002;
           }
-          if (coordMeanBuilder_ == null) {
-            result.coordMean_ = coordMean_;
+          if (infoBuilder_ == null) {
+            result.info_ = info_;
           } else {
-            result.coordMean_ = coordMeanBuilder_.build();
-          }
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          if (coordStddevBuilder_ == null) {
-            result.coordStddev_ = coordStddev_;
-          } else {
-            result.coordStddev_ = coordStddevBuilder_.build();
+            result.info_ = infoBuilder_.build();
           }
           result.bitField0_ = to_bitField0_;
           onBuilt();
@@ -2787,14 +2575,11 @@ public final class Protocol {
 
         public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo other) {
           if (other == pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
+          if (other.hasAxis()) {
+            setAxis(other.getAxis());
           }
-          if (other.hasCoordMean()) {
-            mergeCoordMean(other.getCoordMean());
-          }
-          if (other.hasCoordStddev()) {
-            mergeCoordStddev(other.getCoordStddev());
+          if (other.hasInfo()) {
+            mergeInfo(other.getInfo());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -2802,18 +2587,11 @@ public final class Protocol {
         }
 
         public final boolean isInitialized() {
-          if (!hasId()) {
+          if (!hasAxis()) {
             return false;
           }
-          if (hasCoordMean()) {
-            if (!getCoordMean().isInitialized()) {
-              return false;
-            }
-          }
-          if (hasCoordStddev()) {
-            if (!getCoordStddev().isInitialized()) {
-              return false;
-            }
+          if (!hasInfo()) {
+            return false;
           }
           return true;
         }
@@ -2837,308 +2615,154 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        private int id_ ;
+        private int axis_ ;
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 axis = 1;</code>
          */
-        public boolean hasId() {
+        public boolean hasAxis() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 axis = 1;</code>
          */
-        public int getId() {
-          return id_;
+        public int getAxis() {
+          return axis_;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 axis = 1;</code>
          */
-        public Builder setId(int value) {
+        public Builder setAxis(int value) {
           bitField0_ |= 0x00000001;
-          id_ = value;
+          axis_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 axis = 1;</code>
          */
-        public Builder clearId() {
+        public Builder clearAxis() {
           bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
+          axis_ = 0;
           onChanged();
           return this;
         }
 
-        private pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data coordMean_ = null;
+        private pro.beam.interactive.net.packet.Protocol.Report.Info info_ = null;
         private com.google.protobuf.SingleFieldBuilder<
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder> coordMeanBuilder_;
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> infoBuilder_;
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public boolean hasCoordMean() {
+        public boolean hasInfo() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordMean() {
-          if (coordMeanBuilder_ == null) {
-            return coordMean_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordMean_;
+        public pro.beam.interactive.net.packet.Protocol.Report.Info getInfo() {
+          if (infoBuilder_ == null) {
+            return info_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : info_;
           } else {
-            return coordMeanBuilder_.getMessage();
+            return infoBuilder_.getMessage();
           }
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public Builder setCoordMean(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data value) {
-          if (coordMeanBuilder_ == null) {
+        public Builder setInfo(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (infoBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
             }
-            coordMean_ = value;
+            info_ = value;
             onChanged();
           } else {
-            coordMeanBuilder_.setMessage(value);
+            infoBuilder_.setMessage(value);
           }
           bitField0_ |= 0x00000002;
           return this;
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public Builder setCoordMean(
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder builderForValue) {
-          if (coordMeanBuilder_ == null) {
-            coordMean_ = builderForValue.build();
+        public Builder setInfo(
+            pro.beam.interactive.net.packet.Protocol.Report.Info.Builder builderForValue) {
+          if (infoBuilder_ == null) {
+            info_ = builderForValue.build();
             onChanged();
           } else {
-            coordMeanBuilder_.setMessage(builderForValue.build());
+            infoBuilder_.setMessage(builderForValue.build());
           }
           bitField0_ |= 0x00000002;
           return this;
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public Builder mergeCoordMean(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data value) {
-          if (coordMeanBuilder_ == null) {
+        public Builder mergeInfo(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (infoBuilder_ == null) {
             if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                coordMean_ != null &&
-                coordMean_ != pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance()) {
-              coordMean_ =
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.newBuilder(coordMean_).mergeFrom(value).buildPartial();
+                info_ != null &&
+                info_ != pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance()) {
+              info_ =
+                pro.beam.interactive.net.packet.Protocol.Report.Info.newBuilder(info_).mergeFrom(value).buildPartial();
             } else {
-              coordMean_ = value;
+              info_ = value;
             }
             onChanged();
           } else {
-            coordMeanBuilder_.mergeFrom(value);
+            infoBuilder_.mergeFrom(value);
           }
           bitField0_ |= 0x00000002;
           return this;
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public Builder clearCoordMean() {
-          if (coordMeanBuilder_ == null) {
-            coordMean_ = null;
+        public Builder clearInfo() {
+          if (infoBuilder_ == null) {
+            info_ = null;
             onChanged();
           } else {
-            coordMeanBuilder_.clear();
+            infoBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder getCoordMeanBuilder() {
+        public pro.beam.interactive.net.packet.Protocol.Report.Info.Builder getInfoBuilder() {
           bitField0_ |= 0x00000002;
           onChanged();
-          return getCoordMeanFieldBuilder().getBuilder();
+          return getInfoFieldBuilder().getBuilder();
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordMeanOrBuilder() {
-          if (coordMeanBuilder_ != null) {
-            return coordMeanBuilder_.getMessageOrBuilder();
+        public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getInfoOrBuilder() {
+          if (infoBuilder_ != null) {
+            return infoBuilder_.getMessageOrBuilder();
           } else {
-            return coordMean_ == null ?
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordMean_;
+            return info_ == null ?
+                pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : info_;
           }
         }
         /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
+         * <code>required .pro.beam.interactive.Report.Info info = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilder<
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder> 
-            getCoordMeanFieldBuilder() {
-          if (coordMeanBuilder_ == null) {
-            coordMeanBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder>(
-                    getCoordMean(),
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> 
+            getInfoFieldBuilder() {
+          if (infoBuilder_ == null) {
+            infoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder>(
+                    getInfo(),
                     getParentForChildren(),
                     isClean());
-            coordMean_ = null;
+            info_ = null;
           }
-          return coordMeanBuilder_;
-        }
-
-        private pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data coordStddev_ = null;
-        private com.google.protobuf.SingleFieldBuilder<
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder> coordStddevBuilder_;
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public boolean hasCoordStddev() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data getCoordStddev() {
-          if (coordStddevBuilder_ == null) {
-            return coordStddev_ == null ? pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordStddev_;
-          } else {
-            return coordStddevBuilder_.getMessage();
-          }
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public Builder setCoordStddev(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data value) {
-          if (coordStddevBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            coordStddev_ = value;
-            onChanged();
-          } else {
-            coordStddevBuilder_.setMessage(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public Builder setCoordStddev(
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder builderForValue) {
-          if (coordStddevBuilder_ == null) {
-            coordStddev_ = builderForValue.build();
-            onChanged();
-          } else {
-            coordStddevBuilder_.setMessage(builderForValue.build());
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public Builder mergeCoordStddev(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data value) {
-          if (coordStddevBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                coordStddev_ != null &&
-                coordStddev_ != pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance()) {
-              coordStddev_ =
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.newBuilder(coordStddev_).mergeFrom(value).buildPartial();
-            } else {
-              coordStddev_ = value;
-            }
-            onChanged();
-          } else {
-            coordStddevBuilder_.mergeFrom(value);
-          }
-          bitField0_ |= 0x00000004;
-          return this;
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public Builder clearCoordStddev() {
-          if (coordStddevBuilder_ == null) {
-            coordStddev_ = null;
-            onChanged();
-          } else {
-            coordStddevBuilder_.clear();
-          }
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder getCoordStddevBuilder() {
-          bitField0_ |= 0x00000004;
-          onChanged();
-          return getCoordStddevFieldBuilder().getBuilder();
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder getCoordStddevOrBuilder() {
-          if (coordStddevBuilder_ != null) {
-            return coordStddevBuilder_.getMessageOrBuilder();
-          } else {
-            return coordStddev_ == null ?
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.getDefaultInstance() : coordStddev_;
-          }
-        }
-        /**
-         * <code>optional .pro.beam.interactive.Report.JoystickInfo.Data coordStddev = 3;</code>
-         */
-        private com.google.protobuf.SingleFieldBuilder<
-            pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder> 
-            getCoordStddevFieldBuilder() {
-          if (coordStddevBuilder_ == null) {
-            coordStddevBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Data.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.DataOrBuilder>(
-                    getCoordStddev(),
-                    getParentForChildren(),
-                    isClean());
-            coordStddev_ = null;
-          }
-          return coordStddevBuilder_;
+          return infoBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.JoystickInfo)
@@ -3193,56 +2817,46 @@ public final class Protocol {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 code = 1;</code>
        */
-      boolean hasId();
+      boolean hasCode();
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 code = 1;</code>
        */
-      int getId();
+      int getCode();
 
       /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
        */
-      boolean hasHolding();
+      boolean hasUp();
       /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
        */
-      double getHolding();
+      pro.beam.interactive.net.packet.Protocol.Report.Info getUp();
+      /**
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+       */
+      pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getUpOrBuilder();
 
       /**
-       * <code>optional double pressFrequency = 3;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      boolean hasPressFrequency();
+      boolean hasDown();
       /**
-       * <code>optional double pressFrequency = 3;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      double getPressFrequency();
-
+      pro.beam.interactive.net.packet.Protocol.Report.Info getDown();
       /**
-       * <code>optional double releaseFrequency = 4;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      boolean hasReleaseFrequency();
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      double getReleaseFrequency();
+      pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getDownOrBuilder();
     }
     /**
      * Protobuf type {@code pro.beam.interactive.Report.TactileInfo}
      *
      * <pre>
-     * Reports for the Tactile input type.
+     * Wraps an Info to provide the key code, which might be easier
+     * to use as a means of identification.
      * </pre>
      */
     public  static final class TactileInfo extends
@@ -3254,10 +2868,7 @@ public final class Protocol {
         super(builder);
       }
       private TactileInfo() {
-        id_ = 0;
-        holding_ = 0D;
-        pressFrequency_ = 0D;
-        releaseFrequency_ = 0D;
+        code_ = 0;
       }
 
       @java.lang.Override
@@ -3289,22 +2900,33 @@ public final class Protocol {
               }
               case 8: {
                 bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
+                code_ = input.readUInt32();
                 break;
               }
-              case 17: {
+              case 18: {
+                pro.beam.interactive.net.packet.Protocol.Report.Info.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                  subBuilder = up_.toBuilder();
+                }
+                up_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.Info.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(up_);
+                  up_ = subBuilder.buildPartial();
+                }
                 bitField0_ |= 0x00000002;
-                holding_ = input.readDouble();
                 break;
               }
-              case 25: {
+              case 26: {
+                pro.beam.interactive.net.packet.Protocol.Report.Info.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                  subBuilder = down_.toBuilder();
+                }
+                down_ = input.readMessage(pro.beam.interactive.net.packet.Protocol.Report.Info.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(down_);
+                  down_ = subBuilder.buildPartial();
+                }
                 bitField0_ |= 0x00000004;
-                pressFrequency_ = input.readDouble();
-                break;
-              }
-              case 33: {
-                bitField0_ |= 0x00000008;
-                releaseFrequency_ = input.readDouble();
                 break;
               }
             }
@@ -3333,74 +2955,61 @@ public final class Protocol {
       }
 
       private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
+      public static final int CODE_FIELD_NUMBER = 1;
+      private int code_;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 code = 1;</code>
        */
-      public boolean hasId() {
+      public boolean hasCode() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required uint32 code = 1;</code>
        */
-      public int getId() {
-        return id_;
+      public int getCode() {
+        return code_;
       }
 
-      public static final int HOLDING_FIELD_NUMBER = 2;
-      private double holding_;
+      public static final int UP_FIELD_NUMBER = 2;
+      private pro.beam.interactive.net.packet.Protocol.Report.Info up_;
       /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
        */
-      public boolean hasHolding() {
+      public boolean hasUp() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
        */
-      public double getHolding() {
-        return holding_;
+      public pro.beam.interactive.net.packet.Protocol.Report.Info getUp() {
+        return up_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : up_;
+      }
+      /**
+       * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+       */
+      public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getUpOrBuilder() {
+        return up_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : up_;
       }
 
-      public static final int PRESSFREQUENCY_FIELD_NUMBER = 3;
-      private double pressFrequency_;
+      public static final int DOWN_FIELD_NUMBER = 3;
+      private pro.beam.interactive.net.packet.Protocol.Report.Info down_;
       /**
-       * <code>optional double pressFrequency = 3;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      public boolean hasPressFrequency() {
+      public boolean hasDown() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional double pressFrequency = 3;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      public double getPressFrequency() {
-        return pressFrequency_;
-      }
-
-      public static final int RELEASEFREQUENCY_FIELD_NUMBER = 4;
-      private double releaseFrequency_;
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      public boolean hasReleaseFrequency() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+      public pro.beam.interactive.net.packet.Protocol.Report.Info getDown() {
+        return down_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : down_;
       }
       /**
-       * <code>optional double releaseFrequency = 4;</code>
+       * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
        */
-      public double getReleaseFrequency() {
-        return releaseFrequency_;
+      public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getDownOrBuilder() {
+        return down_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : down_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -3409,7 +3018,7 @@ public final class Protocol {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasId()) {
+        if (!hasCode()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -3420,16 +3029,13 @@ public final class Protocol {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
+          output.writeUInt32(1, code_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeDouble(2, holding_);
+          output.writeMessage(2, getUp());
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeDouble(3, pressFrequency_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeDouble(4, releaseFrequency_);
+          output.writeMessage(3, getDown());
         }
         unknownFields.writeTo(output);
       }
@@ -3441,19 +3047,15 @@ public final class Protocol {
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
+            .computeUInt32Size(1, code_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, holding_);
+            .computeMessageSize(2, getUp());
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(3, pressFrequency_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(4, releaseFrequency_);
+            .computeMessageSize(3, getDown());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3536,7 +3138,8 @@ public final class Protocol {
        * Protobuf type {@code pro.beam.interactive.Report.TactileInfo}
        *
        * <pre>
-       * Reports for the Tactile input type.
+       * Wraps an Info to provide the key code, which might be easier
+       * to use as a means of identification.
        * </pre>
        */
       public static final class Builder extends
@@ -3567,18 +3170,26 @@ public final class Protocol {
         }
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            getUpFieldBuilder();
+            getDownFieldBuilder();
           }
         }
         public Builder clear() {
           super.clear();
-          id_ = 0;
+          code_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
-          holding_ = 0D;
+          if (upBuilder_ == null) {
+            up_ = null;
+          } else {
+            upBuilder_.clear();
+          }
           bitField0_ = (bitField0_ & ~0x00000002);
-          pressFrequency_ = 0D;
+          if (downBuilder_ == null) {
+            down_ = null;
+          } else {
+            downBuilder_.clear();
+          }
           bitField0_ = (bitField0_ & ~0x00000004);
-          releaseFrequency_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -3606,19 +3217,23 @@ public final class Protocol {
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
             to_bitField0_ |= 0x00000001;
           }
-          result.id_ = id_;
+          result.code_ = code_;
           if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
             to_bitField0_ |= 0x00000002;
           }
-          result.holding_ = holding_;
+          if (upBuilder_ == null) {
+            result.up_ = up_;
+          } else {
+            result.up_ = upBuilder_.build();
+          }
           if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
             to_bitField0_ |= 0x00000004;
           }
-          result.pressFrequency_ = pressFrequency_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
+          if (downBuilder_ == null) {
+            result.down_ = down_;
+          } else {
+            result.down_ = downBuilder_.build();
           }
-          result.releaseFrequency_ = releaseFrequency_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -3635,17 +3250,14 @@ public final class Protocol {
 
         public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.TactileInfo other) {
           if (other == pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
+          if (other.hasCode()) {
+            setCode(other.getCode());
           }
-          if (other.hasHolding()) {
-            setHolding(other.getHolding());
+          if (other.hasUp()) {
+            mergeUp(other.getUp());
           }
-          if (other.hasPressFrequency()) {
-            setPressFrequency(other.getPressFrequency());
-          }
-          if (other.hasReleaseFrequency()) {
-            setReleaseFrequency(other.getReleaseFrequency());
+          if (other.hasDown()) {
+            mergeDown(other.getDown());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -3653,7 +3265,7 @@ public final class Protocol {
         }
 
         public final boolean isInitialized() {
-          if (!hasId()) {
+          if (!hasCode()) {
             return false;
           }
           return true;
@@ -3678,152 +3290,272 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        private int id_ ;
+        private int code_ ;
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 code = 1;</code>
          */
-        public boolean hasId() {
+        public boolean hasCode() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 code = 1;</code>
          */
-        public int getId() {
-          return id_;
+        public int getCode() {
+          return code_;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 code = 1;</code>
          */
-        public Builder setId(int value) {
+        public Builder setCode(int value) {
           bitField0_ |= 0x00000001;
-          id_ = value;
+          code_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required uint32 code = 1;</code>
          */
-        public Builder clearId() {
+        public Builder clearCode() {
           bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
+          code_ = 0;
           onChanged();
           return this;
         }
 
-        private double holding_ ;
+        private pro.beam.interactive.net.packet.Protocol.Report.Info up_ = null;
+        private com.google.protobuf.SingleFieldBuilder<
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> upBuilder_;
         /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
          */
-        public boolean hasHolding() {
+        public boolean hasUp() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
         /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
          */
-        public double getHolding() {
-          return holding_;
+        public pro.beam.interactive.net.packet.Protocol.Report.Info getUp() {
+          if (upBuilder_ == null) {
+            return up_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : up_;
+          } else {
+            return upBuilder_.getMessage();
+          }
         }
         /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
          */
-        public Builder setHolding(double value) {
+        public Builder setUp(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (upBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            up_ = value;
+            onChanged();
+          } else {
+            upBuilder_.setMessage(value);
+          }
           bitField0_ |= 0x00000002;
-          holding_ = value;
-          onChanged();
           return this;
         }
         /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
          */
-        public Builder clearHolding() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          holding_ = 0D;
-          onChanged();
+        public Builder setUp(
+            pro.beam.interactive.net.packet.Protocol.Report.Info.Builder builderForValue) {
+          if (upBuilder_ == null) {
+            up_ = builderForValue.build();
+            onChanged();
+          } else {
+            upBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
           return this;
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+         */
+        public Builder mergeUp(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (upBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) == 0x00000002) &&
+                up_ != null &&
+                up_ != pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance()) {
+              up_ =
+                pro.beam.interactive.net.packet.Protocol.Report.Info.newBuilder(up_).mergeFrom(value).buildPartial();
+            } else {
+              up_ = value;
+            }
+            onChanged();
+          } else {
+            upBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000002;
+          return this;
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+         */
+        public Builder clearUp() {
+          if (upBuilder_ == null) {
+            up_ = null;
+            onChanged();
+          } else {
+            upBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+         */
+        public pro.beam.interactive.net.packet.Protocol.Report.Info.Builder getUpBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getUpFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+         */
+        public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getUpOrBuilder() {
+          if (upBuilder_ != null) {
+            return upBuilder_.getMessageOrBuilder();
+          } else {
+            return up_ == null ?
+                pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : up_;
+          }
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info up = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> 
+            getUpFieldBuilder() {
+          if (upBuilder_ == null) {
+            upBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder>(
+                    getUp(),
+                    getParentForChildren(),
+                    isClean());
+            up_ = null;
+          }
+          return upBuilder_;
         }
 
-        private double pressFrequency_ ;
+        private pro.beam.interactive.net.packet.Protocol.Report.Info down_ = null;
+        private com.google.protobuf.SingleFieldBuilder<
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> downBuilder_;
         /**
-         * <code>optional double pressFrequency = 3;</code>
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
          */
-        public boolean hasPressFrequency() {
+        public boolean hasDown() {
           return ((bitField0_ & 0x00000004) == 0x00000004);
         }
         /**
-         * <code>optional double pressFrequency = 3;</code>
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
          */
-        public double getPressFrequency() {
-          return pressFrequency_;
+        public pro.beam.interactive.net.packet.Protocol.Report.Info getDown() {
+          if (downBuilder_ == null) {
+            return down_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : down_;
+          } else {
+            return downBuilder_.getMessage();
+          }
         }
         /**
-         * <code>optional double pressFrequency = 3;</code>
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
          */
-        public Builder setPressFrequency(double value) {
+        public Builder setDown(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (downBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            down_ = value;
+            onChanged();
+          } else {
+            downBuilder_.setMessage(value);
+          }
           bitField0_ |= 0x00000004;
-          pressFrequency_ = value;
-          onChanged();
           return this;
         }
         /**
-         * <code>optional double pressFrequency = 3;</code>
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
          */
-        public Builder clearPressFrequency() {
+        public Builder setDown(
+            pro.beam.interactive.net.packet.Protocol.Report.Info.Builder builderForValue) {
+          if (downBuilder_ == null) {
+            down_ = builderForValue.build();
+            onChanged();
+          } else {
+            downBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          return this;
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
+         */
+        public Builder mergeDown(pro.beam.interactive.net.packet.Protocol.Report.Info value) {
+          if (downBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) == 0x00000004) &&
+                down_ != null &&
+                down_ != pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance()) {
+              down_ =
+                pro.beam.interactive.net.packet.Protocol.Report.Info.newBuilder(down_).mergeFrom(value).buildPartial();
+            } else {
+              down_ = value;
+            }
+            onChanged();
+          } else {
+            downBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000004;
+          return this;
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
+         */
+        public Builder clearDown() {
+          if (downBuilder_ == null) {
+            down_ = null;
+            onChanged();
+          } else {
+            downBuilder_.clear();
+          }
           bitField0_ = (bitField0_ & ~0x00000004);
-          pressFrequency_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double releaseFrequency_ ;
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public boolean hasReleaseFrequency() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public double getReleaseFrequency() {
-          return releaseFrequency_;
-        }
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public Builder setReleaseFrequency(double value) {
-          bitField0_ |= 0x00000008;
-          releaseFrequency_ = value;
-          onChanged();
           return this;
         }
         /**
-         * <code>optional double releaseFrequency = 4;</code>
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
          */
-        public Builder clearReleaseFrequency() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          releaseFrequency_ = 0D;
+        public pro.beam.interactive.net.packet.Protocol.Report.Info.Builder getDownBuilder() {
+          bitField0_ |= 0x00000004;
           onChanged();
-          return this;
+          return getDownFieldBuilder().getBuilder();
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
+         */
+        public pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder getDownOrBuilder() {
+          if (downBuilder_ != null) {
+            return downBuilder_.getMessageOrBuilder();
+          } else {
+            return down_ == null ?
+                pro.beam.interactive.net.packet.Protocol.Report.Info.getDefaultInstance() : down_;
+          }
+        }
+        /**
+         * <code>optional .pro.beam.interactive.Report.Info down = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+            pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder> 
+            getDownFieldBuilder() {
+          if (downBuilder_ == null) {
+            downBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+                pro.beam.interactive.net.packet.Protocol.Report.Info, pro.beam.interactive.net.packet.Protocol.Report.Info.Builder, pro.beam.interactive.net.packet.Protocol.Report.InfoOrBuilder>(
+                    getDown(),
+                    getParentForChildren(),
+                    isClean());
+            down_ = null;
+          }
+          return downBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.TactileInfo)
@@ -3873,1473 +3605,195 @@ public final class Protocol {
 
     }
 
-    public interface ScreenCoordsInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.Report.ScreenCoordsInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      boolean hasId();
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      int getId();
-
-      /**
-       * <code>optional double coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
-       */
-      boolean hasCoordMean();
-      /**
-       * <code>optional double coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
-       */
-      double getCoordMean();
-
-      /**
-       * <code>optional double coordStdev = 3;</code>
-       */
-      boolean hasCoordStdev();
-      /**
-       * <code>optional double coordStdev = 3;</code>
-       */
-      double getCoordStdev();
-    }
-    /**
-     * Protobuf type {@code pro.beam.interactive.Report.ScreenCoordsInfo}
-     *
-     * <pre>
-     * Reports for the ScreenCoords input type.
-     * </pre>
-     */
-    public  static final class ScreenCoordsInfo extends
-        com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:pro.beam.interactive.Report.ScreenCoordsInfo)
-        ScreenCoordsInfoOrBuilder {
-      // Use ScreenCoordsInfo.newBuilder() to construct.
-      private ScreenCoordsInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-      }
-      private ScreenCoordsInfo() {
-        id_ = 0;
-        coordMean_ = 0D;
-        coordStdev_ = 0D;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private ScreenCoordsInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-        this();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
-                break;
-              }
-              case 17: {
-                bitField0_ |= 0x00000002;
-                coordMean_ = input.readDouble();
-                break;
-              }
-              case 25: {
-                bitField0_ |= 0x00000004;
-                coordStdev_ = input.readDouble();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw new RuntimeException(e.setUnfinishedMessage(this));
-        } catch (java.io.IOException e) {
-          throw new RuntimeException(
-              new com.google.protobuf.InvalidProtocolBufferException(
-                  e.getMessage()).setUnfinishedMessage(this));
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.class, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder.class);
-      }
-
-      private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      public int getId() {
-        return id_;
-      }
-
-      public static final int COORDMEAN_FIELD_NUMBER = 2;
-      private double coordMean_;
-      /**
-       * <code>optional double coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
-       */
-      public boolean hasCoordMean() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional double coordMean = 2;</code>
-       *
-       * <pre>
-       * Cordinates analysis, if requested.
-       * </pre>
-       */
-      public double getCoordMean() {
-        return coordMean_;
-      }
-
-      public static final int COORDSTDEV_FIELD_NUMBER = 3;
-      private double coordStdev_;
-      /**
-       * <code>optional double coordStdev = 3;</code>
-       */
-      public boolean hasCoordStdev() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional double coordStdev = 3;</code>
-       */
-      public double getCoordStdev() {
-        return coordStdev_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        if (!hasId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeDouble(2, coordMean_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeDouble(3, coordStdev_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, coordMean_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(3, coordStdev_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code pro.beam.interactive.Report.ScreenCoordsInfo}
-       *
-       * <pre>
-       * Reports for the ScreenCoords input type.
-       * </pre>
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.Report.ScreenCoordsInfo)
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.class, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder.class);
-        }
-
-        // Construct using pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          id_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          coordMean_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          coordStdev_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getDefaultInstanceForType() {
-          return pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.getDefaultInstance();
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo build() {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo buildPartial() {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo result = new pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.id_ = id_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.coordMean_ = coordMean_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.coordStdev_ = coordStdev_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo) {
-            return mergeFrom((pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo other) {
-          if (other == pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
-          }
-          if (other.hasCoordMean()) {
-            setCoordMean(other.getCoordMean());
-          }
-          if (other.hasCoordStdev()) {
-            setCoordStdev(other.getCoordStdev());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasId()) {
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private int id_ ;
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public boolean hasId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public int getId() {
-          return id_;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public Builder setId(int value) {
-          bitField0_ |= 0x00000001;
-          id_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public Builder clearId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private double coordMean_ ;
-        /**
-         * <code>optional double coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
-         */
-        public boolean hasCoordMean() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>optional double coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
-         */
-        public double getCoordMean() {
-          return coordMean_;
-        }
-        /**
-         * <code>optional double coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
-         */
-        public Builder setCoordMean(double value) {
-          bitField0_ |= 0x00000002;
-          coordMean_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double coordMean = 2;</code>
-         *
-         * <pre>
-         * Cordinates analysis, if requested.
-         * </pre>
-         */
-        public Builder clearCoordMean() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          coordMean_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double coordStdev_ ;
-        /**
-         * <code>optional double coordStdev = 3;</code>
-         */
-        public boolean hasCoordStdev() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional double coordStdev = 3;</code>
-         */
-        public double getCoordStdev() {
-          return coordStdev_;
-        }
-        /**
-         * <code>optional double coordStdev = 3;</code>
-         */
-        public Builder setCoordStdev(double value) {
-          bitField0_ |= 0x00000004;
-          coordStdev_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double coordStdev = 3;</code>
-         */
-        public Builder clearCoordStdev() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          coordStdev_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.ScreenCoordsInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:pro.beam.interactive.Report.ScreenCoordsInfo)
-      private static final pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo();
-      }
-
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<ScreenCoordsInfo>
-          PARSER = new com.google.protobuf.AbstractParser<ScreenCoordsInfo>() {
-        public ScreenCoordsInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          try {
-            return new ScreenCoordsInfo(input, extensionRegistry);
-          } catch (RuntimeException e) {
-            if (e.getCause() instanceof
-                com.google.protobuf.InvalidProtocolBufferException) {
-              throw (com.google.protobuf.InvalidProtocolBufferException)
-                  e.getCause();
-            }
-            throw e;
-          }
-        }
-      };
-
-      public static com.google.protobuf.Parser<ScreenCoordsInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<ScreenCoordsInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface ScreenPressInfoOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.Report.ScreenPressInfo)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      boolean hasId();
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      int getId();
-
-      /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
-       */
-      boolean hasHolding();
-      /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
-       */
-      double getHolding();
-
-      /**
-       * <code>optional double pressFrequency = 3;</code>
-       */
-      boolean hasPressFrequency();
-      /**
-       * <code>optional double pressFrequency = 3;</code>
-       */
-      double getPressFrequency();
-
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      boolean hasReleaseFrequency();
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      double getReleaseFrequency();
-    }
-    /**
-     * Protobuf type {@code pro.beam.interactive.Report.ScreenPressInfo}
-     *
-     * <pre>
-     * Reports for the ScreenCoords input type.
-     * </pre>
-     */
-    public  static final class ScreenPressInfo extends
-        com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:pro.beam.interactive.Report.ScreenPressInfo)
-        ScreenPressInfoOrBuilder {
-      // Use ScreenPressInfo.newBuilder() to construct.
-      private ScreenPressInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-      }
-      private ScreenPressInfo() {
-        id_ = 0;
-        holding_ = 0D;
-        pressFrequency_ = 0D;
-        releaseFrequency_ = 0D;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private ScreenPressInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-        this();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
-                break;
-              }
-              case 17: {
-                bitField0_ |= 0x00000002;
-                holding_ = input.readDouble();
-                break;
-              }
-              case 25: {
-                bitField0_ |= 0x00000004;
-                pressFrequency_ = input.readDouble();
-                break;
-              }
-              case 33: {
-                bitField0_ |= 0x00000008;
-                releaseFrequency_ = input.readDouble();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw new RuntimeException(e.setUnfinishedMessage(this));
-        } catch (java.io.IOException e) {
-          throw new RuntimeException(
-              new com.google.protobuf.InvalidProtocolBufferException(
-                  e.getMessage()).setUnfinishedMessage(this));
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenPressInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.class, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder.class);
-      }
-
-      private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 id = 1;</code>
-       */
-      public int getId() {
-        return id_;
-      }
-
-      public static final int HOLDING_FIELD_NUMBER = 2;
-      private double holding_;
-      /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
-       */
-      public boolean hasHolding() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional double holding = 2;</code>
-       *
-       * <pre>
-       * analysis on how many users are holding and pressing releasing
-       * the buttons, if requested.
-       * </pre>
-       */
-      public double getHolding() {
-        return holding_;
-      }
-
-      public static final int PRESSFREQUENCY_FIELD_NUMBER = 3;
-      private double pressFrequency_;
-      /**
-       * <code>optional double pressFrequency = 3;</code>
-       */
-      public boolean hasPressFrequency() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional double pressFrequency = 3;</code>
-       */
-      public double getPressFrequency() {
-        return pressFrequency_;
-      }
-
-      public static final int RELEASEFREQUENCY_FIELD_NUMBER = 4;
-      private double releaseFrequency_;
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      public boolean hasReleaseFrequency() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional double releaseFrequency = 4;</code>
-       */
-      public double getReleaseFrequency() {
-        return releaseFrequency_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        if (!hasId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeDouble(2, holding_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeDouble(3, pressFrequency_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeDouble(4, releaseFrequency_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, holding_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(3, pressFrequency_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(4, releaseFrequency_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code pro.beam.interactive.Report.ScreenPressInfo}
-       *
-       * <pre>
-       * Reports for the ScreenCoords input type.
-       * </pre>
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.Report.ScreenPressInfo)
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenPressInfo_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.class, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder.class);
-        }
-
-        // Construct using pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          id_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          holding_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          pressFrequency_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          releaseFrequency_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getDefaultInstanceForType() {
-          return pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.getDefaultInstance();
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo build() {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo buildPartial() {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo result = new pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.id_ = id_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.holding_ = holding_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.pressFrequency_ = pressFrequency_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
-          result.releaseFrequency_ = releaseFrequency_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo) {
-            return mergeFrom((pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo other) {
-          if (other == pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
-          }
-          if (other.hasHolding()) {
-            setHolding(other.getHolding());
-          }
-          if (other.hasPressFrequency()) {
-            setPressFrequency(other.getPressFrequency());
-          }
-          if (other.hasReleaseFrequency()) {
-            setReleaseFrequency(other.getReleaseFrequency());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasId()) {
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private int id_ ;
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public boolean hasId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public int getId() {
-          return id_;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public Builder setId(int value) {
-          bitField0_ |= 0x00000001;
-          id_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         */
-        public Builder clearId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private double holding_ ;
-        /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
-         */
-        public boolean hasHolding() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
-         */
-        public double getHolding() {
-          return holding_;
-        }
-        /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
-         */
-        public Builder setHolding(double value) {
-          bitField0_ |= 0x00000002;
-          holding_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double holding = 2;</code>
-         *
-         * <pre>
-         * analysis on how many users are holding and pressing releasing
-         * the buttons, if requested.
-         * </pre>
-         */
-        public Builder clearHolding() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          holding_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double pressFrequency_ ;
-        /**
-         * <code>optional double pressFrequency = 3;</code>
-         */
-        public boolean hasPressFrequency() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional double pressFrequency = 3;</code>
-         */
-        public double getPressFrequency() {
-          return pressFrequency_;
-        }
-        /**
-         * <code>optional double pressFrequency = 3;</code>
-         */
-        public Builder setPressFrequency(double value) {
-          bitField0_ |= 0x00000004;
-          pressFrequency_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double pressFrequency = 3;</code>
-         */
-        public Builder clearPressFrequency() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          pressFrequency_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double releaseFrequency_ ;
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public boolean hasReleaseFrequency() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public double getReleaseFrequency() {
-          return releaseFrequency_;
-        }
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public Builder setReleaseFrequency(double value) {
-          bitField0_ |= 0x00000008;
-          releaseFrequency_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double releaseFrequency = 4;</code>
-         */
-        public Builder clearReleaseFrequency() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          releaseFrequency_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report.ScreenPressInfo)
-      }
-
-      // @@protoc_insertion_point(class_scope:pro.beam.interactive.Report.ScreenPressInfo)
-      private static final pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo();
-      }
-
-      public static pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<ScreenPressInfo>
-          PARSER = new com.google.protobuf.AbstractParser<ScreenPressInfo>() {
-        public ScreenPressInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          try {
-            return new ScreenPressInfo(input, extensionRegistry);
-          } catch (RuntimeException e) {
-            if (e.getCause() instanceof
-                com.google.protobuf.InvalidProtocolBufferException) {
-              throw (com.google.protobuf.InvalidProtocolBufferException)
-                  e.getCause();
-            }
-            throw e;
-          }
-        }
-      };
-
-      public static com.google.protobuf.Parser<ScreenPressInfo> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<ScreenPressInfo> getParserForType() {
-        return PARSER;
-      }
-
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
     private int bitField0_;
-    public static final int TIME_FIELD_NUMBER = 1;
-    private int time_;
+    public static final int QUORUM_FIELD_NUMBER = 1;
+    private int quorum_;
     /**
-     * <code>required uint32 time = 1;</code>
+     * <code>required uint32 quorum = 1;</code>
      *
      * <pre>
-     * Unix seconds timestamp in milliseconds that this report was sent at.
+     * Total number of active gamers connected. Only users who have
+     * given input recently (within the last couple minutes) will
+     * be counted in the quorum.
      * </pre>
      */
-    public boolean hasTime() {
+    public boolean hasQuorum() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required uint32 time = 1;</code>
+     * <code>required uint32 quorum = 1;</code>
      *
      * <pre>
-     * Unix seconds timestamp in milliseconds that this report was sent at.
+     * Total number of active gamers connected. Only users who have
+     * given input recently (within the last couple minutes) will
+     * be counted in the quorum.
+     * </pre>
+     */
+    public int getQuorum() {
+      return quorum_;
+    }
+
+    public static final int CONNECTED_FIELD_NUMBER = 2;
+    private int connected_;
+    /**
+     * <code>required uint32 connected = 2;</code>
+     *
+     * <pre>
+     * Total number of connected users. This includes users who
+     * might not be active.
+     * </pre>
+     */
+    public boolean hasConnected() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required uint32 connected = 2;</code>
+     *
+     * <pre>
+     * Total number of connected users. This includes users who
+     * might not be active.
+     * </pre>
+     */
+    public int getConnected() {
+      return connected_;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 3;
+    private int time_;
+    /**
+     * <code>required uint32 time = 3;</code>
+     *
+     * <pre>
+     * Unix seconds timestamp that this report was sent at.
+     * </pre>
+     */
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required uint32 time = 3;</code>
+     *
+     * <pre>
+     * Unix seconds timestamp that this report was sent at.
      * </pre>
      */
     public int getTime() {
       return time_;
     }
 
-    public static final int USERS_FIELD_NUMBER = 2;
-    private pro.beam.interactive.net.packet.Protocol.Report.Users users_;
-    /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    public boolean hasUsers() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.Users getUsers() {
-      return users_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
-    }
-    /**
-     * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder() {
-      return users_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
-    }
-
-    public static final int JOYSTICK_FIELD_NUMBER = 3;
+    public static final int JOYSTICK_FIELD_NUMBER = 4;
     private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> joystick_;
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> getJoystickList() {
       return joystick_;
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder> 
         getJoystickOrBuilderList() {
       return joystick_;
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     public int getJoystickCount() {
       return joystick_.size();
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo getJoystick(int index) {
       return joystick_.get(index);
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+     * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+     *
+     * <pre>
+     * Report for the mouse control.
+     * </pre>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder getJoystickOrBuilder(
         int index) {
       return joystick_.get(index);
     }
 
-    public static final int TACTILE_FIELD_NUMBER = 4;
+    public static final int TACTILE_FIELD_NUMBER = 5;
     private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> tactile_;
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> getTactileList() {
       return tactile_;
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder> 
         getTactileOrBuilderList() {
       return tactile_;
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     public int getTactileCount() {
       return tactile_.size();
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.TactileInfo getTactile(int index) {
       return tactile_.get(index);
     }
     /**
-     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+     * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+     *
+     * <pre>
+     * Report for key controls. The order and index of reports
+     * matches those originally given in the handshake.
+     * </pre>
      */
     public pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder getTactileOrBuilder(
         int index) {
       return tactile_.get(index);
-    }
-
-    public static final int SCREENCOORDS_FIELD_NUMBER = 5;
-    private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> screenCoords_;
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> getScreenCoordsList() {
-      return screenCoords_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder> 
-        getScreenCoordsOrBuilderList() {
-      return screenCoords_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    public int getScreenCoordsCount() {
-      return screenCoords_.size();
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getScreenCoords(int index) {
-      return screenCoords_.get(index);
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder getScreenCoordsOrBuilder(
-        int index) {
-      return screenCoords_.get(index);
-    }
-
-    public static final int SCREENPRESS_FIELD_NUMBER = 6;
-    private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> screenPress_;
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> getScreenPressList() {
-      return screenPress_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder> 
-        getScreenPressOrBuilderList() {
-      return screenPress_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    public int getScreenPressCount() {
-      return screenPress_.size();
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getScreenPress(int index) {
-      return screenPress_.get(index);
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder getScreenPressOrBuilder(
-        int index) {
-      return screenPress_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5348,15 +3802,17 @@ public final class Protocol {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasTime()) {
+      if (!hasQuorum()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (hasUsers()) {
-        if (!getUsers().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
+      if (!hasConnected()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
       }
       for (int i = 0; i < getJoystickCount(); i++) {
         if (!getJoystick(i).isInitialized()) {
@@ -5370,18 +3826,6 @@ public final class Protocol {
           return false;
         }
       }
-      for (int i = 0; i < getScreenCoordsCount(); i++) {
-        if (!getScreenCoords(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      for (int i = 0; i < getScreenPressCount(); i++) {
-        if (!getScreenPress(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -5389,22 +3833,19 @@ public final class Protocol {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, time_);
+        output.writeUInt32(1, quorum_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, getUsers());
+        output.writeUInt32(2, connected_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, time_);
       }
       for (int i = 0; i < joystick_.size(); i++) {
-        output.writeMessage(3, joystick_.get(i));
+        output.writeMessage(4, joystick_.get(i));
       }
       for (int i = 0; i < tactile_.size(); i++) {
-        output.writeMessage(4, tactile_.get(i));
-      }
-      for (int i = 0; i < screenCoords_.size(); i++) {
-        output.writeMessage(5, screenCoords_.get(i));
-      }
-      for (int i = 0; i < screenPress_.size(); i++) {
-        output.writeMessage(6, screenPress_.get(i));
+        output.writeMessage(5, tactile_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -5416,27 +3857,23 @@ public final class Protocol {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, time_);
+          .computeUInt32Size(1, quorum_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUsers());
+          .computeUInt32Size(2, connected_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, time_);
       }
       for (int i = 0; i < joystick_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, joystick_.get(i));
+          .computeMessageSize(4, joystick_.get(i));
       }
       for (int i = 0; i < tactile_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, tactile_.get(i));
-      }
-      for (int i = 0; i < screenCoords_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, screenCoords_.get(i));
-      }
-      for (int i = 0; i < screenPress_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, screenPress_.get(i));
+          .computeMessageSize(5, tactile_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5552,46 +3989,29 @@ public final class Protocol {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getUsersFieldBuilder();
           getJoystickFieldBuilder();
           getTactileFieldBuilder();
-          getScreenCoordsFieldBuilder();
-          getScreenPressFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        time_ = 0;
+        quorum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (usersBuilder_ == null) {
-          users_ = null;
-        } else {
-          usersBuilder_.clear();
-        }
+        connected_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        time_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (joystickBuilder_ == null) {
           joystick_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           joystickBuilder_.clear();
         }
         if (tactileBuilder_ == null) {
           tactile_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          tactileBuilder_.clear();
-        }
-        if (screenCoordsBuilder_ == null) {
-          screenCoords_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          screenCoordsBuilder_.clear();
-        }
-        if (screenPressBuilder_ == null) {
-          screenPress_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          screenPressBuilder_.clear();
+          tactileBuilder_.clear();
         }
         return this;
       }
@@ -5620,50 +4040,32 @@ public final class Protocol {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.time_ = time_;
+        result.quorum_ = quorum_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (usersBuilder_ == null) {
-          result.users_ = users_;
-        } else {
-          result.users_ = usersBuilder_.build();
+        result.connected_ = connected_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
+        result.time_ = time_;
         if (joystickBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             joystick_ = java.util.Collections.unmodifiableList(joystick_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.joystick_ = joystick_;
         } else {
           result.joystick_ = joystickBuilder_.build();
         }
         if (tactileBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             tactile_ = java.util.Collections.unmodifiableList(tactile_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.tactile_ = tactile_;
         } else {
           result.tactile_ = tactileBuilder_.build();
-        }
-        if (screenCoordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            screenCoords_ = java.util.Collections.unmodifiableList(screenCoords_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.screenCoords_ = screenCoords_;
-        } else {
-          result.screenCoords_ = screenCoordsBuilder_.build();
-        }
-        if (screenPressBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
-            screenPress_ = java.util.Collections.unmodifiableList(screenPress_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.screenPress_ = screenPress_;
-        } else {
-          result.screenPress_ = screenPressBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -5681,17 +4083,20 @@ public final class Protocol {
 
       public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.Report other) {
         if (other == pro.beam.interactive.net.packet.Protocol.Report.getDefaultInstance()) return this;
+        if (other.hasQuorum()) {
+          setQuorum(other.getQuorum());
+        }
+        if (other.hasConnected()) {
+          setConnected(other.getConnected());
+        }
         if (other.hasTime()) {
           setTime(other.getTime());
-        }
-        if (other.hasUsers()) {
-          mergeUsers(other.getUsers());
         }
         if (joystickBuilder_ == null) {
           if (!other.joystick_.isEmpty()) {
             if (joystick_.isEmpty()) {
               joystick_ = other.joystick_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureJoystickIsMutable();
               joystick_.addAll(other.joystick_);
@@ -5704,7 +4109,7 @@ public final class Protocol {
               joystickBuilder_.dispose();
               joystickBuilder_ = null;
               joystick_ = other.joystick_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               joystickBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getJoystickFieldBuilder() : null;
@@ -5717,7 +4122,7 @@ public final class Protocol {
           if (!other.tactile_.isEmpty()) {
             if (tactile_.isEmpty()) {
               tactile_ = other.tactile_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureTactileIsMutable();
               tactile_.addAll(other.tactile_);
@@ -5730,64 +4135,12 @@ public final class Protocol {
               tactileBuilder_.dispose();
               tactileBuilder_ = null;
               tactile_ = other.tactile_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               tactileBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getTactileFieldBuilder() : null;
             } else {
               tactileBuilder_.addAllMessages(other.tactile_);
-            }
-          }
-        }
-        if (screenCoordsBuilder_ == null) {
-          if (!other.screenCoords_.isEmpty()) {
-            if (screenCoords_.isEmpty()) {
-              screenCoords_ = other.screenCoords_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureScreenCoordsIsMutable();
-              screenCoords_.addAll(other.screenCoords_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.screenCoords_.isEmpty()) {
-            if (screenCoordsBuilder_.isEmpty()) {
-              screenCoordsBuilder_.dispose();
-              screenCoordsBuilder_ = null;
-              screenCoords_ = other.screenCoords_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              screenCoordsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getScreenCoordsFieldBuilder() : null;
-            } else {
-              screenCoordsBuilder_.addAllMessages(other.screenCoords_);
-            }
-          }
-        }
-        if (screenPressBuilder_ == null) {
-          if (!other.screenPress_.isEmpty()) {
-            if (screenPress_.isEmpty()) {
-              screenPress_ = other.screenPress_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-            } else {
-              ensureScreenPressIsMutable();
-              screenPress_.addAll(other.screenPress_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.screenPress_.isEmpty()) {
-            if (screenPressBuilder_.isEmpty()) {
-              screenPressBuilder_.dispose();
-              screenPressBuilder_ = null;
-              screenPress_ = other.screenPress_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-              screenPressBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getScreenPressFieldBuilder() : null;
-            } else {
-              screenPressBuilder_.addAllMessages(other.screenPress_);
             }
           }
         }
@@ -5797,13 +4150,14 @@ public final class Protocol {
       }
 
       public final boolean isInitialized() {
-        if (!hasTime()) {
+        if (!hasQuorum()) {
           return false;
         }
-        if (hasUsers()) {
-          if (!getUsers().isInitialized()) {
-            return false;
-          }
+        if (!hasConnected()) {
+          return false;
+        }
+        if (!hasTime()) {
+          return false;
         }
         for (int i = 0; i < getJoystickCount(); i++) {
           if (!getJoystick(i).isInitialized()) {
@@ -5812,16 +4166,6 @@ public final class Protocol {
         }
         for (int i = 0; i < getTactileCount(); i++) {
           if (!getTactile(i).isInitialized()) {
-            return false;
-          }
-        }
-        for (int i = 0; i < getScreenCoordsCount(); i++) {
-          if (!getScreenCoords(i).isInitialized()) {
-            return false;
-          }
-        }
-        for (int i = 0; i < getScreenPressCount(); i++) {
-          if (!getScreenPress(i).isInitialized()) {
             return false;
           }
         }
@@ -5847,178 +4191,168 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      private int time_ ;
+      private int quorum_ ;
       /**
-       * <code>required uint32 time = 1;</code>
+       * <code>required uint32 quorum = 1;</code>
        *
        * <pre>
-       * Unix seconds timestamp in milliseconds that this report was sent at.
+       * Total number of active gamers connected. Only users who have
+       * given input recently (within the last couple minutes) will
+       * be counted in the quorum.
        * </pre>
        */
-      public boolean hasTime() {
+      public boolean hasQuorum() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 time = 1;</code>
+       * <code>required uint32 quorum = 1;</code>
        *
        * <pre>
-       * Unix seconds timestamp in milliseconds that this report was sent at.
+       * Total number of active gamers connected. Only users who have
+       * given input recently (within the last couple minutes) will
+       * be counted in the quorum.
+       * </pre>
+       */
+      public int getQuorum() {
+        return quorum_;
+      }
+      /**
+       * <code>required uint32 quorum = 1;</code>
+       *
+       * <pre>
+       * Total number of active gamers connected. Only users who have
+       * given input recently (within the last couple minutes) will
+       * be counted in the quorum.
+       * </pre>
+       */
+      public Builder setQuorum(int value) {
+        bitField0_ |= 0x00000001;
+        quorum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 quorum = 1;</code>
+       *
+       * <pre>
+       * Total number of active gamers connected. Only users who have
+       * given input recently (within the last couple minutes) will
+       * be counted in the quorum.
+       * </pre>
+       */
+      public Builder clearQuorum() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        quorum_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int connected_ ;
+      /**
+       * <code>required uint32 connected = 2;</code>
+       *
+       * <pre>
+       * Total number of connected users. This includes users who
+       * might not be active.
+       * </pre>
+       */
+      public boolean hasConnected() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required uint32 connected = 2;</code>
+       *
+       * <pre>
+       * Total number of connected users. This includes users who
+       * might not be active.
+       * </pre>
+       */
+      public int getConnected() {
+        return connected_;
+      }
+      /**
+       * <code>required uint32 connected = 2;</code>
+       *
+       * <pre>
+       * Total number of connected users. This includes users who
+       * might not be active.
+       * </pre>
+       */
+      public Builder setConnected(int value) {
+        bitField0_ |= 0x00000002;
+        connected_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 connected = 2;</code>
+       *
+       * <pre>
+       * Total number of connected users. This includes users who
+       * might not be active.
+       * </pre>
+       */
+      public Builder clearConnected() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        connected_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int time_ ;
+      /**
+       * <code>required uint32 time = 3;</code>
+       *
+       * <pre>
+       * Unix seconds timestamp that this report was sent at.
+       * </pre>
+       */
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required uint32 time = 3;</code>
+       *
+       * <pre>
+       * Unix seconds timestamp that this report was sent at.
        * </pre>
        */
       public int getTime() {
         return time_;
       }
       /**
-       * <code>required uint32 time = 1;</code>
+       * <code>required uint32 time = 3;</code>
        *
        * <pre>
-       * Unix seconds timestamp in milliseconds that this report was sent at.
+       * Unix seconds timestamp that this report was sent at.
        * </pre>
        */
       public Builder setTime(int value) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 time = 1;</code>
+       * <code>required uint32 time = 3;</code>
        *
        * <pre>
-       * Unix seconds timestamp in milliseconds that this report was sent at.
+       * Unix seconds timestamp that this report was sent at.
        * </pre>
        */
       public Builder clearTime() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         time_ = 0;
         onChanged();
         return this;
       }
 
-      private pro.beam.interactive.net.packet.Protocol.Report.Users users_ = null;
-      private com.google.protobuf.SingleFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.Users, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder, pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder> usersBuilder_;
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public boolean hasUsers() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.Users getUsers() {
-        if (usersBuilder_ == null) {
-          return users_ == null ? pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
-        } else {
-          return usersBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public Builder setUsers(pro.beam.interactive.net.packet.Protocol.Report.Users value) {
-        if (usersBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          users_ = value;
-          onChanged();
-        } else {
-          usersBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public Builder setUsers(
-          pro.beam.interactive.net.packet.Protocol.Report.Users.Builder builderForValue) {
-        if (usersBuilder_ == null) {
-          users_ = builderForValue.build();
-          onChanged();
-        } else {
-          usersBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public Builder mergeUsers(pro.beam.interactive.net.packet.Protocol.Report.Users value) {
-        if (usersBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              users_ != null &&
-              users_ != pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance()) {
-            users_ =
-              pro.beam.interactive.net.packet.Protocol.Report.Users.newBuilder(users_).mergeFrom(value).buildPartial();
-          } else {
-            users_ = value;
-          }
-          onChanged();
-        } else {
-          usersBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public Builder clearUsers() {
-        if (usersBuilder_ == null) {
-          users_ = null;
-          onChanged();
-        } else {
-          usersBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.Users.Builder getUsersBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getUsersFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder getUsersOrBuilder() {
-        if (usersBuilder_ != null) {
-          return usersBuilder_.getMessageOrBuilder();
-        } else {
-          return users_ == null ?
-              pro.beam.interactive.net.packet.Protocol.Report.Users.getDefaultInstance() : users_;
-        }
-      }
-      /**
-       * <code>optional .pro.beam.interactive.Report.Users users = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.Users, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder, pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder> 
-          getUsersFieldBuilder() {
-        if (usersBuilder_ == null) {
-          usersBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              pro.beam.interactive.net.packet.Protocol.Report.Users, pro.beam.interactive.net.packet.Protocol.Report.Users.Builder, pro.beam.interactive.net.packet.Protocol.Report.UsersOrBuilder>(
-                  getUsers(),
-                  getParentForChildren(),
-                  isClean());
-          users_ = null;
-        }
-        return usersBuilder_;
-      }
-
       private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> joystick_ =
         java.util.Collections.emptyList();
       private void ensureJoystickIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           joystick_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo>(joystick_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -6026,7 +4360,11 @@ public final class Protocol {
           pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder> joystickBuilder_;
 
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> getJoystickList() {
         if (joystickBuilder_ == null) {
@@ -6036,7 +4374,11 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public int getJoystickCount() {
         if (joystickBuilder_ == null) {
@@ -6046,7 +4388,11 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo getJoystick(int index) {
         if (joystickBuilder_ == null) {
@@ -6056,7 +4402,11 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder setJoystick(
           int index, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo value) {
@@ -6073,7 +4423,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder setJoystick(
           int index, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder builderForValue) {
@@ -6087,7 +4441,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder addJoystick(pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo value) {
         if (joystickBuilder_ == null) {
@@ -6103,7 +4461,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder addJoystick(
           int index, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo value) {
@@ -6120,7 +4482,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder addJoystick(
           pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder builderForValue) {
@@ -6134,7 +4500,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder addJoystick(
           int index, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder builderForValue) {
@@ -6148,7 +4518,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder addAllJoystick(
           java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo> values) {
@@ -6163,12 +4537,16 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder clearJoystick() {
         if (joystickBuilder_ == null) {
           joystick_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           joystickBuilder_.clear();
@@ -6176,7 +4554,11 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public Builder removeJoystick(int index) {
         if (joystickBuilder_ == null) {
@@ -6189,14 +4571,22 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder getJoystickBuilder(
           int index) {
         return getJoystickFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder getJoystickOrBuilder(
           int index) {
@@ -6206,7 +4596,11 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder> 
            getJoystickOrBuilderList() {
@@ -6217,14 +4611,22 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder addJoystickBuilder() {
         return getJoystickFieldBuilder().addBuilder(
             pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder addJoystickBuilder(
           int index) {
@@ -6232,7 +4634,11 @@ public final class Protocol {
             index, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 3;</code>
+       * <code>repeated .pro.beam.interactive.Report.JoystickInfo joystick = 4;</code>
+       *
+       * <pre>
+       * Report for the mouse control.
+       * </pre>
        */
       public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder> 
            getJoystickBuilderList() {
@@ -6245,7 +4651,7 @@ public final class Protocol {
           joystickBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.JoystickInfoOrBuilder>(
                   joystick_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           joystick_ = null;
@@ -6256,9 +4662,9 @@ public final class Protocol {
       private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> tactile_ =
         java.util.Collections.emptyList();
       private void ensureTactileIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           tactile_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo>(tactile_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -6266,7 +4672,12 @@ public final class Protocol {
           pro.beam.interactive.net.packet.Protocol.Report.TactileInfo, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder> tactileBuilder_;
 
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> getTactileList() {
         if (tactileBuilder_ == null) {
@@ -6276,7 +4687,12 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public int getTactileCount() {
         if (tactileBuilder_ == null) {
@@ -6286,7 +4702,12 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.TactileInfo getTactile(int index) {
         if (tactileBuilder_ == null) {
@@ -6296,7 +4717,12 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder setTactile(
           int index, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo value) {
@@ -6313,7 +4739,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder setTactile(
           int index, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder builderForValue) {
@@ -6327,7 +4758,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder addTactile(pro.beam.interactive.net.packet.Protocol.Report.TactileInfo value) {
         if (tactileBuilder_ == null) {
@@ -6343,7 +4779,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder addTactile(
           int index, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo value) {
@@ -6360,7 +4801,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder addTactile(
           pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder builderForValue) {
@@ -6374,7 +4820,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder addTactile(
           int index, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder builderForValue) {
@@ -6388,7 +4839,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder addAllTactile(
           java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.Report.TactileInfo> values) {
@@ -6403,12 +4859,17 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder clearTactile() {
         if (tactileBuilder_ == null) {
           tactile_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           tactileBuilder_.clear();
@@ -6416,7 +4877,12 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public Builder removeTactile(int index) {
         if (tactileBuilder_ == null) {
@@ -6429,14 +4895,24 @@ public final class Protocol {
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder getTactileBuilder(
           int index) {
         return getTactileFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder getTactileOrBuilder(
           int index) {
@@ -6446,7 +4922,12 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder> 
            getTactileOrBuilderList() {
@@ -6457,14 +4938,24 @@ public final class Protocol {
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder addTactileBuilder() {
         return getTactileFieldBuilder().addBuilder(
             pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder addTactileBuilder(
           int index) {
@@ -6472,7 +4963,12 @@ public final class Protocol {
             index, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 4;</code>
+       * <code>repeated .pro.beam.interactive.Report.TactileInfo tactile = 5;</code>
+       *
+       * <pre>
+       * Report for key controls. The order and index of reports
+       * matches those originally given in the handshake.
+       * </pre>
        */
       public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder> 
            getTactileBuilderList() {
@@ -6485,492 +4981,12 @@ public final class Protocol {
           tactileBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               pro.beam.interactive.net.packet.Protocol.Report.TactileInfo, pro.beam.interactive.net.packet.Protocol.Report.TactileInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.TactileInfoOrBuilder>(
                   tactile_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           tactile_ = null;
         }
         return tactileBuilder_;
-      }
-
-      private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> screenCoords_ =
-        java.util.Collections.emptyList();
-      private void ensureScreenCoordsIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          screenCoords_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo>(screenCoords_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder> screenCoordsBuilder_;
-
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> getScreenCoordsList() {
-        if (screenCoordsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(screenCoords_);
-        } else {
-          return screenCoordsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public int getScreenCoordsCount() {
-        if (screenCoordsBuilder_ == null) {
-          return screenCoords_.size();
-        } else {
-          return screenCoordsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo getScreenCoords(int index) {
-        if (screenCoordsBuilder_ == null) {
-          return screenCoords_.get(index);
-        } else {
-          return screenCoordsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder setScreenCoords(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo value) {
-        if (screenCoordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenCoordsIsMutable();
-          screenCoords_.set(index, value);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder setScreenCoords(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder builderForValue) {
-        if (screenCoordsBuilder_ == null) {
-          ensureScreenCoordsIsMutable();
-          screenCoords_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          screenCoordsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder addScreenCoords(pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo value) {
-        if (screenCoordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenCoordsIsMutable();
-          screenCoords_.add(value);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder addScreenCoords(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo value) {
-        if (screenCoordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenCoordsIsMutable();
-          screenCoords_.add(index, value);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder addScreenCoords(
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder builderForValue) {
-        if (screenCoordsBuilder_ == null) {
-          ensureScreenCoordsIsMutable();
-          screenCoords_.add(builderForValue.build());
-          onChanged();
-        } else {
-          screenCoordsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder addScreenCoords(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder builderForValue) {
-        if (screenCoordsBuilder_ == null) {
-          ensureScreenCoordsIsMutable();
-          screenCoords_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          screenCoordsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder addAllScreenCoords(
-          java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo> values) {
-        if (screenCoordsBuilder_ == null) {
-          ensureScreenCoordsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, screenCoords_);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder clearScreenCoords() {
-        if (screenCoordsBuilder_ == null) {
-          screenCoords_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public Builder removeScreenCoords(int index) {
-        if (screenCoordsBuilder_ == null) {
-          ensureScreenCoordsIsMutable();
-          screenCoords_.remove(index);
-          onChanged();
-        } else {
-          screenCoordsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder getScreenCoordsBuilder(
-          int index) {
-        return getScreenCoordsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder getScreenCoordsOrBuilder(
-          int index) {
-        if (screenCoordsBuilder_ == null) {
-          return screenCoords_.get(index);  } else {
-          return screenCoordsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder> 
-           getScreenCoordsOrBuilderList() {
-        if (screenCoordsBuilder_ != null) {
-          return screenCoordsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(screenCoords_);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder addScreenCoordsBuilder() {
-        return getScreenCoordsFieldBuilder().addBuilder(
-            pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder addScreenCoordsBuilder(
-          int index) {
-        return getScreenCoordsFieldBuilder().addBuilder(
-            index, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenCoordsInfo screenCoords = 5;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder> 
-           getScreenCoordsBuilderList() {
-        return getScreenCoordsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder> 
-          getScreenCoordsFieldBuilder() {
-        if (screenCoordsBuilder_ == null) {
-          screenCoordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenCoordsInfoOrBuilder>(
-                  screenCoords_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
-                  getParentForChildren(),
-                  isClean());
-          screenCoords_ = null;
-        }
-        return screenCoordsBuilder_;
-      }
-
-      private java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> screenPress_ =
-        java.util.Collections.emptyList();
-      private void ensureScreenPressIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          screenPress_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo>(screenPress_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder> screenPressBuilder_;
-
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> getScreenPressList() {
-        if (screenPressBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(screenPress_);
-        } else {
-          return screenPressBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public int getScreenPressCount() {
-        if (screenPressBuilder_ == null) {
-          return screenPress_.size();
-        } else {
-          return screenPressBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo getScreenPress(int index) {
-        if (screenPressBuilder_ == null) {
-          return screenPress_.get(index);
-        } else {
-          return screenPressBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder setScreenPress(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo value) {
-        if (screenPressBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenPressIsMutable();
-          screenPress_.set(index, value);
-          onChanged();
-        } else {
-          screenPressBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder setScreenPress(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder builderForValue) {
-        if (screenPressBuilder_ == null) {
-          ensureScreenPressIsMutable();
-          screenPress_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          screenPressBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder addScreenPress(pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo value) {
-        if (screenPressBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenPressIsMutable();
-          screenPress_.add(value);
-          onChanged();
-        } else {
-          screenPressBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder addScreenPress(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo value) {
-        if (screenPressBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureScreenPressIsMutable();
-          screenPress_.add(index, value);
-          onChanged();
-        } else {
-          screenPressBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder addScreenPress(
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder builderForValue) {
-        if (screenPressBuilder_ == null) {
-          ensureScreenPressIsMutable();
-          screenPress_.add(builderForValue.build());
-          onChanged();
-        } else {
-          screenPressBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder addScreenPress(
-          int index, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder builderForValue) {
-        if (screenPressBuilder_ == null) {
-          ensureScreenPressIsMutable();
-          screenPress_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          screenPressBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder addAllScreenPress(
-          java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo> values) {
-        if (screenPressBuilder_ == null) {
-          ensureScreenPressIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, screenPress_);
-          onChanged();
-        } else {
-          screenPressBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder clearScreenPress() {
-        if (screenPressBuilder_ == null) {
-          screenPress_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-          onChanged();
-        } else {
-          screenPressBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public Builder removeScreenPress(int index) {
-        if (screenPressBuilder_ == null) {
-          ensureScreenPressIsMutable();
-          screenPress_.remove(index);
-          onChanged();
-        } else {
-          screenPressBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder getScreenPressBuilder(
-          int index) {
-        return getScreenPressFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder getScreenPressOrBuilder(
-          int index) {
-        if (screenPressBuilder_ == null) {
-          return screenPress_.get(index);  } else {
-          return screenPressBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder> 
-           getScreenPressOrBuilderList() {
-        if (screenPressBuilder_ != null) {
-          return screenPressBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(screenPress_);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder addScreenPressBuilder() {
-        return getScreenPressFieldBuilder().addBuilder(
-            pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder addScreenPressBuilder(
-          int index) {
-        return getScreenPressFieldBuilder().addBuilder(
-            index, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.Report.ScreenPressInfo screenPress = 6;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder> 
-           getScreenPressBuilderList() {
-        return getScreenPressFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder> 
-          getScreenPressFieldBuilder() {
-        if (screenPressBuilder_ == null) {
-          screenPressBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfo.Builder, pro.beam.interactive.net.packet.Protocol.Report.ScreenPressInfoOrBuilder>(
-                  screenPress_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
-                  getParentForChildren(),
-                  isClean());
-          screenPress_ = null;
-        }
-        return screenPressBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:pro.beam.interactive.Report)
@@ -7514,92 +5530,35 @@ public final class Protocol {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    boolean hasState();
+    java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> 
+        getProgressList();
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    java.lang.String getState();
+    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getProgress(int index);
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getStateBytes();
-
+    int getProgressCount();
     /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> 
-        getJoystickList();
+    java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder> 
+        getProgressOrBuilderList();
     /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getJoystick(int index);
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    int getJoystickCount();
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder> 
-        getJoystickOrBuilderList();
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder getJoystickOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> 
-        getTactileList();
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getTactile(int index);
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    int getTactileCount();
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder> 
-        getTactileOrBuilderList();
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder getTactileOrBuilder(
+    pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder getProgressOrBuilder(
         int index);
   }
   /**
    * Protobuf type {@code pro.beam.interactive.ProgressUpdate}
    *
    * <pre>
-   * A ProgressUpdate message may be sent up periodically from
-   * the Robot. It contains an array of objects to update the
-   * multiple controls on the frontend.
+   * A ProgressUpdate message may be sent up periodically from the Robot. It
+   * contains an array of objects to update the multiple controls on the fe.
    * </pre>
    */
   public  static final class ProgressUpdate extends
@@ -7611,9 +5570,7 @@ public final class Protocol {
       super(builder);
     }
     private ProgressUpdate() {
-      state_ = "";
-      joystick_ = java.util.Collections.emptyList();
-      tactile_ = java.util.Collections.emptyList();
+      progress_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -7644,25 +5601,11 @@ public final class Protocol {
               break;
             }
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                joystick_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate>();
-                mutable_bitField0_ |= 0x00000002;
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                progress_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              joystick_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                tactile_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              tactile_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              state_ = bs;
+              progress_.add(input.readMessage(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.parser(), extensionRegistry));
               break;
             }
           }
@@ -7674,11 +5617,8 @@ public final class Protocol {
             new com.google.protobuf.InvalidProtocolBufferException(
                 e.getMessage()).setUnfinishedMessage(this));
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          joystick_ = java.util.Collections.unmodifiableList(joystick_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          tactile_ = java.util.Collections.unmodifiableList(tactile_);
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          progress_ = java.util.Collections.unmodifiableList(progress_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7696,805 +5636,122 @@ public final class Protocol {
               pro.beam.interactive.net.packet.Protocol.ProgressUpdate.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Builder.class);
     }
 
-    public interface JoystickUpdateOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.ProgressUpdate.JoystickUpdate)
+    public interface ProgressOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.ProgressUpdate.Progress)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
        *
        * <pre>
-       * The ID of the joystick control to update
+       * The type of control this targets.
        * </pre>
        */
-      boolean hasId();
+      boolean hasTarget();
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
        *
        * <pre>
-       * The ID of the joystick control to update
+       * The type of control this targets.
        * </pre>
        */
-      int getId();
+      pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType getTarget();
 
       /**
-       * <code>optional double angle = 2;</code>
+       * <code>required uint32 code = 2;</code>
        *
        * <pre>
-       * The angle to move the "pointer" that appears around the joystick
-       * to. This is usually used to indicate the average direction that
-       * users pointing to. This is given in radians, in the range
-       * [0, 2π), with the same alignment as the standard unit circle.
+       * The code for the control target. For tactile controls, this will be
+       * the `key` code. For joystick controls, this will be the `axis`.
        * </pre>
        */
-      boolean hasAngle();
+      boolean hasCode();
       /**
-       * <code>optional double angle = 2;</code>
+       * <code>required uint32 code = 2;</code>
        *
        * <pre>
-       * The angle to move the "pointer" that appears around the joystick
-       * to. This is usually used to indicate the average direction that
-       * users pointing to. This is given in radians, in the range
-       * [0, 2π), with the same alignment as the standard unit circle.
+       * The code for the control target. For tactile controls, this will be
+       * the `key` code. For joystick controls, this will be the `axis`.
        * </pre>
        */
-      double getAngle();
+      int getCode();
 
       /**
-       * <code>optional double intensity = 3;</code>
+       * <code>optional float progress = 3;</code>
        *
        * <pre>
-       * Intensity the pointer should appear at. This is often used to
-       * indicate how strongly users are moving in a direction.
-       * Should be given in the range [0, 1].
+       * The progress this input as towards some threshold, designated by the
+       * robot. This must be a float value in the range [0, 1).
        * </pre>
        */
-      boolean hasIntensity();
+      boolean hasProgress();
       /**
-       * <code>optional double intensity = 3;</code>
+       * <code>optional float progress = 3;</code>
        *
        * <pre>
-       * Intensity the pointer should appear at. This is often used to
-       * indicate how strongly users are moving in a direction.
-       * Should be given in the range [0, 1].
+       * The progress this input as towards some threshold, designated by the
+       * robot. This must be a float value in the range [0, 1).
        * </pre>
        */
-      double getIntensity();
-    }
-    /**
-     * Protobuf type {@code pro.beam.interactive.ProgressUpdate.JoystickUpdate}
-     */
-    public  static final class JoystickUpdate extends
-        com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:pro.beam.interactive.ProgressUpdate.JoystickUpdate)
-        JoystickUpdateOrBuilder {
-      // Use JoystickUpdate.newBuilder() to construct.
-      private JoystickUpdate(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-      }
-      private JoystickUpdate() {
-        id_ = 0;
-        angle_ = 0D;
-        intensity_ = 0D;
-      }
+      float getProgress();
 
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private JoystickUpdate(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
-        this();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 8: {
-                bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
-                break;
-              }
-              case 17: {
-                bitField0_ |= 0x00000002;
-                angle_ = input.readDouble();
-                break;
-              }
-              case 25: {
-                bitField0_ |= 0x00000004;
-                intensity_ = input.readDouble();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw new RuntimeException(e.setUnfinishedMessage(this));
-        } catch (java.io.IOException e) {
-          throw new RuntimeException(
-              new com.google.protobuf.InvalidProtocolBufferException(
-                  e.getMessage()).setUnfinishedMessage(this));
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder.class);
-      }
-
-      private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>optional uint32 cooldown = 4;</code>
        *
        * <pre>
-       * The ID of the joystick control to update
-       * </pre>
-       */
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>required uint32 id = 1;</code>
-       *
-       * <pre>
-       * The ID of the joystick control to update
-       * </pre>
-       */
-      public int getId() {
-        return id_;
-      }
-
-      public static final int ANGLE_FIELD_NUMBER = 2;
-      private double angle_;
-      /**
-       * <code>optional double angle = 2;</code>
-       *
-       * <pre>
-       * The angle to move the "pointer" that appears around the joystick
-       * to. This is usually used to indicate the average direction that
-       * users pointing to. This is given in radians, in the range
-       * [0, 2π), with the same alignment as the standard unit circle.
-       * </pre>
-       */
-      public boolean hasAngle() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional double angle = 2;</code>
-       *
-       * <pre>
-       * The angle to move the "pointer" that appears around the joystick
-       * to. This is usually used to indicate the average direction that
-       * users pointing to. This is given in radians, in the range
-       * [0, 2π), with the same alignment as the standard unit circle.
-       * </pre>
-       */
-      public double getAngle() {
-        return angle_;
-      }
-
-      public static final int INTENSITY_FIELD_NUMBER = 3;
-      private double intensity_;
-      /**
-       * <code>optional double intensity = 3;</code>
-       *
-       * <pre>
-       * Intensity the pointer should appear at. This is often used to
-       * indicate how strongly users are moving in a direction.
-       * Should be given in the range [0, 1].
-       * </pre>
-       */
-      public boolean hasIntensity() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional double intensity = 3;</code>
-       *
-       * <pre>
-       * Intensity the pointer should appear at. This is often used to
-       * indicate how strongly users are moving in a direction.
-       * Should be given in the range [0, 1].
-       * </pre>
-       */
-      public double getIntensity() {
-        return intensity_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        if (!hasId()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeDouble(2, angle_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeDouble(3, intensity_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, angle_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(3, intensity_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code pro.beam.interactive.ProgressUpdate.JoystickUpdate}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.ProgressUpdate.JoystickUpdate)
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder.class);
-        }
-
-        // Construct using pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          id_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          angle_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          intensity_ = 0D;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getDefaultInstanceForType() {
-          return pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.getDefaultInstance();
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate build() {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate buildPartial() {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate result = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.id_ = id_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.angle_ = angle_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.intensity_ = intensity_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate) {
-            return mergeFrom((pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate other) {
-          if (other == pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
-          }
-          if (other.hasAngle()) {
-            setAngle(other.getAngle());
-          }
-          if (other.hasIntensity()) {
-            setIntensity(other.getIntensity());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          if (!hasId()) {
-            return false;
-          }
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private int id_ ;
-        /**
-         * <code>required uint32 id = 1;</code>
-         *
-         * <pre>
-         * The ID of the joystick control to update
-         * </pre>
-         */
-        public boolean hasId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         *
-         * <pre>
-         * The ID of the joystick control to update
-         * </pre>
-         */
-        public int getId() {
-          return id_;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         *
-         * <pre>
-         * The ID of the joystick control to update
-         * </pre>
-         */
-        public Builder setId(int value) {
-          bitField0_ |= 0x00000001;
-          id_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>required uint32 id = 1;</code>
-         *
-         * <pre>
-         * The ID of the joystick control to update
-         * </pre>
-         */
-        public Builder clearId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private double angle_ ;
-        /**
-         * <code>optional double angle = 2;</code>
-         *
-         * <pre>
-         * The angle to move the "pointer" that appears around the joystick
-         * to. This is usually used to indicate the average direction that
-         * users pointing to. This is given in radians, in the range
-         * [0, 2π), with the same alignment as the standard unit circle.
-         * </pre>
-         */
-        public boolean hasAngle() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>optional double angle = 2;</code>
-         *
-         * <pre>
-         * The angle to move the "pointer" that appears around the joystick
-         * to. This is usually used to indicate the average direction that
-         * users pointing to. This is given in radians, in the range
-         * [0, 2π), with the same alignment as the standard unit circle.
-         * </pre>
-         */
-        public double getAngle() {
-          return angle_;
-        }
-        /**
-         * <code>optional double angle = 2;</code>
-         *
-         * <pre>
-         * The angle to move the "pointer" that appears around the joystick
-         * to. This is usually used to indicate the average direction that
-         * users pointing to. This is given in radians, in the range
-         * [0, 2π), with the same alignment as the standard unit circle.
-         * </pre>
-         */
-        public Builder setAngle(double value) {
-          bitField0_ |= 0x00000002;
-          angle_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double angle = 2;</code>
-         *
-         * <pre>
-         * The angle to move the "pointer" that appears around the joystick
-         * to. This is usually used to indicate the average direction that
-         * users pointing to. This is given in radians, in the range
-         * [0, 2π), with the same alignment as the standard unit circle.
-         * </pre>
-         */
-        public Builder clearAngle() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          angle_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double intensity_ ;
-        /**
-         * <code>optional double intensity = 3;</code>
-         *
-         * <pre>
-         * Intensity the pointer should appear at. This is often used to
-         * indicate how strongly users are moving in a direction.
-         * Should be given in the range [0, 1].
-         * </pre>
-         */
-        public boolean hasIntensity() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional double intensity = 3;</code>
-         *
-         * <pre>
-         * Intensity the pointer should appear at. This is often used to
-         * indicate how strongly users are moving in a direction.
-         * Should be given in the range [0, 1].
-         * </pre>
-         */
-        public double getIntensity() {
-          return intensity_;
-        }
-        /**
-         * <code>optional double intensity = 3;</code>
-         *
-         * <pre>
-         * Intensity the pointer should appear at. This is often used to
-         * indicate how strongly users are moving in a direction.
-         * Should be given in the range [0, 1].
-         * </pre>
-         */
-        public Builder setIntensity(double value) {
-          bitField0_ |= 0x00000004;
-          intensity_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double intensity = 3;</code>
-         *
-         * <pre>
-         * Intensity the pointer should appear at. This is often used to
-         * indicate how strongly users are moving in a direction.
-         * Should be given in the range [0, 1].
-         * </pre>
-         */
-        public Builder clearIntensity() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          intensity_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.ProgressUpdate.JoystickUpdate)
-      }
-
-      // @@protoc_insertion_point(class_scope:pro.beam.interactive.ProgressUpdate.JoystickUpdate)
-      private static final pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate();
-      }
-
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<JoystickUpdate>
-          PARSER = new com.google.protobuf.AbstractParser<JoystickUpdate>() {
-        public JoystickUpdate parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          try {
-            return new JoystickUpdate(input, extensionRegistry);
-          } catch (RuntimeException e) {
-            if (e.getCause() instanceof
-                com.google.protobuf.InvalidProtocolBufferException) {
-              throw (com.google.protobuf.InvalidProtocolBufferException)
-                  e.getCause();
-            }
-            throw e;
-          }
-        }
-      };
-
-      public static com.google.protobuf.Parser<JoystickUpdate> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<JoystickUpdate> getParserForType() {
-        return PARSER;
-      }
-
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface TactileUpdateOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:pro.beam.interactive.ProgressUpdate.TactileUpdate)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>required uint32 id = 1;</code>
-       *
-       * <pre>
-       * The ID of the tactile control to update
-       * </pre>
-       */
-      boolean hasId();
-      /**
-       * <code>required uint32 id = 1;</code>
-       *
-       * <pre>
-       * The ID of the tactile control to update
-       * </pre>
-       */
-      int getId();
-
-      /**
-       * <code>optional uint32 cooldown = 2;</code>
-       *
-       * <pre>
-       * Starts a cooldown for all users, with a duration given in milliseconds.
-       * Users will not be able to press the button until the cooldown is
-       * over. Users who currently are pressing the button will be marked
-       * as having released it. Sending another cooldown before the first
-       * is over sets the cooldown's duration. The cooldown duration will
-       * decrement automatically.
+       * The duration, in milliseconds, before the action effected by this input
+       * may be carried out again. Note that this will decrement automatically
+       * on the frontend and does not need continuous updates.
        * </pre>
        */
       boolean hasCooldown();
       /**
-       * <code>optional uint32 cooldown = 2;</code>
+       * <code>optional uint32 cooldown = 4;</code>
        *
        * <pre>
-       * Starts a cooldown for all users, with a duration given in milliseconds.
-       * Users will not be able to press the button until the cooldown is
-       * over. Users who currently are pressing the button will be marked
-       * as having released it. Sending another cooldown before the first
-       * is over sets the cooldown's duration. The cooldown duration will
-       * decrement automatically.
+       * The duration, in milliseconds, before the action effected by this input
+       * may be carried out again. Note that this will decrement automatically
+       * on the frontend and does not need continuous updates.
        * </pre>
        */
       int getCooldown();
 
       /**
-       * <code>optional bool fired = 3;</code>
+       * <code>optional bool fired = 5;</code>
        *
        * <pre>
-       * Marks the button has having been fired, showing a "pulse"
-       * on the Beam frontend.
+       * Denotes that the action effected by this control has
+       * occurred, showing a "pulse" on the input.
        * </pre>
        */
       boolean hasFired();
       /**
-       * <code>optional bool fired = 3;</code>
+       * <code>optional bool fired = 5;</code>
        *
        * <pre>
-       * Marks the button has having been fired, showing a "pulse"
-       * on the Beam frontend.
+       * Denotes that the action effected by this control has
+       * occurred, showing a "pulse" on the input.
        * </pre>
        */
       boolean getFired();
-
-      /**
-       * <code>optional double progress = 4;</code>
-       *
-       * <pre>
-       * Sets the progress of the button toward some threshold, appearing
-       * as a sort of progress bar on the frontend. Should be given in the
-       * range [0, 1].
-       * </pre>
-       */
-      boolean hasProgress();
-      /**
-       * <code>optional double progress = 4;</code>
-       *
-       * <pre>
-       * Sets the progress of the button toward some threshold, appearing
-       * as a sort of progress bar on the frontend. Should be given in the
-       * range [0, 1].
-       * </pre>
-       */
-      double getProgress();
     }
     /**
-     * Protobuf type {@code pro.beam.interactive.ProgressUpdate.TactileUpdate}
+     * Protobuf type {@code pro.beam.interactive.ProgressUpdate.Progress}
      */
-    public  static final class TactileUpdate extends
+    public  static final class Progress extends
         com.google.protobuf.GeneratedMessage implements
-        // @@protoc_insertion_point(message_implements:pro.beam.interactive.ProgressUpdate.TactileUpdate)
-        TactileUpdateOrBuilder {
-      // Use TactileUpdate.newBuilder() to construct.
-      private TactileUpdate(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        // @@protoc_insertion_point(message_implements:pro.beam.interactive.ProgressUpdate.Progress)
+        ProgressOrBuilder {
+      // Use Progress.newBuilder() to construct.
+      private Progress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
-      private TactileUpdate() {
-        id_ = 0;
+      private Progress() {
+        target_ = 0;
+        code_ = 0;
+        progress_ = 0F;
         cooldown_ = 0;
         fired_ = false;
-        progress_ = 0D;
       }
 
       @java.lang.Override
@@ -8502,7 +5759,7 @@ public final class Protocol {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private TactileUpdate(
+      private Progress(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
         this();
@@ -8525,23 +5782,34 @@ public final class Protocol {
                 break;
               }
               case 8: {
-                bitField0_ |= 0x00000001;
-                id_ = input.readUInt32();
+                int rawValue = input.readEnum();
+                pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType value = pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  target_ = rawValue;
+                }
                 break;
               }
               case 16: {
                 bitField0_ |= 0x00000002;
+                code_ = input.readUInt32();
+                break;
+              }
+              case 29: {
+                bitField0_ |= 0x00000004;
+                progress_ = input.readFloat();
+                break;
+              }
+              case 32: {
+                bitField0_ |= 0x00000008;
                 cooldown_ = input.readUInt32();
                 break;
               }
-              case 24: {
-                bitField0_ |= 0x00000004;
+              case 40: {
+                bitField0_ |= 0x00000010;
                 fired_ = input.readBool();
-                break;
-              }
-              case 33: {
-                bitField0_ |= 0x00000008;
-                progress_ = input.readDouble();
                 break;
               }
             }
@@ -8559,123 +5827,225 @@ public final class Protocol {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor;
+        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_fieldAccessorTable
+        return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_Progress_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder.class);
+                pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder.class);
+      }
+
+      /**
+       * Protobuf enum {@code pro.beam.interactive.ProgressUpdate.Progress.TargetType}
+       */
+      public enum TargetType
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <code>TACTILE = 0;</code>
+         */
+        TACTILE(0, 0),
+        /**
+         * <code>JOYSTICK = 1;</code>
+         */
+        JOYSTICK(1, 1),
+        ;
+
+        /**
+         * <code>TACTILE = 0;</code>
+         */
+        public static final int TACTILE_VALUE = 0;
+        /**
+         * <code>JOYSTICK = 1;</code>
+         */
+        public static final int JOYSTICK_VALUE = 1;
+
+
+        public final int getNumber() {
+          return value;
+        }
+
+        public static TargetType valueOf(int value) {
+          switch (value) {
+            case 0: return TACTILE;
+            case 1: return JOYSTICK;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<TargetType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            TargetType> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<TargetType>() {
+                public TargetType findValueByNumber(int number) {
+                  return TargetType.valueOf(number);
+                }
+              };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          return getDescriptor().getValues().get(index);
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final TargetType[] VALUES = values();
+
+        public static TargetType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int index;
+        private final int value;
+
+        private TargetType(int index, int value) {
+          this.index = index;
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:pro.beam.interactive.ProgressUpdate.Progress.TargetType)
       }
 
       private int bitField0_;
-      public static final int ID_FIELD_NUMBER = 1;
-      private int id_;
+      public static final int TARGET_FIELD_NUMBER = 1;
+      private int target_;
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
        *
        * <pre>
-       * The ID of the tactile control to update
+       * The type of control this targets.
        * </pre>
        */
-      public boolean hasId() {
+      public boolean hasTarget() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required uint32 id = 1;</code>
+       * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
        *
        * <pre>
-       * The ID of the tactile control to update
+       * The type of control this targets.
        * </pre>
        */
-      public int getId() {
-        return id_;
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType getTarget() {
+        pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType result = pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType.valueOf(target_);
+        return result == null ? pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType.TACTILE : result;
       }
 
-      public static final int COOLDOWN_FIELD_NUMBER = 2;
-      private int cooldown_;
+      public static final int CODE_FIELD_NUMBER = 2;
+      private int code_;
       /**
-       * <code>optional uint32 cooldown = 2;</code>
+       * <code>required uint32 code = 2;</code>
        *
        * <pre>
-       * Starts a cooldown for all users, with a duration given in milliseconds.
-       * Users will not be able to press the button until the cooldown is
-       * over. Users who currently are pressing the button will be marked
-       * as having released it. Sending another cooldown before the first
-       * is over sets the cooldown's duration. The cooldown duration will
-       * decrement automatically.
+       * The code for the control target. For tactile controls, this will be
+       * the `key` code. For joystick controls, this will be the `axis`.
        * </pre>
        */
-      public boolean hasCooldown() {
+      public boolean hasCode() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional uint32 cooldown = 2;</code>
+       * <code>required uint32 code = 2;</code>
        *
        * <pre>
-       * Starts a cooldown for all users, with a duration given in milliseconds.
-       * Users will not be able to press the button until the cooldown is
-       * over. Users who currently are pressing the button will be marked
-       * as having released it. Sending another cooldown before the first
-       * is over sets the cooldown's duration. The cooldown duration will
-       * decrement automatically.
+       * The code for the control target. For tactile controls, this will be
+       * the `key` code. For joystick controls, this will be the `axis`.
+       * </pre>
+       */
+      public int getCode() {
+        return code_;
+      }
+
+      public static final int PROGRESS_FIELD_NUMBER = 3;
+      private float progress_;
+      /**
+       * <code>optional float progress = 3;</code>
+       *
+       * <pre>
+       * The progress this input as towards some threshold, designated by the
+       * robot. This must be a float value in the range [0, 1).
+       * </pre>
+       */
+      public boolean hasProgress() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional float progress = 3;</code>
+       *
+       * <pre>
+       * The progress this input as towards some threshold, designated by the
+       * robot. This must be a float value in the range [0, 1).
+       * </pre>
+       */
+      public float getProgress() {
+        return progress_;
+      }
+
+      public static final int COOLDOWN_FIELD_NUMBER = 4;
+      private int cooldown_;
+      /**
+       * <code>optional uint32 cooldown = 4;</code>
+       *
+       * <pre>
+       * The duration, in milliseconds, before the action effected by this input
+       * may be carried out again. Note that this will decrement automatically
+       * on the frontend and does not need continuous updates.
+       * </pre>
+       */
+      public boolean hasCooldown() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint32 cooldown = 4;</code>
+       *
+       * <pre>
+       * The duration, in milliseconds, before the action effected by this input
+       * may be carried out again. Note that this will decrement automatically
+       * on the frontend and does not need continuous updates.
        * </pre>
        */
       public int getCooldown() {
         return cooldown_;
       }
 
-      public static final int FIRED_FIELD_NUMBER = 3;
+      public static final int FIRED_FIELD_NUMBER = 5;
       private boolean fired_;
       /**
-       * <code>optional bool fired = 3;</code>
+       * <code>optional bool fired = 5;</code>
        *
        * <pre>
-       * Marks the button has having been fired, showing a "pulse"
-       * on the Beam frontend.
+       * Denotes that the action effected by this control has
+       * occurred, showing a "pulse" on the input.
        * </pre>
        */
       public boolean hasFired() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional bool fired = 3;</code>
+       * <code>optional bool fired = 5;</code>
        *
        * <pre>
-       * Marks the button has having been fired, showing a "pulse"
-       * on the Beam frontend.
+       * Denotes that the action effected by this control has
+       * occurred, showing a "pulse" on the input.
        * </pre>
        */
       public boolean getFired() {
         return fired_;
-      }
-
-      public static final int PROGRESS_FIELD_NUMBER = 4;
-      private double progress_;
-      /**
-       * <code>optional double progress = 4;</code>
-       *
-       * <pre>
-       * Sets the progress of the button toward some threshold, appearing
-       * as a sort of progress bar on the frontend. Should be given in the
-       * range [0, 1].
-       * </pre>
-       */
-      public boolean hasProgress() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional double progress = 4;</code>
-       *
-       * <pre>
-       * Sets the progress of the button toward some threshold, appearing
-       * as a sort of progress bar on the frontend. Should be given in the
-       * range [0, 1].
-       * </pre>
-       */
-      public double getProgress() {
-        return progress_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -8684,7 +6054,11 @@ public final class Protocol {
         if (isInitialized == 1) return true;
         if (isInitialized == 0) return false;
 
-        if (!hasId()) {
+        if (!hasTarget()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+        if (!hasCode()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -8695,16 +6069,19 @@ public final class Protocol {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeUInt32(1, id_);
+          output.writeEnum(1, target_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeUInt32(2, cooldown_);
+          output.writeUInt32(2, code_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeBool(3, fired_);
+          output.writeFloat(3, progress_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeDouble(4, progress_);
+          output.writeUInt32(4, cooldown_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          output.writeBool(5, fired_);
         }
         unknownFields.writeTo(output);
       }
@@ -8716,19 +6093,23 @@ public final class Protocol {
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(1, id_);
+            .computeEnumSize(1, target_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(2, cooldown_);
+            .computeUInt32Size(2, code_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(3, fired_);
+            .computeFloatSize(3, progress_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(4, progress_);
+            .computeUInt32Size(4, cooldown_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(5, fired_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -8736,53 +6117,53 @@ public final class Protocol {
       }
 
       private static final long serialVersionUID = 0L;
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(byte[] data)
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(java.io.InputStream input)
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return PARSER.parseFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return PARSER.parseFrom(input, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseDelimitedFrom(java.io.InputStream input)
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return PARSER.parseDelimitedFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseDelimitedFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return PARSER.parseFrom(input);
       }
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parseFrom(
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -8793,7 +6174,7 @@ public final class Protocol {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate prototype) {
+      public static Builder newBuilder(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() {
@@ -8808,25 +6189,25 @@ public final class Protocol {
         return builder;
       }
       /**
-       * Protobuf type {@code pro.beam.interactive.ProgressUpdate.TactileUpdate}
+       * Protobuf type {@code pro.beam.interactive.ProgressUpdate.Progress}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.ProgressUpdate.TactileUpdate)
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder {
+          // @@protoc_insertion_point(builder_implements:pro.beam.interactive.ProgressUpdate.Progress)
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor;
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_fieldAccessorTable
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_Progress_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder.class);
+                  pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.class, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder.class);
         }
 
-        // Construct using pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.newBuilder()
+        // Construct using pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -8842,72 +6223,84 @@ public final class Protocol {
         }
         public Builder clear() {
           super.clear();
-          id_ = 0;
+          target_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
-          cooldown_ = 0;
+          code_ = 0;
           bitField0_ = (bitField0_ & ~0x00000002);
-          fired_ = false;
+          progress_ = 0F;
           bitField0_ = (bitField0_ & ~0x00000004);
-          progress_ = 0D;
+          cooldown_ = 0;
           bitField0_ = (bitField0_ & ~0x00000008);
+          fired_ = false;
+          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor;
+          return pro.beam.interactive.net.packet.Protocol.internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor;
         }
 
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getDefaultInstanceForType() {
-          return pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.getDefaultInstance();
+        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getDefaultInstanceForType() {
+          return pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.getDefaultInstance();
         }
 
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate build() {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate result = buildPartial();
+        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress build() {
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate buildPartial() {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate result = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate(this);
+        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress buildPartial() {
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress result = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress(this);
           int from_bitField0_ = bitField0_;
           int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
             to_bitField0_ |= 0x00000001;
           }
-          result.id_ = id_;
+          result.target_ = target_;
           if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
             to_bitField0_ |= 0x00000002;
           }
-          result.cooldown_ = cooldown_;
+          result.code_ = code_;
           if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
             to_bitField0_ |= 0x00000004;
           }
-          result.fired_ = fired_;
+          result.progress_ = progress_;
           if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
             to_bitField0_ |= 0x00000008;
           }
-          result.progress_ = progress_;
+          result.cooldown_ = cooldown_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          result.fired_ = fired_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
 
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate) {
-            return mergeFrom((pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate)other);
+          if (other instanceof pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress) {
+            return mergeFrom((pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate other) {
-          if (other == pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.getDefaultInstance()) return this;
-          if (other.hasId()) {
-            setId(other.getId());
+        public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress other) {
+          if (other == pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.getDefaultInstance()) return this;
+          if (other.hasTarget()) {
+            setTarget(other.getTarget());
+          }
+          if (other.hasCode()) {
+            setCode(other.getCode());
+          }
+          if (other.hasProgress()) {
+            setProgress(other.getProgress());
           }
           if (other.hasCooldown()) {
             setCooldown(other.getCooldown());
@@ -8915,16 +6308,16 @@ public final class Protocol {
           if (other.hasFired()) {
             setFired(other.getFired());
           }
-          if (other.hasProgress()) {
-            setProgress(other.getProgress());
-          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
-          if (!hasId()) {
+          if (!hasTarget()) {
+            return false;
+          }
+          if (!hasCode()) {
             return false;
           }
           return true;
@@ -8934,11 +6327,11 @@ public final class Protocol {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate parsedMessage = null;
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate) e.getUnfinishedMessage();
+            parsedMessage = (pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress) e.getUnfinishedMessage();
             throw e;
           } finally {
             if (parsedMessage != null) {
@@ -8949,117 +6342,213 @@ public final class Protocol {
         }
         private int bitField0_;
 
-        private int id_ ;
+        private int target_ = 0;
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
          *
          * <pre>
-         * The ID of the tactile control to update
+         * The type of control this targets.
          * </pre>
          */
-        public boolean hasId() {
+        public boolean hasTarget() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
          *
          * <pre>
-         * The ID of the tactile control to update
+         * The type of control this targets.
          * </pre>
          */
-        public int getId() {
-          return id_;
+        public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType getTarget() {
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType result = pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType.valueOf(target_);
+          return result == null ? pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType.TACTILE : result;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
          *
          * <pre>
-         * The ID of the tactile control to update
+         * The type of control this targets.
          * </pre>
          */
-        public Builder setId(int value) {
+        public Builder setTarget(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.TargetType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
           bitField0_ |= 0x00000001;
-          id_ = value;
+          target_ = value.getNumber();
           onChanged();
           return this;
         }
         /**
-         * <code>required uint32 id = 1;</code>
+         * <code>required .pro.beam.interactive.ProgressUpdate.Progress.TargetType target = 1;</code>
          *
          * <pre>
-         * The ID of the tactile control to update
+         * The type of control this targets.
          * </pre>
          */
-        public Builder clearId() {
+        public Builder clearTarget() {
           bitField0_ = (bitField0_ & ~0x00000001);
-          id_ = 0;
+          target_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int code_ ;
+        /**
+         * <code>required uint32 code = 2;</code>
+         *
+         * <pre>
+         * The code for the control target. For tactile controls, this will be
+         * the `key` code. For joystick controls, this will be the `axis`.
+         * </pre>
+         */
+        public boolean hasCode() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>required uint32 code = 2;</code>
+         *
+         * <pre>
+         * The code for the control target. For tactile controls, this will be
+         * the `key` code. For joystick controls, this will be the `axis`.
+         * </pre>
+         */
+        public int getCode() {
+          return code_;
+        }
+        /**
+         * <code>required uint32 code = 2;</code>
+         *
+         * <pre>
+         * The code for the control target. For tactile controls, this will be
+         * the `key` code. For joystick controls, this will be the `axis`.
+         * </pre>
+         */
+        public Builder setCode(int value) {
+          bitField0_ |= 0x00000002;
+          code_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>required uint32 code = 2;</code>
+         *
+         * <pre>
+         * The code for the control target. For tactile controls, this will be
+         * the `key` code. For joystick controls, this will be the `axis`.
+         * </pre>
+         */
+        public Builder clearCode() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          code_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private float progress_ ;
+        /**
+         * <code>optional float progress = 3;</code>
+         *
+         * <pre>
+         * The progress this input as towards some threshold, designated by the
+         * robot. This must be a float value in the range [0, 1).
+         * </pre>
+         */
+        public boolean hasProgress() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional float progress = 3;</code>
+         *
+         * <pre>
+         * The progress this input as towards some threshold, designated by the
+         * robot. This must be a float value in the range [0, 1).
+         * </pre>
+         */
+        public float getProgress() {
+          return progress_;
+        }
+        /**
+         * <code>optional float progress = 3;</code>
+         *
+         * <pre>
+         * The progress this input as towards some threshold, designated by the
+         * robot. This must be a float value in the range [0, 1).
+         * </pre>
+         */
+        public Builder setProgress(float value) {
+          bitField0_ |= 0x00000004;
+          progress_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional float progress = 3;</code>
+         *
+         * <pre>
+         * The progress this input as towards some threshold, designated by the
+         * robot. This must be a float value in the range [0, 1).
+         * </pre>
+         */
+        public Builder clearProgress() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          progress_ = 0F;
           onChanged();
           return this;
         }
 
         private int cooldown_ ;
         /**
-         * <code>optional uint32 cooldown = 2;</code>
+         * <code>optional uint32 cooldown = 4;</code>
          *
          * <pre>
-         * Starts a cooldown for all users, with a duration given in milliseconds.
-         * Users will not be able to press the button until the cooldown is
-         * over. Users who currently are pressing the button will be marked
-         * as having released it. Sending another cooldown before the first
-         * is over sets the cooldown's duration. The cooldown duration will
-         * decrement automatically.
+         * The duration, in milliseconds, before the action effected by this input
+         * may be carried out again. Note that this will decrement automatically
+         * on the frontend and does not need continuous updates.
          * </pre>
          */
         public boolean hasCooldown() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
+          return ((bitField0_ & 0x00000008) == 0x00000008);
         }
         /**
-         * <code>optional uint32 cooldown = 2;</code>
+         * <code>optional uint32 cooldown = 4;</code>
          *
          * <pre>
-         * Starts a cooldown for all users, with a duration given in milliseconds.
-         * Users will not be able to press the button until the cooldown is
-         * over. Users who currently are pressing the button will be marked
-         * as having released it. Sending another cooldown before the first
-         * is over sets the cooldown's duration. The cooldown duration will
-         * decrement automatically.
+         * The duration, in milliseconds, before the action effected by this input
+         * may be carried out again. Note that this will decrement automatically
+         * on the frontend and does not need continuous updates.
          * </pre>
          */
         public int getCooldown() {
           return cooldown_;
         }
         /**
-         * <code>optional uint32 cooldown = 2;</code>
+         * <code>optional uint32 cooldown = 4;</code>
          *
          * <pre>
-         * Starts a cooldown for all users, with a duration given in milliseconds.
-         * Users will not be able to press the button until the cooldown is
-         * over. Users who currently are pressing the button will be marked
-         * as having released it. Sending another cooldown before the first
-         * is over sets the cooldown's duration. The cooldown duration will
-         * decrement automatically.
+         * The duration, in milliseconds, before the action effected by this input
+         * may be carried out again. Note that this will decrement automatically
+         * on the frontend and does not need continuous updates.
          * </pre>
          */
         public Builder setCooldown(int value) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
           cooldown_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional uint32 cooldown = 2;</code>
+         * <code>optional uint32 cooldown = 4;</code>
          *
          * <pre>
-         * Starts a cooldown for all users, with a duration given in milliseconds.
-         * Users will not be able to press the button until the cooldown is
-         * over. Users who currently are pressing the button will be marked
-         * as having released it. Sending another cooldown before the first
-         * is over sets the cooldown's duration. The cooldown duration will
-         * decrement automatically.
+         * The duration, in milliseconds, before the action effected by this input
+         * may be carried out again. Note that this will decrement automatically
+         * on the frontend and does not need continuous updates.
          * </pre>
          */
         public Builder clearCooldown() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           cooldown_ = 0;
           onChanged();
           return this;
@@ -9067,133 +6556,77 @@ public final class Protocol {
 
         private boolean fired_ ;
         /**
-         * <code>optional bool fired = 3;</code>
+         * <code>optional bool fired = 5;</code>
          *
          * <pre>
-         * Marks the button has having been fired, showing a "pulse"
-         * on the Beam frontend.
+         * Denotes that the action effected by this control has
+         * occurred, showing a "pulse" on the input.
          * </pre>
          */
         public boolean hasFired() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
+          return ((bitField0_ & 0x00000010) == 0x00000010);
         }
         /**
-         * <code>optional bool fired = 3;</code>
+         * <code>optional bool fired = 5;</code>
          *
          * <pre>
-         * Marks the button has having been fired, showing a "pulse"
-         * on the Beam frontend.
+         * Denotes that the action effected by this control has
+         * occurred, showing a "pulse" on the input.
          * </pre>
          */
         public boolean getFired() {
           return fired_;
         }
         /**
-         * <code>optional bool fired = 3;</code>
+         * <code>optional bool fired = 5;</code>
          *
          * <pre>
-         * Marks the button has having been fired, showing a "pulse"
-         * on the Beam frontend.
+         * Denotes that the action effected by this control has
+         * occurred, showing a "pulse" on the input.
          * </pre>
          */
         public Builder setFired(boolean value) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000010;
           fired_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>optional bool fired = 3;</code>
+         * <code>optional bool fired = 5;</code>
          *
          * <pre>
-         * Marks the button has having been fired, showing a "pulse"
-         * on the Beam frontend.
+         * Denotes that the action effected by this control has
+         * occurred, showing a "pulse" on the input.
          * </pre>
          */
         public Builder clearFired() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
           fired_ = false;
           onChanged();
           return this;
         }
 
-        private double progress_ ;
-        /**
-         * <code>optional double progress = 4;</code>
-         *
-         * <pre>
-         * Sets the progress of the button toward some threshold, appearing
-         * as a sort of progress bar on the frontend. Should be given in the
-         * range [0, 1].
-         * </pre>
-         */
-        public boolean hasProgress() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional double progress = 4;</code>
-         *
-         * <pre>
-         * Sets the progress of the button toward some threshold, appearing
-         * as a sort of progress bar on the frontend. Should be given in the
-         * range [0, 1].
-         * </pre>
-         */
-        public double getProgress() {
-          return progress_;
-        }
-        /**
-         * <code>optional double progress = 4;</code>
-         *
-         * <pre>
-         * Sets the progress of the button toward some threshold, appearing
-         * as a sort of progress bar on the frontend. Should be given in the
-         * range [0, 1].
-         * </pre>
-         */
-        public Builder setProgress(double value) {
-          bitField0_ |= 0x00000008;
-          progress_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional double progress = 4;</code>
-         *
-         * <pre>
-         * Sets the progress of the button toward some threshold, appearing
-         * as a sort of progress bar on the frontend. Should be given in the
-         * range [0, 1].
-         * </pre>
-         */
-        public Builder clearProgress() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          progress_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.ProgressUpdate.TactileUpdate)
+        // @@protoc_insertion_point(builder_scope:pro.beam.interactive.ProgressUpdate.Progress)
       }
 
-      // @@protoc_insertion_point(class_scope:pro.beam.interactive.ProgressUpdate.TactileUpdate)
-      private static final pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:pro.beam.interactive.ProgressUpdate.Progress)
+      private static final pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate();
+        DEFAULT_INSTANCE = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress();
       }
 
-      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getDefaultInstance() {
+      public static pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<TactileUpdate>
-          PARSER = new com.google.protobuf.AbstractParser<TactileUpdate>() {
-        public TactileUpdate parsePartialFrom(
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<Progress>
+          PARSER = new com.google.protobuf.AbstractParser<Progress>() {
+        public Progress parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
           try {
-            return new TactileUpdate(input, extensionRegistry);
+            return new Progress(input, extensionRegistry);
           } catch (RuntimeException e) {
             if (e.getCause() instanceof
                 com.google.protobuf.InvalidProtocolBufferException) {
@@ -9205,150 +6638,54 @@ public final class Protocol {
         }
       };
 
-      public static com.google.protobuf.Parser<TactileUpdate> parser() {
+      public static com.google.protobuf.Parser<Progress> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<TactileUpdate> getParserForType() {
+      public com.google.protobuf.Parser<Progress> getParserForType() {
         return PARSER;
       }
 
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getDefaultInstanceForType() {
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
-    private int bitField0_;
-    public static final int STATE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object state_;
+    public static final int PROGRESS_FIELD_NUMBER = 1;
+    private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> progress_;
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    public boolean hasState() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+    public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> getProgressList() {
+      return progress_;
     }
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    public java.lang.String getState() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          state_ = s;
-        }
-        return s;
-      }
+    public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder> 
+        getProgressOrBuilderList() {
+      return progress_;
     }
     /**
-     * <code>optional string state = 3;</code>
-     *
-     * <pre>
-     * State to change to. States with the given state in their `states` array
-     * will be visible. If not passed, the state will not be changed.
-     * The default state at initialization of the robot is simply "default".
-     * </pre>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      java.lang.Object ref = state_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int JOYSTICK_FIELD_NUMBER = 1;
-    private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> joystick_;
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> getJoystickList() {
-      return joystick_;
+    public int getProgressCount() {
+      return progress_.size();
     }
     /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder> 
-        getJoystickOrBuilderList() {
-      return joystick_;
+    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getProgress(int index) {
+      return progress_.get(index);
     }
     /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+     * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
      */
-    public int getJoystickCount() {
-      return joystick_.size();
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getJoystick(int index) {
-      return joystick_.get(index);
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder getJoystickOrBuilder(
+    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder getProgressOrBuilder(
         int index) {
-      return joystick_.get(index);
-    }
-
-    public static final int TACTILE_FIELD_NUMBER = 2;
-    private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> tactile_;
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> getTactileList() {
-      return tactile_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder> 
-        getTactileOrBuilderList() {
-      return tactile_;
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    public int getTactileCount() {
-      return tactile_.size();
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getTactile(int index) {
-      return tactile_.get(index);
-    }
-    /**
-     * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-     */
-    public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder getTactileOrBuilder(
-        int index) {
-      return tactile_.get(index);
+      return progress_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -9357,14 +6694,8 @@ public final class Protocol {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      for (int i = 0; i < getJoystickCount(); i++) {
-        if (!getJoystick(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      for (int i = 0; i < getTactileCount(); i++) {
-        if (!getTactile(i).isInitialized()) {
+      for (int i = 0; i < getProgressCount(); i++) {
+        if (!getProgress(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -9375,14 +6706,8 @@ public final class Protocol {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < joystick_.size(); i++) {
-        output.writeMessage(1, joystick_.get(i));
-      }
-      for (int i = 0; i < tactile_.size(); i++) {
-        output.writeMessage(2, tactile_.get(i));
-      }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, state_);
+      for (int i = 0; i < progress_.size(); i++) {
+        output.writeMessage(1, progress_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -9392,16 +6717,9 @@ public final class Protocol {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < joystick_.size(); i++) {
+      for (int i = 0; i < progress_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, joystick_.get(i));
-      }
-      for (int i = 0; i < tactile_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, tactile_.get(i));
-      }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, state_);
+          .computeMessageSize(1, progress_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9484,9 +6802,8 @@ public final class Protocol {
      * Protobuf type {@code pro.beam.interactive.ProgressUpdate}
      *
      * <pre>
-     * A ProgressUpdate message may be sent up periodically from
-     * the Robot. It contains an array of objects to update the
-     * multiple controls on the frontend.
+     * A ProgressUpdate message may be sent up periodically from the Robot. It
+     * contains an array of objects to update the multiple controls on the fe.
      * </pre>
      */
     public static final class Builder extends
@@ -9517,25 +6834,16 @@ public final class Protocol {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getJoystickFieldBuilder();
-          getTactileFieldBuilder();
+          getProgressFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        state_ = "";
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (joystickBuilder_ == null) {
-          joystick_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+        if (progressBuilder_ == null) {
+          progress_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          joystickBuilder_.clear();
-        }
-        if (tactileBuilder_ == null) {
-          tactile_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          tactileBuilder_.clear();
+          progressBuilder_.clear();
         }
         return this;
       }
@@ -9560,30 +6868,15 @@ public final class Protocol {
       public pro.beam.interactive.net.packet.Protocol.ProgressUpdate buildPartial() {
         pro.beam.interactive.net.packet.Protocol.ProgressUpdate result = new pro.beam.interactive.net.packet.Protocol.ProgressUpdate(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.state_ = state_;
-        if (joystickBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            joystick_ = java.util.Collections.unmodifiableList(joystick_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+        if (progressBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            progress_ = java.util.Collections.unmodifiableList(progress_);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.joystick_ = joystick_;
+          result.progress_ = progress_;
         } else {
-          result.joystick_ = joystickBuilder_.build();
+          result.progress_ = progressBuilder_.build();
         }
-        if (tactileBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            tactile_ = java.util.Collections.unmodifiableList(tactile_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.tactile_ = tactile_;
-        } else {
-          result.tactile_ = tactileBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -9599,60 +6892,29 @@ public final class Protocol {
 
       public Builder mergeFrom(pro.beam.interactive.net.packet.Protocol.ProgressUpdate other) {
         if (other == pro.beam.interactive.net.packet.Protocol.ProgressUpdate.getDefaultInstance()) return this;
-        if (other.hasState()) {
-          bitField0_ |= 0x00000001;
-          state_ = other.state_;
-          onChanged();
-        }
-        if (joystickBuilder_ == null) {
-          if (!other.joystick_.isEmpty()) {
-            if (joystick_.isEmpty()) {
-              joystick_ = other.joystick_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+        if (progressBuilder_ == null) {
+          if (!other.progress_.isEmpty()) {
+            if (progress_.isEmpty()) {
+              progress_ = other.progress_;
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureJoystickIsMutable();
-              joystick_.addAll(other.joystick_);
+              ensureProgressIsMutable();
+              progress_.addAll(other.progress_);
             }
             onChanged();
           }
         } else {
-          if (!other.joystick_.isEmpty()) {
-            if (joystickBuilder_.isEmpty()) {
-              joystickBuilder_.dispose();
-              joystickBuilder_ = null;
-              joystick_ = other.joystick_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              joystickBuilder_ = 
+          if (!other.progress_.isEmpty()) {
+            if (progressBuilder_.isEmpty()) {
+              progressBuilder_.dispose();
+              progressBuilder_ = null;
+              progress_ = other.progress_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              progressBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getJoystickFieldBuilder() : null;
+                   getProgressFieldBuilder() : null;
             } else {
-              joystickBuilder_.addAllMessages(other.joystick_);
-            }
-          }
-        }
-        if (tactileBuilder_ == null) {
-          if (!other.tactile_.isEmpty()) {
-            if (tactile_.isEmpty()) {
-              tactile_ = other.tactile_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureTactileIsMutable();
-              tactile_.addAll(other.tactile_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.tactile_.isEmpty()) {
-            if (tactileBuilder_.isEmpty()) {
-              tactileBuilder_.dispose();
-              tactileBuilder_ = null;
-              tactile_ = other.tactile_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              tactileBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getTactileFieldBuilder() : null;
-            } else {
-              tactileBuilder_.addAllMessages(other.tactile_);
+              progressBuilder_.addAllMessages(other.progress_);
             }
           }
         }
@@ -9662,13 +6924,8 @@ public final class Protocol {
       }
 
       public final boolean isInitialized() {
-        for (int i = 0; i < getJoystickCount(); i++) {
-          if (!getJoystick(i).isInitialized()) {
-            return false;
-          }
-        }
-        for (int i = 0; i < getTactileCount(); i++) {
-          if (!getTactile(i).isInitialized()) {
+        for (int i = 0; i < getProgressCount(); i++) {
+          if (!getProgress(i).isInitialized()) {
             return false;
           }
         }
@@ -9694,596 +6951,244 @@ public final class Protocol {
       }
       private int bitField0_;
 
-      private java.lang.Object state_ = "";
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public boolean hasState() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public java.lang.String getState() {
-        java.lang.Object ref = state_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            state_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        java.lang.Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public Builder setState(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public Builder clearState() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        state_ = getDefaultInstance().getState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string state = 3;</code>
-       *
-       * <pre>
-       * State to change to. States with the given state in their `states` array
-       * will be visible. If not passed, the state will not be changed.
-       * The default state at initialization of the robot is simply "default".
-       * </pre>
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        state_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> joystick_ =
+      private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> progress_ =
         java.util.Collections.emptyList();
-      private void ensureJoystickIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          joystick_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate>(joystick_);
-          bitField0_ |= 0x00000002;
+      private void ensureProgressIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          progress_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress>(progress_);
+          bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder> joystickBuilder_;
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder> progressBuilder_;
 
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> getJoystickList() {
-        if (joystickBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(joystick_);
+      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> getProgressList() {
+        if (progressBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(progress_);
         } else {
-          return joystickBuilder_.getMessageList();
+          return progressBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public int getJoystickCount() {
-        if (joystickBuilder_ == null) {
-          return joystick_.size();
+      public int getProgressCount() {
+        if (progressBuilder_ == null) {
+          return progress_.size();
         } else {
-          return joystickBuilder_.getCount();
+          return progressBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate getJoystick(int index) {
-        if (joystickBuilder_ == null) {
-          return joystick_.get(index);
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress getProgress(int index) {
+        if (progressBuilder_ == null) {
+          return progress_.get(index);
         } else {
-          return joystickBuilder_.getMessage(index);
+          return progressBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder setJoystick(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate value) {
-        if (joystickBuilder_ == null) {
+      public Builder setProgress(
+          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress value) {
+        if (progressBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureJoystickIsMutable();
-          joystick_.set(index, value);
+          ensureProgressIsMutable();
+          progress_.set(index, value);
           onChanged();
         } else {
-          joystickBuilder_.setMessage(index, value);
+          progressBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder setJoystick(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder builderForValue) {
-        if (joystickBuilder_ == null) {
-          ensureJoystickIsMutable();
-          joystick_.set(index, builderForValue.build());
+      public Builder setProgress(
+          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder builderForValue) {
+        if (progressBuilder_ == null) {
+          ensureProgressIsMutable();
+          progress_.set(index, builderForValue.build());
           onChanged();
         } else {
-          joystickBuilder_.setMessage(index, builderForValue.build());
+          progressBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder addJoystick(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate value) {
-        if (joystickBuilder_ == null) {
+      public Builder addProgress(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress value) {
+        if (progressBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureJoystickIsMutable();
-          joystick_.add(value);
+          ensureProgressIsMutable();
+          progress_.add(value);
           onChanged();
         } else {
-          joystickBuilder_.addMessage(value);
+          progressBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder addJoystick(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate value) {
-        if (joystickBuilder_ == null) {
+      public Builder addProgress(
+          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress value) {
+        if (progressBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureJoystickIsMutable();
-          joystick_.add(index, value);
+          ensureProgressIsMutable();
+          progress_.add(index, value);
           onChanged();
         } else {
-          joystickBuilder_.addMessage(index, value);
+          progressBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder addJoystick(
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder builderForValue) {
-        if (joystickBuilder_ == null) {
-          ensureJoystickIsMutable();
-          joystick_.add(builderForValue.build());
+      public Builder addProgress(
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder builderForValue) {
+        if (progressBuilder_ == null) {
+          ensureProgressIsMutable();
+          progress_.add(builderForValue.build());
           onChanged();
         } else {
-          joystickBuilder_.addMessage(builderForValue.build());
+          progressBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder addJoystick(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder builderForValue) {
-        if (joystickBuilder_ == null) {
-          ensureJoystickIsMutable();
-          joystick_.add(index, builderForValue.build());
+      public Builder addProgress(
+          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder builderForValue) {
+        if (progressBuilder_ == null) {
+          ensureProgressIsMutable();
+          progress_.add(index, builderForValue.build());
           onChanged();
         } else {
-          joystickBuilder_.addMessage(index, builderForValue.build());
+          progressBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder addAllJoystick(
-          java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate> values) {
-        if (joystickBuilder_ == null) {
-          ensureJoystickIsMutable();
+      public Builder addAllProgress(
+          java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress> values) {
+        if (progressBuilder_ == null) {
+          ensureProgressIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, joystick_);
+              values, progress_);
           onChanged();
         } else {
-          joystickBuilder_.addAllMessages(values);
+          progressBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder clearJoystick() {
-        if (joystickBuilder_ == null) {
-          joystick_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+      public Builder clearProgress() {
+        if (progressBuilder_ == null) {
+          progress_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          joystickBuilder_.clear();
+          progressBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public Builder removeJoystick(int index) {
-        if (joystickBuilder_ == null) {
-          ensureJoystickIsMutable();
-          joystick_.remove(index);
+      public Builder removeProgress(int index) {
+        if (progressBuilder_ == null) {
+          ensureProgressIsMutable();
+          progress_.remove(index);
           onChanged();
         } else {
-          joystickBuilder_.remove(index);
+          progressBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder getJoystickBuilder(
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder getProgressBuilder(
           int index) {
-        return getJoystickFieldBuilder().getBuilder(index);
+        return getProgressFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder getJoystickOrBuilder(
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder getProgressOrBuilder(
           int index) {
-        if (joystickBuilder_ == null) {
-          return joystick_.get(index);  } else {
-          return joystickBuilder_.getMessageOrBuilder(index);
+        if (progressBuilder_ == null) {
+          return progress_.get(index);  } else {
+          return progressBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder> 
-           getJoystickOrBuilderList() {
-        if (joystickBuilder_ != null) {
-          return joystickBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder> 
+           getProgressOrBuilderList() {
+        if (progressBuilder_ != null) {
+          return progressBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(joystick_);
+          return java.util.Collections.unmodifiableList(progress_);
         }
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder addJoystickBuilder() {
-        return getJoystickFieldBuilder().addBuilder(
-            pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.getDefaultInstance());
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder addProgressBuilder() {
+        return getProgressFieldBuilder().addBuilder(
+            pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder addJoystickBuilder(
+      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder addProgressBuilder(
           int index) {
-        return getJoystickFieldBuilder().addBuilder(
-            index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.getDefaultInstance());
+        return getProgressFieldBuilder().addBuilder(
+            index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.getDefaultInstance());
       }
       /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.JoystickUpdate joystick = 1;</code>
+       * <code>repeated .pro.beam.interactive.ProgressUpdate.Progress progress = 1;</code>
        */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder> 
-           getJoystickBuilderList() {
-        return getJoystickFieldBuilder().getBuilderList();
+      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder> 
+           getProgressBuilderList() {
+        return getProgressFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder> 
-          getJoystickFieldBuilder() {
-        if (joystickBuilder_ == null) {
-          joystickBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.JoystickUpdateOrBuilder>(
-                  joystick_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder> 
+          getProgressFieldBuilder() {
+        if (progressBuilder_ == null) {
+          progressBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.Progress.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.ProgressOrBuilder>(
+                  progress_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          joystick_ = null;
+          progress_ = null;
         }
-        return joystickBuilder_;
-      }
-
-      private java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> tactile_ =
-        java.util.Collections.emptyList();
-      private void ensureTactileIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          tactile_ = new java.util.ArrayList<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate>(tactile_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder> tactileBuilder_;
-
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> getTactileList() {
-        if (tactileBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(tactile_);
-        } else {
-          return tactileBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public int getTactileCount() {
-        if (tactileBuilder_ == null) {
-          return tactile_.size();
-        } else {
-          return tactileBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate getTactile(int index) {
-        if (tactileBuilder_ == null) {
-          return tactile_.get(index);
-        } else {
-          return tactileBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder setTactile(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate value) {
-        if (tactileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTactileIsMutable();
-          tactile_.set(index, value);
-          onChanged();
-        } else {
-          tactileBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder setTactile(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder builderForValue) {
-        if (tactileBuilder_ == null) {
-          ensureTactileIsMutable();
-          tactile_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          tactileBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder addTactile(pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate value) {
-        if (tactileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTactileIsMutable();
-          tactile_.add(value);
-          onChanged();
-        } else {
-          tactileBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder addTactile(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate value) {
-        if (tactileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTactileIsMutable();
-          tactile_.add(index, value);
-          onChanged();
-        } else {
-          tactileBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder addTactile(
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder builderForValue) {
-        if (tactileBuilder_ == null) {
-          ensureTactileIsMutable();
-          tactile_.add(builderForValue.build());
-          onChanged();
-        } else {
-          tactileBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder addTactile(
-          int index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder builderForValue) {
-        if (tactileBuilder_ == null) {
-          ensureTactileIsMutable();
-          tactile_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          tactileBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder addAllTactile(
-          java.lang.Iterable<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate> values) {
-        if (tactileBuilder_ == null) {
-          ensureTactileIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, tactile_);
-          onChanged();
-        } else {
-          tactileBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder clearTactile() {
-        if (tactileBuilder_ == null) {
-          tactile_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          tactileBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public Builder removeTactile(int index) {
-        if (tactileBuilder_ == null) {
-          ensureTactileIsMutable();
-          tactile_.remove(index);
-          onChanged();
-        } else {
-          tactileBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder getTactileBuilder(
-          int index) {
-        return getTactileFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder getTactileOrBuilder(
-          int index) {
-        if (tactileBuilder_ == null) {
-          return tactile_.get(index);  } else {
-          return tactileBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public java.util.List<? extends pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder> 
-           getTactileOrBuilderList() {
-        if (tactileBuilder_ != null) {
-          return tactileBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(tactile_);
-        }
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder addTactileBuilder() {
-        return getTactileFieldBuilder().addBuilder(
-            pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder addTactileBuilder(
-          int index) {
-        return getTactileFieldBuilder().addBuilder(
-            index, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .pro.beam.interactive.ProgressUpdate.TactileUpdate tactile = 2;</code>
-       */
-      public java.util.List<pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder> 
-           getTactileBuilderList() {
-        return getTactileFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder> 
-          getTactileFieldBuilder() {
-        if (tactileBuilder_ == null) {
-          tactileBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdate.Builder, pro.beam.interactive.net.packet.Protocol.ProgressUpdate.TactileUpdateOrBuilder>(
-                  tactile_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
-                  getParentForChildren(),
-                  isClean());
-          tactile_ = null;
-        }
-        return tactileBuilder_;
+        return progressBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:pro.beam.interactive.ProgressUpdate)
@@ -10349,35 +7254,20 @@ public final class Protocol {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_pro_beam_interactive_Report_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_Report_Users_descriptor;
+    internal_static_pro_beam_interactive_Report_Info_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_Report_Users_fieldAccessorTable;
+      internal_static_pro_beam_interactive_Report_Info_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_pro_beam_interactive_Report_JoystickInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_pro_beam_interactive_Report_JoystickInfo_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_Report_JoystickInfo_Data_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_pro_beam_interactive_Report_TactileInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_pro_beam_interactive_Report_TactileInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_Report_ScreenPressInfo_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_pro_beam_interactive_Error_descriptor;
   private static
@@ -10389,15 +7279,10 @@ public final class Protocol {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_pro_beam_interactive_ProgressUpdate_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor;
+    internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_fieldAccessorTable;
+      internal_static_pro_beam_interactive_ProgressUpdate_Progress_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10410,37 +7295,28 @@ public final class Protocol {
       "\n\037src/main/resources/tetris.proto\022\024pro.b" +
       "eam.interactive\"/\n\tHandshake\022\017\n\007channel\030" +
       "\001 \002(\r\022\021\n\tstreamKey\030\002 \002(\t\"\016\n\014HandshakeACK" +
-      "\"\277\006\n\006Report\022\014\n\004time\030\001 \002(\r\0221\n\005users\030\002 \001(\013" +
-      "2\".pro.beam.interactive.Report.Users\022;\n\010" +
-      "joystick\030\003 \003(\0132).pro.beam.interactive.Re" +
-      "port.JoystickInfo\0229\n\007tactile\030\004 \003(\0132(.pro" +
-      ".beam.interactive.Report.TactileInfo\022C\n\014" +
-      "screenCoords\030\005 \003(\0132-.pro.beam.interactiv" +
-      "e.Report.ScreenCoordsInfo\022A\n\013screenPress",
-      "\030\006 \003(\0132,.pro.beam.interactive.Report.Scr" +
-      "eenPressInfo\032*\n\005Users\022\021\n\tconnected\030\001 \002(\r" +
-      "\022\016\n\006quorum\030\002 \002(\r\032\300\001\n\014JoystickInfo\022\n\n\002id\030" +
-      "\001 \002(\r\022A\n\tcoordMean\030\002 \001(\0132..pro.beam.inte" +
-      "ractive.Report.JoystickInfo.Data\022C\n\013coor" +
-      "dStddev\030\003 \001(\0132..pro.beam.interactive.Rep" +
-      "ort.JoystickInfo.Data\032\034\n\004Data\022\t\n\001X\030\001 \002(\001" +
-      "\022\t\n\001Y\030\002 \002(\001\032\\\n\013TactileInfo\022\n\n\002id\030\001 \002(\r\022\017" +
-      "\n\007holding\030\002 \001(\001\022\026\n\016pressFrequency\030\003 \001(\001\022" +
-      "\030\n\020releaseFrequency\030\004 \001(\001\032E\n\020ScreenCoord",
-      "sInfo\022\n\n\002id\030\001 \002(\r\022\021\n\tcoordMean\030\002 \001(\001\022\022\n\n" +
-      "coordStdev\030\003 \001(\001\032`\n\017ScreenPressInfo\022\n\n\002i" +
-      "d\030\001 \002(\r\022\017\n\007holding\030\002 \001(\001\022\026\n\016pressFrequen" +
-      "cy\030\003 \001(\001\022\030\n\020releaseFrequency\030\004 \001(\001\"\030\n\005Er" +
-      "ror\022\017\n\007message\030\001 \002(\t\"\273\002\n\016ProgressUpdate\022" +
-      "\r\n\005state\030\003 \001(\t\022E\n\010joystick\030\001 \003(\01323.pro.b" +
-      "eam.interactive.ProgressUpdate.JoystickU" +
-      "pdate\022C\n\007tactile\030\002 \003(\01322.pro.beam.intera" +
-      "ctive.ProgressUpdate.TactileUpdate\032>\n\016Jo" +
-      "ystickUpdate\022\n\n\002id\030\001 \002(\r\022\r\n\005angle\030\002 \001(\001\022",
-      "\021\n\tintensity\030\003 \001(\001\032N\n\rTactileUpdate\022\n\n\002i" +
-      "d\030\001 \002(\r\022\020\n\010cooldown\030\002 \001(\r\022\r\n\005fired\030\003 \001(\010" +
-      "\022\020\n\010progress\030\004 \001(\001B+\n\037pro.beam.interacti" +
-      "ve.net.packetB\010Protocol"
+      "\"\373\003\n\006Report\022\016\n\006quorum\030\001 \002(\r\022\021\n\tconnected" +
+      "\030\002 \002(\r\022\014\n\004time\030\003 \002(\r\022;\n\010joystick\030\004 \003(\0132)" +
+      ".pro.beam.interactive.Report.JoystickInf" +
+      "o\0229\n\007tactile\030\005 \003(\0132(.pro.beam.interactiv" +
+      "e.Report.TactileInfo\032|\n\004Info\022\021\n\tfrequenc" +
+      "y\030\001 \001(\001\022\014\n\004mean\030\002 \001(\001\022\r\n\005stdev\030\003 \001(\001\022\025\n\r" +
+      "upperQuartile\030\004 \001(\001\022\025\n\rlowerQuartile\030\005 \001",
+      "(\001\022\026\n\016normalizedMean\030\006 \001(\001\032M\n\014JoystickIn" +
+      "fo\022\014\n\004axis\030\001 \002(\r\022/\n\004info\030\002 \002(\0132!.pro.bea" +
+      "m.interactive.Report.Info\032{\n\013TactileInfo" +
+      "\022\014\n\004code\030\001 \002(\r\022-\n\002up\030\002 \001(\0132!.pro.beam.in" +
+      "teractive.Report.Info\022/\n\004down\030\003 \001(\0132!.pr" +
+      "o.beam.interactive.Report.Info\"\030\n\005Error\022" +
+      "\017\n\007message\030\001 \002(\t\"\222\002\n\016ProgressUpdate\022?\n\010p" +
+      "rogress\030\001 \003(\0132-.pro.beam.interactive.Pro" +
+      "gressUpdate.Progress\032\276\001\n\010Progress\022H\n\006tar" +
+      "get\030\001 \002(\01628.pro.beam.interactive.Progres",
+      "sUpdate.Progress.TargetType\022\014\n\004code\030\002 \002(" +
+      "\r\022\020\n\010progress\030\003 \001(\002\022\020\n\010cooldown\030\004 \001(\r\022\r\n" +
+      "\005fired\030\005 \001(\010\"\'\n\nTargetType\022\013\n\007TACTILE\020\000\022" +
+      "\014\n\010JOYSTICK\020\001B+\n\037pro.beam.interactive.ne" +
+      "t.packetB\010Protocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10471,43 +7347,25 @@ public final class Protocol {
     internal_static_pro_beam_interactive_Report_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_pro_beam_interactive_Report_descriptor,
-        new java.lang.String[] { "Time", "Users", "Joystick", "Tactile", "ScreenCoords", "ScreenPress", });
-    internal_static_pro_beam_interactive_Report_Users_descriptor =
+        new java.lang.String[] { "Quorum", "Connected", "Time", "Joystick", "Tactile", });
+    internal_static_pro_beam_interactive_Report_Info_descriptor =
       internal_static_pro_beam_interactive_Report_descriptor.getNestedTypes().get(0);
-    internal_static_pro_beam_interactive_Report_Users_fieldAccessorTable = new
+    internal_static_pro_beam_interactive_Report_Info_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_Report_Users_descriptor,
-        new java.lang.String[] { "Connected", "Quorum", });
+        internal_static_pro_beam_interactive_Report_Info_descriptor,
+        new java.lang.String[] { "Frequency", "Mean", "Stdev", "UpperQuartile", "LowerQuartile", "NormalizedMean", });
     internal_static_pro_beam_interactive_Report_JoystickInfo_descriptor =
       internal_static_pro_beam_interactive_Report_descriptor.getNestedTypes().get(1);
     internal_static_pro_beam_interactive_Report_JoystickInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_pro_beam_interactive_Report_JoystickInfo_descriptor,
-        new java.lang.String[] { "Id", "CoordMean", "CoordStddev", });
-    internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor =
-      internal_static_pro_beam_interactive_Report_JoystickInfo_descriptor.getNestedTypes().get(0);
-    internal_static_pro_beam_interactive_Report_JoystickInfo_Data_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_Report_JoystickInfo_Data_descriptor,
-        new java.lang.String[] { "X", "Y", });
+        new java.lang.String[] { "Axis", "Info", });
     internal_static_pro_beam_interactive_Report_TactileInfo_descriptor =
       internal_static_pro_beam_interactive_Report_descriptor.getNestedTypes().get(2);
     internal_static_pro_beam_interactive_Report_TactileInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_pro_beam_interactive_Report_TactileInfo_descriptor,
-        new java.lang.String[] { "Id", "Holding", "PressFrequency", "ReleaseFrequency", });
-    internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor =
-      internal_static_pro_beam_interactive_Report_descriptor.getNestedTypes().get(3);
-    internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_Report_ScreenCoordsInfo_descriptor,
-        new java.lang.String[] { "Id", "CoordMean", "CoordStdev", });
-    internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor =
-      internal_static_pro_beam_interactive_Report_descriptor.getNestedTypes().get(4);
-    internal_static_pro_beam_interactive_Report_ScreenPressInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_Report_ScreenPressInfo_descriptor,
-        new java.lang.String[] { "Id", "Holding", "PressFrequency", "ReleaseFrequency", });
+        new java.lang.String[] { "Code", "Up", "Down", });
     internal_static_pro_beam_interactive_Error_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_pro_beam_interactive_Error_fieldAccessorTable = new
@@ -10519,19 +7377,13 @@ public final class Protocol {
     internal_static_pro_beam_interactive_ProgressUpdate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_pro_beam_interactive_ProgressUpdate_descriptor,
-        new java.lang.String[] { "State", "Joystick", "Tactile", });
-    internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor =
+        new java.lang.String[] { "Progress", });
+    internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor =
       internal_static_pro_beam_interactive_ProgressUpdate_descriptor.getNestedTypes().get(0);
-    internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_fieldAccessorTable = new
+    internal_static_pro_beam_interactive_ProgressUpdate_Progress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_ProgressUpdate_JoystickUpdate_descriptor,
-        new java.lang.String[] { "Id", "Angle", "Intensity", });
-    internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor =
-      internal_static_pro_beam_interactive_ProgressUpdate_descriptor.getNestedTypes().get(1);
-    internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_pro_beam_interactive_ProgressUpdate_TactileUpdate_descriptor,
-        new java.lang.String[] { "Id", "Cooldown", "Fired", "Progress", });
+        internal_static_pro_beam_interactive_ProgressUpdate_Progress_descriptor,
+        new java.lang.String[] { "Target", "Code", "Progress", "Cooldown", "Fired", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

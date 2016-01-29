@@ -24,69 +24,49 @@ message HandshakeACK {}
 // reportFrequency, containing information about connected
 // clients and their actions.
 message Report {
-    // Unix seconds timestamp in milliseconds that this report was sent at.
-    required uint32 time = 1;
-    optional Users users = 2;
+    // Total number of active gamers connected. Only users who have
+    // given input recently (within the last couple minutes) will
+    // be counted in the quorum.
+    required uint32 quorum = 1;
+    // Total number of connected users. This includes users who
+    // might not be active.
+    required uint32 connected = 2;
+    // Unix seconds timestamp that this report was sent at.
+    required uint32 time = 3;
 
-    // Contains information about the users connected to the stream.
-    message Users {
-        // Total number of users connected to the stream.
-        required uint32 connected = 1;
-        // Number of users who gave any kind of input in the last
-        // 30 seconds.
-        required uint32 quorum = 2;
+    // Contains information as required in game's analysis.
+    message Info {
+        // Only present if "frequency" is requested
+        optional double frequency = 1;
+        // Only present if "mean" is requested
+        optional double mean = 2;
+        // Only present if "stdev" is requested
+        optional double stdev = 3;
+        // Only present if "quartiles" are requested
+        optional double upperQuartile = 4;
+        optional double lowerQuartile = 5;
+        // Only present if "normalized_mean" is requested
+        optional double normalizedMean = 6;
     }
 
-    // Reports for the Joystick input type.
     message JoystickInfo {
-        required uint32 id = 1;
-
-        message Data {
-            required double X = 1;
-            required double Y = 2;
-        }
-
-        // Cordinates analysis, if requested.
-        optional Data coordMean = 2;
-        optional Data coordStddev = 3;
+        required uint32 axis = 1;
+        required Info info = 2;
     }
-    repeated JoystickInfo joystick = 3;
 
-    // Reports for the Tactile input type.
+    // Report for the mouse control.
+    repeated JoystickInfo joystick = 4;
+
+    // Wraps an Info to provide the key code, which might be easier
+    // to use as a means of identification.
     message TactileInfo {
-        required uint32 id = 1;
-
-        // analysis on how many users are holding and pressing releasing
-        // the buttons, if requested.
-        optional double holding = 2;
-        optional double pressFrequency = 3;
-        optional double releaseFrequency = 4;
+        required uint32 code = 1;
+        optional Info up = 2;
+        optional Info down = 3;
     }
-    repeated TactileInfo tactile = 4;
-
-
-    // Reports for the ScreenCoords input type.
-    message ScreenCoordsInfo {
-        required uint32 id = 1;
-
-        // Cordinates analysis, if requested.
-        optional double coordMean = 2;
-        optional double coordStdev = 3;
-    }
-    repeated ScreenCoordsInfo screenCoords = 5;
-
-
-    // Reports for the ScreenCoords input type.
-    message ScreenPressInfo {
-        required uint32 id = 1;
-
-        // analysis on how many users are holding and pressing releasing
-        // the buttons, if requested.
-        optional double holding = 2;
-        optional double pressFrequency = 3;
-        optional double releaseFrequency = 4;
-    }
-    repeated ScreenPressInfo screenPress = 6;
+    // Report for key controls. The order and index of reports
+    // matches those originally given in the handshake.
+    repeated TactileInfo tactile = 5;
 }
 
 // An error in response to some invalid input or event.
@@ -94,51 +74,35 @@ message Error {
     required string message = 1;
 }
 
-// A ProgressUpdate message may be sent up periodically from
-// the Robot. It contains an array of objects to update the
-// multiple controls on the frontend.
+// A ProgressUpdate message may be sent up periodically from the Robot. It
+// contains an array of objects to update the multiple controls on the fe.
 message ProgressUpdate {
-    // State to change to. States with the given state in their `states` array
-    // will be visible. If not passed, the state will not be changed.
-    // The default state at initialization of the robot is simply "default".
-    optional string state = 3;
+    message Progress {
+        enum TargetType {
+            TACTILE = 0;
+            JOYSTICK = 1;
+        }
 
-    message JoystickUpdate {
-        // The ID of the joystick control to update
-        required uint32 id = 1;
+        // The type of control this targets.
+        required TargetType target = 1;
 
-        // The angle to move the "pointer" that appears around the joystick
-        // to. This is usually used to indicate the average direction that
-        // users pointing to. This is given in radians, in the range
-        // [0, 2π), with the same alignment as the standard unit circle.
-        optional double angle = 2;
-        // Intensity the pointer should appear at. This is often used to
-        // indicate how strongly users are moving in a direction.
-        // Should be given in the range [0, 1].
-        optional double intensity = 3;
+        // The code for the control target. For tactile controls, this will be
+        // the `key` code. For joystick controls, this will be the `axis`.
+        required uint32 code = 2;
+
+        // The progress this input as towards some threshold, designated by the
+        // robot. This must be a float value in the range [0, 1).
+        optional float progress = 3;
+
+        // The duration, in milliseconds, before the action effected by this input
+        // may be carried out again. Note that this will decrement automatically
+        // on the frontend and does not need continuous updates.
+        optional uint32 cooldown = 4;
+
+        // Denotes that the action effected by this control has
+        // occurred, showing a "pulse" on the input.
+        optional bool fired = 5;
     }
-    repeated JoystickUpdate joystick = 1;
 
-    message TactileUpdate {
-        // The ID of the tactile control to update
-        required uint32 id = 1;
-
-        // Starts a cooldown for all users, with a duration given in milliseconds.
-        // Users will not be able to press the button until the cooldown is
-        // over. Users who currently are pressing the button will be marked
-        // as having released it. Sending another cooldown before the first
-        // is over sets the cooldown's duration. The cooldown duration will
-        // decrement automatically.
-        optional uint32 cooldown = 2;
-
-        // Marks the button has having been fired, showing a "pulse"
-        // on the Beam frontend.
-        optional bool fired = 3;
-
-        // Sets the progress of the button toward some threshold, appearing
-        // as a sort of progress bar on the frontend. Should be given in the
-        // range [0, 1].
-        optional double progress = 4;
-    }
-    repeated TactileUpdate tactile = 2;
+    repeated Progress progress = 1;
 }
