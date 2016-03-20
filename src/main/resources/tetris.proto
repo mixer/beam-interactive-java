@@ -5,6 +5,15 @@ package pro.beam.interactive;
 option java_package = "pro.beam.interactive.net.packet";
 option java_outer_classname = "Protocol";
 
+// Top-Level Wire Messages ====================================================
+//
+// The following messages are the top-level message sent over the wire. See
+// the interactive docs for the wire format:
+// http://beam-interactive.readthedocs.org/en/latest/talking.html
+//
+// ============================================================================
+
+
 // Handshake MUST be the first message sent from clients to servers.
 // After sending it, they should wait for a HandshakeACK, which will
 // contain authentication status.
@@ -32,35 +41,27 @@ message Report {
     message Users {
         // Total number of users connected to the stream.
         required uint32 connected = 1;
-        // Number of users who gave any kind of input in the last
-        // 30 seconds.
+        // Number of users who gave any kind of input in the last 30 seconds.
         required uint32 quorum = 2;
         // Number of users who gave input in *this* report interval.
         required uint32 active = 3;
 
         // User activity is reported in a histographic fashion via a
-        // sequence of QGrams, which record the number of users who gave
-        // any sort of input in the last (now - delta) milliseconds.
-        message QGram {
-            required uint32 delta = 1;
-            required uint32 users = 2;
-        }
-
-        repeated QGram qgram = 4;
+        // 1D histogram, which record the number of users who gave
+        // any sort of input in the last (now - x) milliseconds.
+        repeated HistogramUint1D qgram = 4;
     }
 
     // Reports for the Joystick input type.
     message JoystickInfo {
         required uint32 id = 1;
 
-        message Data {
-            required double X = 1;
-            required double Y = 2;
-        }
-
-        // Cordinates analysis, if requested.
-        optional Data coordMean = 2;
-        optional Data coordStddev = 3;
+        // Cordinates analysis, if requested. The coordinates are in the range
+        // [-1, 1], where (0, 0) is the "middle" of the joystick, (-1, -1)
+        // is the upper-left corner of the joystick, and (1, 1) is the lower
+        // right corner of the joystick.
+        optional Coordinate coordMean = 2;
+        optional Coordinate coordStddev = 3;
     }
     repeated JoystickInfo joystick = 3;
 
@@ -76,29 +77,19 @@ message Report {
     }
     repeated TactileInfo tactile = 4;
 
-
-    // Reports for the ScreenCoords input type.
-    message ScreenCoordsInfo {
+    // Reports for the Screen input type.
+    message ScreenInfo {
         required uint32 id = 1;
 
-        // Cordinates analysis, if requested.
-        optional double coordMean = 2;
-        optional double coordStdev = 3;
+        // The number of clicks users made this analysis cycle.
+        optional uint32 clicks = 2;
+        // Coordinate analysis if requested, in the range [0, 1]. The
+        // upper-left corner of the screen is (0, 0), and the lower right
+        // corner is (1, 1).
+        optional Coordinate coordMean = 3;
+        optional Coordinate coordStddev = 4;
     }
-    repeated ScreenCoordsInfo screenCoords = 5;
-
-
-    // Reports for the ScreenCoords input type.
-    message ScreenPressInfo {
-        required uint32 id = 1;
-
-        // analysis on how many users are holding and pressing releasing
-        // the buttons, if requested.
-        optional double holding = 2;
-        optional double pressFrequency = 3;
-        optional double releaseFrequency = 4;
-    }
-    repeated ScreenPressInfo screenPress = 6;
+    repeated ScreenInfo screen = 5;
 }
 
 // An error in response to some invalid input or event.
@@ -124,10 +115,16 @@ message ProgressUpdate {
         // users pointing to. This is given in radians, in the range
         // [0, 2π), with the same alignment as the standard unit circle.
         optional double angle = 2;
+
         // Intensity the pointer should appear at. This is often used to
         // indicate how strongly users are moving in a direction.
         // Should be given in the range [0, 1].
         optional double intensity = 3;
+
+        // Changes the disabled or enabled state of the control. If you pass
+        // `disabled = true` in a progress update, users won't be able to
+        // give input on that control until you send `disabled = false`.
+        optional bool disabled = 4;
     }
     repeated JoystickUpdate joystick = 1;
 
@@ -151,6 +148,55 @@ message ProgressUpdate {
         // as a sort of progress bar on the frontend. Should be given in the
         // range [0, 1].
         optional double progress = 4;
+
+        // Changes the disabled or enabled state of the control. If you pass
+        // `disabled = true` in a progress update, users won't be able to
+        // give input on that control until you send `disabled = false`.
+        optional bool disabled = 5;
     }
     repeated TactileUpdate tactile = 2;
+
+    message ScreenUpdate {
+        // The ID of the screen control to update
+        required uint32 id = 1;
+
+        message Click {
+            // x and y follow the same coordinate system as described in
+            // Report.ScreenInfo .
+            required Coordinate coordinate = 1;
+
+            // Intensity of the pulse from 0 to 1.
+            required double intensity = 2;
+        }
+
+        // A list of clicks that will be displayed on the frontend as pulses
+        // on the screen. You can show multiple pulses per cycle.
+        repeated Click clicks = 2;
+
+        // Changes the disabled or enabled state of the control. If you pass
+        // `disabled = true` in a progress update, users won't be able to
+        // give input on that control until you send `disabled = false`.
+        optional bool disabled = 3;
+    }
+    repeated ScreenUpdate screen = 4;
+}
+
+// Utility Messages ===========================================================
+//
+// These messages are utilities used for data representation in the above
+// messages.
+//
+// ============================================================================
+
+// HistogramUint1D is a point on a 1-dimensional histogram, where `x` is the
+// defined horizontal axis and y is the vertical axis.
+message HistogramUint1D {
+    required uint32 x = 1;
+    required uint32 y = 2;
+}
+
+// Coordinate represents a single x/y point on a screen or joystick.
+message Coordinate {
+    required double x = 1;
+    required double y = 2;
 }
