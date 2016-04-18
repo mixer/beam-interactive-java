@@ -25,10 +25,10 @@ public class KeyPressListener implements EventListener<Protocol.Report> {
         // based on the state of a particular TactileInfo instance.
         for (Protocol.Report.TactileInfo tactile : report.getTactileList()) {
             // If the key is not pressed down, skip it.
-            if (!tactile.hasDown()) continue;
+            if (!tactile.hasHolding()) continue;
 
             // Otherwise, trigger an AWT key press with the same keycode.
-            this.keyboard.keyPress(tactile.getCode());
+            this.keyboard.keyPress(tactile.getId());
         }
     }
 }
