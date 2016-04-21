@@ -93,15 +93,15 @@ public class RobotBuilder {
      * (`new BeamAPI()`) be constructed and sent into this method's parameter list.
      *
      * @param beam An instance of the BeamAPI.
-     * @param auth Should the robot authenticate with the BeamAPI.
+     * @param forceAuth Should the robot authenticate with the BeamAPI.
      * @return A ListenableFuture of type Robot that will return the connected, authenticated instance of the Robot.
      */
-    public ListenableFuture<Robot> build(final BeamAPI beam, final boolean auth) {
+    public ListenableFuture<Robot> build(final BeamAPI beam, final boolean forceAuth) {
         return beam.executor.submit(new Callable<Robot>() {
             @Override public Robot call() throws Exception {
                 RobotConnector connector = new RobotConnector(RobotBuilder.this);
 
-                if (auth) {
+                if (forceAuth) {
                     connector.authenticate(beam);
                 }
 
