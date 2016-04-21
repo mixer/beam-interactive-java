@@ -88,18 +88,22 @@ public class RobotBuilder {
      * Returns a ListenableFuture which will eventually deliver an instance of a connected, authenticated Robot,
      * ready to send and receive events.
      *
-     * This method does, at some point, attempt to authenticate with the BeamAPI using the Beam API client,
-     * which will, in turn, tarnish its credentials. It is RECOMMENDED that a new instance (`new BeamAPI()`) be
-     * constructed and sent into this method's parameter list.
+     * If auth is set to true, then this method does, at some point, attempt to authenticate with the BeamAPI
+     * using the Beam API client, which will, in turn, tarnish its credentials. It is RECOMMENDED that a new instance
+     * (`new BeamAPI()`) be constructed and sent into this method's parameter list.
      *
      * @param beam An instance of the BeamAPI.
+     * @param auth Should the robot authenticate with the BeamAPI.
      * @return A ListenableFuture of type Robot that will return the connected, authenticated instance of the Robot.
      */
-    public ListenableFuture<Robot> build(final BeamAPI beam) {
+    public ListenableFuture<Robot> build(final BeamAPI beam, final boolean auth) {
         return beam.executor.submit(new Callable<Robot>() {
             @Override public Robot call() throws Exception {
                 RobotConnector connector = new RobotConnector(RobotBuilder.this);
-                connector.authenticate(beam);
+
+                if (auth) {
+                    connector.authenticate(beam);
+                }
 
                 RobotInfo info = connector.findCredentials(beam);
                 Robot robot = connector.connectRobotTo(info, channel);
@@ -107,5 +111,9 @@ public class RobotBuilder {
                 return robot;
             }
         });
+    }
+
+    public ListenableFuture<Robot> build(final BeamAPI beam) {
+        return this.build(beam, true);
     }
 }
