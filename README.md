@@ -41,8 +41,7 @@ We use Maven to handle our dependencies.
 
 Someone is always available in our
 [Gitter room](https://gitter.im/MCProHosting/beam-dev), and many resources can
-be found on our [developer site](https://developer.beam.pro), and our
-[interactive developer's site](https://beam-interactive.readthedocs.org/en/latest/).
+be found on our [developer site](https://dev.beam.pro).
 
 ## License
 
