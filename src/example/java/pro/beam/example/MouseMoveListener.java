@@ -21,14 +21,13 @@ public class MouseMoveListener implements EventListener<Protocol.Report> {
     // It takes some information given in the Report message and does something with it (in this case,
     // it moves the mouse across the screen.
     @Override public void handle(Protocol.Report report) {
-        // Grab the joystick for each axis, the x and y-axis respectively.
-        Protocol.Report.JoystickInfo joystickX = report.getJoystick(0);
-        Protocol.Report.JoystickInfo joystickY = report.getJoystick(1);
+        // Grab the joystick for each both axes
+        Protocol.Report.JoystickInfo joystick = report.getJoystick(0);
 
         // Move the mouse to the calculated mean of each of the individual axis respectively.
         mouse.mouseMove(
-                (int) Math.round(joystickX.getInfo().getMean()),
-                (int) Math.round(joystickY.getInfo().getMean())
+                (int) Math.round(joystick.getCoordMean().getX()),
+                (int) Math.round(joystick.getCoordMean().getY())
         );
     }
 }
