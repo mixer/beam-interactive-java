@@ -8,6 +8,13 @@
     <artifactId>interactive</artifactId>
     <version>1.5.1-SNAPSHOT</version>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
