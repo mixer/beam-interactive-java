@@ -23,7 +23,7 @@ following:
   <dependency>
     <groupId>pro.beam</groupId>
     <artifactId>interactive</artifactId>
-    <version>1.5.1-SNAPSHOT</version>
+    <version>1.5.2-SNAPSHOT</version>
   </dependency>
 </dependencies>
 ```
