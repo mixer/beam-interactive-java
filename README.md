@@ -11,11 +11,11 @@ following:
 <repositories>
   <repository>
     <id>beam-releases</id>
-    <url>https://maven.beam.pro/content/repositories/releases/</url>
+    <url>https://maven.mixer.com/content/repositories/releases/</url>
   </repository>
   <repository>
     <id>beam-snapshots</id>
-    <url>https://maven.beam.pro/content/repositories/snapshots/</url>
+    <url>https://maven.mixer.com/content/repositories/snapshots/</url>
   </repository>
 </repositories>
 

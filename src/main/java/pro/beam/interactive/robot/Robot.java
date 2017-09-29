@@ -1,7 +1,7 @@
 package pro.beam.interactive.robot;
 
 import com.google.protobuf.Message;
-import org.java_websocket.drafts.Draft_17;
+import org.java_websocket.drafts.Draft_6455;
 import pro.beam.api.resource.channel.BeamChannel;
 import pro.beam.interactive.event.EventListener;
 import pro.beam.interactive.event.EventRegistry;
@@ -35,7 +35,7 @@ public class Robot extends BufferedWebSocket {
      * @param uri The URI of the Tetris Robot server to connect to.
      */
     public Robot(URI uri) throws IOException {
-        super(uri, new Draft_17());
+        super(uri, new Draft_6455());
 
         if (uri.getScheme().equals("wss")) {
             try {
